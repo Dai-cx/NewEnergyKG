@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新能源知识图谱 - 系统启动器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #10b981;
+            --primary-dark: #059669;
+            --primary-light: #d1fae5;
+            --secondary: #3b82f6;
+            --secondary-dark: #2563eb;
+            --danger: #ef4444;
+            --danger-dark: #dc2626;
+            --warning: #f59e0b;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 50%, #eff6ff 100%);
+            min-height: 100vh;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 48px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .logo svg {
+            width: 40px;
+            height: 40px;
+            fill: white;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            letter-spacing: -0.025em;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .status-card {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .status-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .status-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .status-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .status-badge.online {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .status-badge.offline {
+            background: #fee2e2;
+            color: var(--danger-dark);
+        }
+
+        .status-badge.checking {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .status-badge.online .status-dot {
+            background: var(--primary);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        .status-badge.offline .status-dot {
+            background: var(--danger);
+        }
+
+        .status-badge.checking .status-dot {
+            background: var(--warning);
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-detail {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .control-section {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .control-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding: 24px;
+            border: 2px solid var(--border);
+            border-radius: 16px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .control-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .control-btn:active {
+            transform: translateY(0);
+        }
+
+        .control-btn.primary {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+
+        .control-btn.primary:hover {
+            background: var(--primary-light);
+        }
+
+        .control-btn.secondary {
+            border-color: var(--secondary);
+            color: var(--secondary-dark);
+        }
+
+        .control-btn.secondary:hover {
+            background: #dbeafe;
+        }
+
+        .control-btn.danger {
+            border-color: var(--danger);
+            color: var(--danger-dark);
+        }
+
+        .control-btn.danger:hover {
+            background: #fee2e2;
+        }
+
+        .control-btn.info {
+            border-color: #8b5cf6;
+            color: #7c3aed;
+        }
+
+        .control-btn.info:hover {
+            background: #ede9fe;
+        }
+
+        .control-btn .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: currentColor;
+            opacity: 0.1;
+        }
+
+        .control-btn .icon svg {
+            width: 24px;
+            height: 24px;
+            color: inherit;
+        }
+
+        .control-btn .label {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .control-btn .desc {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .links-section {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            margin-bottom: 32px;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            border-radius: 12px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+            transform: translateX(4px);
+        }
+
+        .link-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .link-icon.blue { background: #dbeafe; color: var(--secondary-dark); }
+        .link-icon.green { background: var(--primary-light); color: var(--primary-dark); }
+        .link-icon.purple { background: #ede9fe; color: #7c3aed; }
+
+        .link-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .link-url {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            word-break: break-all;
+        }
+
+        .log-section {
+            background: var(--card);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .log-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+        }
+
+        .log-actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .log-btn {
+            padding: 6px 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: white;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .log-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+
+        .log-container {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 16px;
+            height: 280px;
+            overflow-y: auto;
+            font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .log-line {
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .log-time {
+            color: #64748b;
+            margin-right: 8px;
+        }
+
+        .log-info { color: #38bdf8; }
+        .log-success { color: #4ade80; }
+        .log-warning { color: #fbbf24; }
+        .log-error { color: #f87171; }
+
+        .empty-log {
+            color: #475569;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            animation: fadeInUp 0.8s ease 0.5s both;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+            70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 24px 16px; }
+            h1 { font-size: 1.75rem; }
+            .control-grid, .links-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h1>新能源知识图谱系统</h1>
+            <p class="subtitle">NewEnergyKG · 系统启动器</p>
+        </header>
+
+        <div class="status-grid">
+            <div class="status-card">
+                <div class="status-header">
+                    <div class="status-title">
+                        <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                        Neo4j 数据库
+                    </div>
+                    <span id="neo4j-status" class="status-badge checking"><span class="status-dot"></span>检测中</span>
+                </div>
+                <div class="status-detail" id="neo4j-detail">正在检测图数据库连接状态...</div>
+            </div>
+            <div class="status-card">
+                <div class="status-header">
+                    <div class="status-title">
+                        <svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        Web Server
+                    </div>
+                    <span id="web-status" class="status-badge checking"><span class="status-dot"></span>检测中</span>
+                </div>
+                <div class="status-detail" id="web-detail">正在检测后端服务可用性...</div>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><path d="M12 2v10"/></svg>
+                系统控制
+            </h2>
+            <div class="control-grid">
+                <button class="control-btn primary" onclick="controlSystem('full', '启动完整系统')">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+                    <span class="label">启动完整系统</span>
+                    <span class="desc">Neo4j + Web Server</span>
+                </button>
+                <button class="control-btn secondary" onclick="controlSystem('neo4j', '启动 Neo4j Only')">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></div>
+                    <span class="label">启动 Neo4j Only</span>
+                    <span class="desc">仅启动图数据库</span>
+                </button>
+                <button class="control-btn info" onclick="controlSystem('web', '启动 Web Server Only')">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                    <span class="label">启动 Web Server Only</span>
+                    <span class="desc">仅启动后端服务</span>
+                </button>
+                <button class="control-btn danger" onclick="controlSystem('stop', '停止所有服务')">
+                    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M11 11h2"/></svg></div>
+                    <span class="label">停止所有服务</span>
+                    <span class="desc">关闭全部运行实例</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <h2 class="section-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                Quick Access Links
+            </h2>
+            <div class="links-grid">
+                <a href="/chat" class="link-card">
+                    <div class="link-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+                    <div class="link-content">
+                        <div class="link-title">Web Interface</div>
+                        <div class="link-url">/chat</div>
+                    </div>
+                </a>
+                <a href="/docs" class="link-card">
+                    <div class="link-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
+                    <div class="link-content">
+                        <div class="link-title">API Documentation</div>
+                        <div class="link-url">/docs</div>
+                    </div>
+                </a>
+                <a href="http://localhost:7474" target="_blank" class="link-card">
+                    <div class="link-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+                    <div class="link-content">
+                        <div class="link-title">Neo4j Browser</div>
+                        <div class="link-url">localhost:7474</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="log-section">
+            <div class="log-header">
+                <h2 class="section-title" style="margin-bottom:0">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                    Activity Log
+                </h2>
+                <div class="log-actions">
+                    <button class="log-btn" onclick="clearLog()">清空</button>
+                    <button class="log-btn" onclick="refreshStatus()">刷新状态</button>
+                </div>
+            </div>
+            <div class="log-container" id="log-container">
+                <div class="empty-log">暂无活动日志，点击上方按钮开始操作</div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 NewEnergyKG · 新能源知识图谱系统</p>
+        </footer>
+    </div>
+
+    <script>
+        const logContainer = document.getElementById('log-container');
+        let logCount = 0;
+
+        function getTimestamp() {
+            const now = new Date();
+            return now.toLocaleTimeString('zh-CN', { hour12: false }) + '.' + String(now.getMilliseconds()).padStart(3, '0');
+        }
+
+        function addLog(message, type = 'info') {
+            if (logCount === 0) {
+                logContainer.innerHTML = '';
+            }
+            logCount++;
+            const line = document.createElement('div');
+            line.className = 'log-line';
+            line.innerHTML = `<span class="log-time">[${getTimestamp()}]</span><span class="log-${type}">${escapeHtml(message)}</span>`;
+            logContainer.appendChild(line);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        function clearLog() {
+            logContainer.innerHTML = '<div class="empty-log">日志已清空</div>';
+            logCount = 0;
+            addLog('日志已清空', 'info');
+        }
+
+        function setStatus(id, status, text, detail) {
+            const badge = document.getElementById(id + '-status');
+            const detailEl = document.getElementById(id + '-detail');
+            badge.className = 'status-badge ' + status;
+            badge.innerHTML = `<span class="status-dot"></span>${text}`;
+            if (detail) detailEl.textContent = detail;
+        }
+
+        async function checkHealth() {
+            setStatus('web', 'checking', '检测中', '正在检测后端服务可用性...');
+            try {
+                const response = await fetch('/health', { method: 'GET', cache: 'no-store' });
+                if (response.ok) {
+                    const data = await response.json();
+                    setStatus('web', 'online', '在线', `服务正常 · ${JSON.stringify(data)}`);
+                    addLog('Web Server 状态检测：在线', 'success');
+                } else {
+                    setStatus('web', 'offline', '离线', `HTTP 错误：${response.status}`);
+                    addLog(`Web Server 状态检测：HTTP ${response.status}`, 'error');
+                }
+            } catch (error) {
+                setStatus('web', 'offline', '离线', '无法连接到后端服务');
+                addLog('Web Server 状态检测失败：' + error.message, 'error');
+            }
+        }
+
+        async function checkNeo4j() {
+            setStatus('neo4j', 'checking', '检测中', '正在检测图数据库连接状态...');
+            try {
+                const response = await fetch('/kg/status', { method: 'GET', cache: 'no-store' });
+                if (response.ok) {
+                    const data = await response.json();
+                    setStatus('neo4j', 'online', '在线', `连接正常 · ${data.message || ''}`);
+                    addLog('Neo4j 状态检测：在线', 'success');
+                } else {
+                    setStatus('neo4j', 'offline', '离线', `未检测到 Neo4j 服务（HTTP ${response.status}）`);
+                    addLog(`Neo4j 状态检测：HTTP ${response.status}`, 'warning');
+                }
+            } catch (error) {
+                setStatus('neo4j', 'offline', '离线', 'Neo4j 知识图谱服务尚未接入（第一阶段）');
+                addLog('Neo4j 状态检测：服务未接入或离线', 'warning');
+            }
+        }
+
+        async function refreshStatus() {
+            addLog('开始刷新系统状态...', 'info');
+            await Promise.all([checkHealth(), checkNeo4j()]);
+            addLog('系统状态刷新完成', 'info');
+        }
+
+        async function controlSystem(action, label) {
+            addLog(`收到控制指令：${label}`, 'info');
+            try {
+                const response = await fetch('/system/control', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: action })
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    addLog(`${label} 成功：${data.message || '操作完成'}`, 'success');
+                } else if (response.status === 404) {
+                    addLog(`${label}：后端控制接口尚未实现，已记录为模拟操作`, 'warning');
+                } else {
+                    addLog(`${label} 失败：HTTP ${response.status}`, 'error');
+                }
+            } catch (error) {
+                addLog(`${label}：后端控制接口不可用（${error.message}），请在命令行手动执行`, 'warning');
+            }
+            setTimeout(refreshStatus, 800);
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            addLog('系统启动器页面已加载', 'info');
+            refreshStatus();
+        });
+    </script>
+</body>
+</html>

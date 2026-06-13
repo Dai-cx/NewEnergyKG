@@ -1,0 +1,62 @@
+[
+  {
+    "question": "什么是光伏逆变器？",
+    "expected_intent": "property",
+    "expected_entities": ["光伏逆变器"]
+  },
+  {
+    "question": "磷酸铁锂电池有哪些优点？",
+    "expected_intent": "property",
+    "expected_entities": ["磷酸铁锂电池"]
+  },
+  {
+    "question": "磷酸铁锂电池有哪些公司？",
+    "expected_intent": "relation",
+    "expected_entities": ["磷酸铁锂电池"]
+  },
+  {
+    "question": "光伏逆变器有哪些应用？",
+    "expected_intent": "relation",
+    "expected_entities": ["光伏逆变器"]
+  },
+  {
+    "question": "光伏逆变器和锂电池比较？",
+    "expected_intent": "compare",
+    "expected_entities": ["光伏逆变器", "磷酸铁锂电池"]
+  },
+  {
+    "question": "风电和光伏比较？",
+    "expected_intent": "compare",
+    "expected_entities": ["风电", "光伏"]
+  },
+  {
+    "question": "有哪些储能技术？",
+    "expected_intent": "list",
+    "expected_entities": []
+  },
+  {
+    "question": "有什么风电技术？",
+    "expected_intent": "list",
+    "expected_entities": []
+  },
+  {
+    "question": "列举光伏发电技术",
+    "expected_intent": "list",
+    "expected_entities": []
+  },
+  {
+    "question": "氢燃料电池汽车的应用？",
+    "expected_intent": "relation",
+    "expected_entities": ["氢燃料电池汽车"]
+  },
+  {
+    "question": "三元锂电池和磷酸铁锂电池哪个好？",
+    "expected_intent": "compare",
+    "expected_entities": ["三元锂电池", "磷酸铁锂电池"]
+  },
+  {
+    "question": "钠离子电池有哪些材料？",
+    "expected_intent": "relation",
+    "expected_entities": ["钠离子电池"]
+  }
+]
