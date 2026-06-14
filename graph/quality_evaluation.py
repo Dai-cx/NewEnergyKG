@@ -2,13 +2,30 @@
 知识图谱质量评估脚本（官方 neo4j 驱动版）
 """
 
+import sys
+from pathlib import Path
 from neo4j import GraphDatabase
+
+# 确保脚本所在目录在 sys.path 中，支持从任意目录运行
+_SCRIPT_DIR = Path(__file__).resolve().parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+import config
 
 
 class GraphQualityEvaluator:
 
-    def __init__(self, password="dcx434&&"):
-        self.driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", password))
+    def __init__(self, uri=None, user=None, password=None):
+        # 优先使用传入参数，其次从环境变量 / .env 读取
+        self.uri = uri or config.NEO4J_URI
+        self.user = user or config.NEO4J_USER
+        self.password = password or config.NEO4J_PASSWORD
+        if not self.password:
+            raise ValueError(
+                "Neo4j 密码未配置。请设置环境变量 NEO4J_PASSWORD，"
+                "或在 graph/.env 文件中填写 NEO4J_PASSWORD=your-password"
+            )
+        self.driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
 
     def close(self):
         self.driver.close()
@@ -105,6 +122,6 @@ class GraphQualityEvaluator:
 
 
 if __name__ == '__main__':
-    evaluator = GraphQualityEvaluator(password="dcx434&&")  # ← 改成你的密码
+    evaluator = GraphQualityEvaluator()  # 密码从环境变量 NEO4J_PASSWORD 或 graph/.env 读取
     evaluator.generate_report()
     evaluator.close()

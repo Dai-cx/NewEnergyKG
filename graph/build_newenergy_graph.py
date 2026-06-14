@@ -9,18 +9,27 @@
 """
 
 import os
+import sys
 import json
+from pathlib import Path
 from neo4j import GraphDatabase
+
+# 确保脚本所在目录在 sys.path 中，支持从任意目录运行
+_SCRIPT_DIR = Path(__file__).resolve().parent
+if str(_SCRIPT_DIR) not in sys.path:
+    sys.path.insert(0, str(_SCRIPT_DIR))
+import config
 
 class NewEnergyGraph:
     def __init__(self):
-        self.data_path = r"D:\NewEnergyKG\data\new_energy.json"
+        # ==================== 数据路径配置 ====================
+        # 优先从环境变量 GRAPH_DATA_PATH 读取，否则使用项目默认路径
+        self.data_path = str(config.DATA_PATH)
 
         # ==================== Neo4j 连接配置 ====================
-        # 请根据你的实际情况修改 URI 和密码
-        self.uri = "bolt://localhost:7687"
-        self.user = "neo4j"
-        self.password = "dcx434&&"  # ← 改成你的密码
+        # 从环境变量 / .env 文件读取，避免硬编码敏感信息
+        self.uri = config.NEO4J_URI
+        self.user, self.password = config.get_neo4j_auth()
 
         self.driver = GraphDatabase.driver(self.uri, auth=(self.user, self.password))
 
@@ -283,7 +292,7 @@ class NewEnergyGraph:
             }
         }
 
-        output_path = os.path.join('/'.join(os.path.abspath(__file__).split('/')[:-1]), 'graph_data_export.json')
+        output_path = Path(__file__).resolve().parent / 'graph_data_export.json'
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         print(f"数据导出完成: {output_path}")

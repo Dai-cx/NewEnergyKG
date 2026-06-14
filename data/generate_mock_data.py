@@ -1,8 +1,11 @@
 """
-知识图谱构建脚本
+知识图谱构建脚本（旧版 py2neo 实现，已弃用）
 将清洗后的数据导入 Neo4j 图数据库
+
+敏感配置（密码）建议通过环境变量注入，避免硬编码。
 """
 
+import os
 from py2neo import Graph, Node, Relationship, NodeMatcher
 import json
 
@@ -12,10 +15,23 @@ class NewEnergyGraphBuilder:
     新能源知识图谱构建器
     """
 
-    def __init__(self, uri="bolt://localhost:7687", user="neo4j", password="你的密码"):
+    def __init__(
+        self,
+        uri="bolt://localhost:7687",
+        user="neo4j",
+        password=None,
+    ):
         """
-        连接 Neo4j 数据库
+        连接 Neo4j 数据库。
+
+        密码优先从参数传入，其次从环境变量 NEO4J_PASSWORD 读取。
         """
+        password = password or os.getenv("NEO4J_PASSWORD")
+        if not password:
+            raise ValueError(
+                "Neo4j 密码未配置。请设置环境变量 NEO4J_PASSWORD，"
+                "或在项目根目录 / graph/ / data/ 的 .env 文件中填写 NEO4J_PASSWORD=your-password"
+            )
         try:
             self.graph = Graph(uri, auth=(user, password))
             self.matcher = NodeMatcher(self.graph)
@@ -186,11 +202,10 @@ class NewEnergyGraphBuilder:
 
 
 def main():
-    # 创建构建器实例（把密码改成你设置的）
+    # 创建构建器实例（密码从环境变量 NEO4J_PASSWORD 读取）
     builder = NewEnergyGraphBuilder(
         uri="bolt://localhost:7687",
         user="neo4j",
-        password="12345678"  # ← 改成你的密码！
     )
 
     # 清空旧数据（第一次运行可以打开，后续注释掉）

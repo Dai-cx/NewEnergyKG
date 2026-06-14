@@ -43,7 +43,11 @@ class AnswerEngine:
         # 加载本地数据
         self.data_store = LocalDataStore()
         # 初始化意图分类器，注入所有技术名称用于实体匹配
-        self.classifier = IntentClassifier(entity_names=self.data_store.get_all_names())
+        # 模糊匹配阈值可从环境变量调整，默认 85
+        self.classifier = IntentClassifier(
+            entity_names=self.data_store.get_all_names(),
+            fuzzy_threshold=config.ENTITY_FUZZY_THRESHOLD,
+        )
         # 初始化 LLM 客户端（未配置 API Key 时返回 None）
         self.llm_client = create_llm_client()
         # 初始化 Neo4j 知识图谱客户端（未配置密码时自动禁用）

@@ -32,6 +32,8 @@ NewEnergyKG-myself/
 ├── graph/                          # 图数据库构建与评估
 │   ├── build_newenergy_graph.py    # 官方 neo4j 驱动版入库脚本
 │   ├── quality_evaluation.py       # 图谱质量评估脚本
+│   ├── config.py                   # 图谱模块配置管理（环境变量 / .env）
+│   ├── .env.example                # 图谱模块环境变量示例
 │   └── graph_data_export.json      # build_newenergy_graph.py 生成的导出/统计文件
 ├── static/                         # 前端静态页面
 │   ├── index.html                  # 系统启动器页面
@@ -152,7 +154,14 @@ pip install -r requirements.txt
 ### 6.1 准备 Neo4j
 
 1. 启动本地 Neo4j 服务，默认端口 `7687`。
-2. 确认用户名/密码。当前代码中默认用户为 `neo4j`，密码为 `dcx434&&`。
+2. 确认用户名/密码。默认用户为 `neo4j`，密码需通过环境变量或 `.env` 文件配置。
+3. 复制并填写环境变量示例文件：
+
+   ```bash
+   cp .env.example .env
+   # 编辑 .env，至少填写：
+   #   NEO4J_PASSWORD=your-neo4j-password
+   ```
 
 ### 6.2 合并批次数据（可选）
 
@@ -168,6 +177,7 @@ python merge_data.py
 
 ```bash
 cd graph
+cp .env.example .env  # 首次运行需配置 Neo4j 密码
 python build_newenergy_graph.py
 ```
 
@@ -249,7 +259,7 @@ python -m qa.evaluate --mode both --output qa/eval_report.md --csv qa/eval_resul
 - `--mode` 可选 `llm_only`（纯 LLM）、`kg_rag`（KG+RAG）、`both`（两者对比）
 - 输出 `qa/eval_report.md`：汇总指标对比表、逐题时间对比表、完整答案附录
 - 输出 `qa/eval_result_llm.csv` 与 `qa/eval_result_kg.csv`：原始结果
-- 指标包括：意图准确率、实体命中率、KG 命中率、平均响应时间、回答来源分布等
+- 指标包括：意图准确率、实体识别精确率/召回率/F1、答案准确率、KG 召回率、KG 命中率、平均响应时间、回答来源分布等
 
 
 ## 7. 代码风格约定
@@ -272,15 +282,15 @@ python -m qa.evaluate --mode both --output qa/eval_report.md --csv qa/eval_resul
 
 ## 9. 安全注意事项
 
-- **明文凭据**：`build_newenergy_graph.py` 与 `quality_evaluation.py` 中硬编码了 Neo4j 密码 `dcx434&&`。若提交到版本控制或共享，请改为环境变量或配置文件读取。
-- **硬编码绝对路径**：`build_newenergy_graph.py` 中 `self.data_path = r"D:\NewEnergyKG\data\new_energy.json"`，与当前项目路径 `d:\NewEnergyKG-myself` 不一致，直接运行会报文件不存在。建议改为基于脚本位置的相对路径或环境变量。
+- **明文凭据（已修复）**：`build_newenergy_graph.py`、`quality_evaluation.py` 与 `data/generate_mock_data.py` 中的 Neo4j 密码已从硬编码改为从环境变量 / `.env` 文件读取。运行前请复制 `.env.example` 为 `.env` 并填写真实密码，切勿将含真实密码的 `.env` 提交到版本控制。
+- **硬编码绝对路径（已修复）**：`build_newenergy_graph.py` 的数据路径已改为基于脚本位置的相对路径（默认 `d:\NewEnergyKG-myself\data\new_energy.json`），并支持通过环境变量 `GRAPH_DATA_PATH` 自定义。
 - **数据库清空操作**：`build_newenergy_graph.py::clear_database()` 与 `generate_mock_data.py::clear_graph()` 会删除 Neo4j 中全部节点和关系，生产环境慎用。
 - **Cypher 注入风险**：`build_newenergy_graph.py` 中 `_create_relationship_tx` 使用字符串拼接构造关系类型，虽然节点匹配使用参数化查询，但关系类型未参数化；当前数据来自受控 JSON，风险较低，但应避免直接拼接用户输入。
 
 ## 10. 已知约束与常见问题
 
 - 没有 `pyproject.toml`、`setup.py` 或 `README.md`；`qa/requirements.txt` 为问答系统依赖清单，其他脚本依赖仍需手动安装。
-- `build_newenergy_graph.py` 的 `export_and_stats()` 使用 `os.path.abspath(__file__).split('/')` 推导路径，在 Windows 下可能得到空列表或错误路径，建议改用 `pathlib`。
+- `build_newenergy_graph.py` 的 `export_and_stats()` 已改用 `pathlib` 推导导出路径。
 - 当前数据文件均为中文内容，编码为 UTF-8，读取时需指定 `encoding='utf-8'`。
 - `graph_data_export.json` 是构建产物，不需要手工编辑。
 - `data/energy_storage_10.json` 实际包含 9 条记录，文件名中的“10”与当前内容不符。

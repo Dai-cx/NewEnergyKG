@@ -2,61 +2,935 @@
   {
     "question": "什么是光伏逆变器？",
     "expected_intent": "property",
-    "expected_entities": ["光伏逆变器"]
+    "expected_entities": [
+      "光伏逆变器"
+    ],
+    "expected_answer_keywords": [
+      "直流电",
+      "交流电",
+      "光伏",
+      "MPPT"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "磷酸铁锂电池有哪些优点？",
     "expected_intent": "property",
-    "expected_entities": ["磷酸铁锂电池"]
+    "expected_entities": [
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "安全性",
+      "循环寿命",
+      "成本",
+      "环保"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "磷酸铁锂电池有哪些公司？",
     "expected_intent": "relation",
-    "expected_entities": ["磷酸铁锂电池"]
+    "expected_entities": [
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "宁德时代",
+      "比亚迪",
+      "生产"
+    ],
+    "expected_relation_entities": [
+      "宁德时代",
+      "比亚迪",
+      "国轩高科",
+      "亿纬锂能"
+    ]
   },
   {
     "question": "光伏逆变器有哪些应用？",
     "expected_intent": "relation",
-    "expected_entities": ["光伏逆变器"]
+    "expected_entities": [
+      "光伏逆变器"
+    ],
+    "expected_answer_keywords": [
+      "光伏电站",
+      "分布式光伏",
+      "储能系统"
+    ],
+    "expected_relation_entities": [
+      "地面电站",
+      "分布式光伏",
+      "户用光伏",
+      "储能系统"
+    ]
   },
   {
     "question": "光伏逆变器和锂电池比较？",
     "expected_intent": "compare",
-    "expected_entities": ["光伏逆变器", "磷酸铁锂电池"]
+    "expected_entities": [
+      "光伏逆变器",
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "逆变器",
+      "电池",
+      "直流",
+      "交流",
+      "储能"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "风电和光伏比较？",
     "expected_intent": "compare",
-    "expected_entities": ["风电", "光伏"]
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "风能",
+      "太阳能",
+      "可再生",
+      "发电"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "有哪些储能技术？",
     "expected_intent": "list",
-    "expected_entities": []
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "电池",
+      "储能",
+      "液流",
+      "锂离子"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "有什么风电技术？",
     "expected_intent": "list",
-    "expected_entities": []
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "直驱",
+      "风电",
+      "海上",
+      "永磁"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "列举光伏发电技术",
     "expected_intent": "list",
-    "expected_entities": []
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "光伏",
+      "太阳能",
+      "电池",
+      "组件"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "氢燃料电池汽车的应用？",
     "expected_intent": "relation",
-    "expected_entities": ["氢燃料电池汽车"]
+    "expected_entities": [
+      "氢燃料电池汽车"
+    ],
+    "expected_answer_keywords": [
+      "重卡",
+      "客车",
+      "公交",
+      "物流"
+    ],
+    "expected_relation_entities": [
+      "重型卡车",
+      "长途客车",
+      "城市公交",
+      "冷链物流"
+    ]
   },
   {
     "question": "三元锂电池和磷酸铁锂电池哪个好？",
     "expected_intent": "compare",
-    "expected_entities": ["三元锂电池", "磷酸铁锂电池"]
+    "expected_entities": [
+      "三元锂电池",
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "能量密度",
+      "安全性",
+      "成本",
+      "循环寿命"
+    ],
+    "expected_relation_entities": []
   },
   {
     "question": "钠离子电池有哪些材料？",
     "expected_intent": "relation",
-    "expected_entities": ["钠离子电池"]
+    "expected_entities": [
+      "钠离子电池"
+    ],
+    "expected_answer_keywords": [
+      "层状氧化物",
+      "普鲁士蓝",
+      "硬碳",
+      "电解液"
+    ],
+    "expected_relation_entities": [
+      "层状氧化物正极",
+      "普鲁士蓝正极",
+      "硬碳负极"
+    ]
+  },
+  {
+    "question": "纯电动汽车是什么？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "纯电动汽车"
+    ],
+    "expected_answer_keywords": [
+      "动力电池",
+      "电动机",
+      "零尾气",
+      "新能源汽车"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "增程式电动车的工作原理是什么？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "增程式电动车"
+    ],
+    "expected_answer_keywords": [
+      "电动机",
+      "增程器",
+      "发电",
+      "电池"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "钙钛矿太阳能电池有什么优点？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "钙钛矿太阳能电池"
+    ],
+    "expected_answer_keywords": [
+      "转换效率",
+      "成本低",
+      "柔性",
+      "弱光"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "三元锂电池有什么缺点？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "三元锂电池"
+    ],
+    "expected_answer_keywords": [
+      "安全性",
+      "成本",
+      "循环寿命",
+      "温度"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "PERC电池的效率是多少？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "PERC电池"
+    ],
+    "expected_answer_keywords": [
+      "23",
+      "24",
+      "转换效率",
+      "%"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "全钒液流电池的循环寿命是多少？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "全钒液流电池"
+    ],
+    "expected_answer_keywords": [
+      "20000",
+      "循环寿命",
+      "20年"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "纯电动汽车有哪些应用场景？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "纯电动汽车"
+    ],
+    "expected_answer_keywords": [
+      "城市通勤",
+      "网约车",
+      "出租车",
+      "物流"
+    ],
+    "expected_relation_entities": [
+      "城市通勤",
+      "网约车",
+      "出租车",
+      "物流配送"
+    ]
+  },
+  {
+    "question": "HJT电池有哪些公司生产？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "HJT电池"
+    ],
+    "expected_answer_keywords": [
+      "华晟新能源",
+      "东方日升",
+      "生产"
+    ],
+    "expected_relation_entities": [
+      "华晟新能源",
+      "东方日升",
+      "金刚玻璃",
+      "爱康科技"
+    ]
+  },
+  {
+    "question": "磷酸铁锂电池有哪些竞争技术？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "三元锂电池",
+      "钠离子电池",
+      "固态电池"
+    ],
+    "expected_relation_entities": [
+      "三元锂电池",
+      "钠离子电池",
+      "固态电池"
+    ]
+  },
+  {
+    "question": "质子交换膜燃料电池有哪些材料？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "质子交换膜燃料电池"
+    ],
+    "expected_answer_keywords": [
+      "质子交换膜",
+      "铂催化剂",
+      "双极板",
+      "碳纸"
+    ],
+    "expected_relation_entities": [
+      "质子交换膜",
+      "铂催化剂",
+      "双极板"
+    ]
+  },
+  {
+    "question": "分布式光伏发电有哪些政策支持？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "分布式光伏发电"
+    ],
+    "expected_answer_keywords": [
+      "整县推进",
+      "分布式光伏",
+      "户用光伏",
+      "双碳"
+    ],
+    "expected_relation_entities": [
+      "整县推进分布式光伏",
+      "分布式光伏发电管理办法",
+      "户用光伏补贴政策"
+    ]
+  },
+  {
+    "question": "永磁直驱风力发电需要什么设备？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "永磁直驱风力发电"
+    ],
+    "expected_answer_keywords": [
+      "永磁同步发电机",
+      "叶片",
+      "变流器",
+      "塔筒"
+    ],
+    "expected_relation_entities": [
+      "永磁同步发电机",
+      "叶片",
+      "变流器",
+      "塔筒"
+    ]
+  },
+  {
+    "question": "AP1000的效率参数是多少？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "AP1000"
+    ],
+    "expected_answer_keywords": [
+      "热效率",
+      "32",
+      "33",
+      "1100",
+      "1250"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "碱性电解水制氢有哪些应用场景？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "碱性电解水制氢"
+    ],
+    "expected_answer_keywords": [
+      "绿氢",
+      "化工",
+      "炼钢",
+      "合成氨"
+    ],
+    "expected_relation_entities": [
+      "大规模绿氢生产",
+      "化工原料",
+      "炼钢",
+      "合成氨"
+    ]
+  },
+  {
+    "question": "纯电动和插电式混合动力汽车哪个好？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "纯电动汽车",
+      "插电式混合动力汽车"
+    ],
+    "expected_answer_keywords": [
+      "续航",
+      "充电",
+      "油耗",
+      "纯电"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "PERC电池和HJT电池有什么区别？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "PERC电池",
+      "HJT电池"
+    ],
+    "expected_answer_keywords": [
+      "钝化",
+      "异质结",
+      "效率",
+      "成本"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "全钒液流电池和钠离子电池比较？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "全钒液流电池",
+      "钠离子电池"
+    ],
+    "expected_answer_keywords": [
+      "循环寿命",
+      "能量密度",
+      "成本",
+      "储能"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "有哪些氢能技术？",
+    "expected_intent": "list",
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "电解水制氢",
+      "燃料电池",
+      "氢能",
+      "储氢"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "TOPCon电池的效率是多少？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "TOPCon电池"
+    ],
+    "expected_answer_keywords": [
+      "25",
+      "26",
+      "转换效率",
+      "%"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "半固态电池有什么优点？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "半固态电池"
+    ],
+    "expected_answer_keywords": [
+      "安全性",
+      "能量密度",
+      "350",
+      "快充"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "抽水蓄能的工作原理是什么？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "抽水蓄能"
+    ],
+    "expected_answer_keywords": [
+      "水库",
+      "抽水",
+      "发电",
+      "势能"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "800V高压平台有什么优势？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "800V高压平台"
+    ],
+    "expected_answer_keywords": [
+      "充电",
+      "时间",
+      "线束",
+      "效率"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "碲化镉薄膜电池有哪些优点？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "碲化镉薄膜电池"
+    ],
+    "expected_answer_keywords": [
+      "碲化镉",
+      "弱光",
+      "建筑一体化",
+      "转换效率"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "高温气冷堆的安全性如何？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "高温气冷堆"
+    ],
+    "expected_answer_keywords": [
+      "固有安全性",
+      "负温度系数",
+      "衰变热",
+      "氦气"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "TOPCon电池有哪些公司生产？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "TOPCon电池"
+    ],
+    "expected_answer_keywords": [
+      "晶科能源",
+      "天合光能",
+      "生产"
+    ],
+    "expected_relation_entities": [
+      "晶科能源",
+      "天合光能",
+      "晶澳科技",
+      "隆基绿能"
+    ]
+  },
+  {
+    "question": "压缩空气储能有哪些应用场景？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "压缩空气储能"
+    ],
+    "expected_answer_keywords": [
+      "电网调峰",
+      "可再生能源",
+      "长时储能"
+    ],
+    "expected_relation_entities": [
+      "电网调峰",
+      "可再生能源并网",
+      "备用电源",
+      "长时储能"
+    ]
+  },
+  {
+    "question": "铁铬液流电池有哪些材料？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "铁铬液流电池"
+    ],
+    "expected_answer_keywords": [
+      "氯化亚铁",
+      "氯化铬",
+      "离子交换膜"
+    ],
+    "expected_relation_entities": [
+      "氯化亚铁",
+      "氯化铬",
+      "盐酸电解液"
+    ]
+  },
+  {
+    "question": "固体氧化物燃料电池有哪些应用？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "固体氧化物燃料电池"
+    ],
+    "expected_answer_keywords": [
+      "分布式",
+      "发电",
+      "热电",
+      "交通"
+    ],
+    "expected_relation_entities": [
+      "分布式发电",
+      "数据中心供电",
+      "工业热电联供",
+      "家庭热电联供"
+    ]
+  },
+  {
+    "question": "风电制氢有什么应用？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "风电制氢"
+    ],
+    "expected_answer_keywords": [
+      "绿氢",
+      "风电消纳",
+      "化工原料"
+    ],
+    "expected_relation_entities": [
+      "绿氢生产",
+      "风电消纳",
+      "化工原料",
+      "氢燃料电池汽车"
+    ]
+  },
+  {
+    "question": "CTC电池底盘一体化有哪些公司？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "CTC电池底盘一体化"
+    ],
+    "expected_answer_keywords": [
+      "特斯拉",
+      "比亚迪",
+      "零跑"
+    ],
+    "expected_relation_entities": [
+      "特斯拉",
+      "比亚迪",
+      "零跑汽车",
+      "宁德时代"
+    ]
+  },
+  {
+    "question": "高压气态储氢有哪些应用？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "高压气态储氢"
+    ],
+    "expected_answer_keywords": [
+      "氢燃料电池汽车",
+      "加氢站",
+      "工业用氢"
+    ],
+    "expected_relation_entities": [
+      "氢燃料电池汽车",
+      "加氢站",
+      "短距离运输",
+      "工业用氢"
+    ]
+  },
+  {
+    "question": "双馈风力发电和永磁直驱风力发电有什么区别？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "双馈风力发电",
+      "永磁直驱风力发电"
+    ],
+    "expected_answer_keywords": [
+      "齿轮箱",
+      "变流器",
+      "永磁",
+      "双馈"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "华龙一号和AP1000哪个好？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "华龙一号",
+      "AP1000"
+    ],
+    "expected_answer_keywords": [
+      "自主知识产权",
+      "双层安全壳",
+      "非能动",
+      "安全性"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "SOEC电解水制氢和碱性电解水制氢比较？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "SOEC电解水制氢",
+      "碱性电解水制氢"
+    ],
+    "expected_answer_keywords": [
+      "效率",
+      "高温",
+      "成本",
+      "波动"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "换电技术和800V高压平台哪个好？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "换电技术",
+      "800V高压平台"
+    ],
+    "expected_answer_keywords": [
+      "3-5分钟",
+      "充电",
+      "标准化",
+      "高压"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "光伏制造设备领域有哪些技术？",
+    "expected_intent": "relation",
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "PECVD",
+      "光伏",
+      "制造",
+      "设备"
+    ],
+    "expected_relation_entities": [
+      "PECVD设备"
+    ]
+  },
+  {
+    "question": "有哪些氢能储运技术？",
+    "expected_intent": "list",
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "高压气态",
+      "低温液态",
+      "固态储氢"
+    ],
+    "expected_relation_entities": [
+      "高压气态储氢",
+      "低温液态储氢",
+      "固态储氢"
+    ]
+  },
+  {
+    "question": "有哪些核聚变技术？",
+    "expected_intent": "list",
+    "expected_entities": [],
+    "expected_answer_keywords": [
+      "托卡马克",
+      "惯性约束",
+      "磁约束"
+    ],
+    "expected_relation_entities": [
+      "托卡马克磁约束聚变"
+    ]
+  },
+  {
+    "question": "锂电池有什么优缺点？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "安全性",
+      "循环寿命",
+      "成本",
+      "能量密度",
+      "低温性能"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "三元电池和铁锂电池哪个好？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "三元锂电池",
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "能量密度",
+      "安全性",
+      "成本",
+      "循环寿命",
+      "低温"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "钠电池有哪些材料？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "钠离子电池"
+    ],
+    "expected_answer_keywords": [
+      "正极",
+      "负极",
+      "电解液",
+      "钠",
+      "材料"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "燃料电池汽车有哪些应用场景？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "氢燃料电池汽车"
+    ],
+    "expected_answer_keywords": [
+      "重卡",
+      "客车",
+      "物流车",
+      "船舶",
+      "应用"
+    ],
+    "expected_relation_entities": [
+      "重卡",
+      "客车",
+      "物流车",
+      "船舶",
+      "轨道交通",
+      "叉车"
+    ]
+  },
+  {
+    "question": "磷酸铁锂电池有哪些材料和公司？",
+    "expected_intent": "relation",
+    "expected_entities": [
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "磷酸铁锂",
+      "石墨",
+      "电解液",
+      "宁德时代",
+      "比亚迪",
+      "材料",
+      "公司"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "纯电动汽车和氢燃料电池汽车哪个好？",
+    "expected_intent": "compare",
+    "expected_entities": [
+      "纯电动汽车",
+      "氢燃料电池汽车"
+    ],
+    "expected_answer_keywords": [
+      "纯电动",
+      "氢燃料",
+      "续航",
+      "加氢",
+      "充电",
+      "排放"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "电动车的工作原理是什么？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "纯电动汽车"
+    ],
+    "expected_answer_keywords": [
+      "电机",
+      "电池",
+      "电控",
+      "驱动",
+      "电能"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "光fu逆变器有什么作用？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "光伏逆变器"
+    ],
+    "expected_answer_keywords": [
+      "直流",
+      "交流",
+      "转换",
+      "并网",
+      "MPPT"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "固态电池有哪些优点？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "固态电池"
+    ],
+    "expected_answer_keywords": [
+      "能量密度",
+      "安全性",
+      "固态电解质"
+    ],
+    "expected_relation_entities": []
+  },
+  {
+    "question": "钒电池的循环寿命是多少？",
+    "expected_intent": "property",
+    "expected_entities": [
+      "全钒液流电池"
+    ],
+    "expected_answer_keywords": [
+      "循环寿命",
+      "20000",
+      "次",
+      "20年"
+    ],
+    "expected_relation_entities": []
   }
 ]

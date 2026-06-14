@@ -50,6 +50,11 @@ LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", "0.3"))
 APP_HOST = os.getenv("APP_HOST", "127.0.0.1")
 APP_PORT = int(os.getenv("APP_PORT", "8000"))
 
+# ==================== 实体识别配置 ====================
+# 模糊匹配阈值（0-100），低于此分数的 rapidfuzz 候选将被过滤。
+# 阈值越高越严格，可减少误召回；阈值越低越宽松，可能引入更多近似实体。
+ENTITY_FUZZY_THRESHOLD = int(os.getenv("ENTITY_FUZZY_THRESHOLD", "85"))
+
 # ==================== 调试配置 ====================
 DEBUG = os.getenv("QA_DEBUG", "false").lower() in ("true", "1", "yes")
 

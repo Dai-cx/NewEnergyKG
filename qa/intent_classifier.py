@@ -25,9 +25,10 @@ except ImportError:
 # ==================== 意图关键词表 ====================
 INTENT_KEYWORDS = {
     "property": ["是什么", "什么是", "什么叫", "定义", "概念", "原理", "工作原理", "优点", "优势", "缺点", "不足",
-                 "效率", "性能", "参数", "成本", "价格", "市场份额", "成熟度", "描述"],
+                 "效率", "性能", "参数", "成本", "价格", "市场份额", "成熟度", "描述",
+                 "寿命", "循环寿命", "能量密度", "功率密度", "续航", "安全性"],
     "relation": ["材料", "企业", "公司", "厂商", "生产", "应用", "场景", "设备", "指标",
-                 "参数", "政策", "支持", "关系", "相关"],
+                 "参数", "政策", "支持", "关系", "相关", "竞争", "替代", "竞争技术", "替代方案"],
     "compare":  ["比较", "区别", "差异", "对比", "vs", "versus", "哪个好", "优劣"],
     "aggregate":["有多少", "数量", "总数", "几种", "几个", "统计"],
     "list":     ["列表", "全部", "列出", "列举", "罗列", "举出", "所有", "有什么", "有啥", "哪些"],
@@ -69,12 +70,19 @@ SYNONYMS = {
 class IntentClassifier:
     """基于规则的意图分类器"""
 
-    def __init__(self, entity_names: Optional[List[str]] = None):
+    def __init__(
+        self,
+        entity_names: Optional[List[str]] = None,
+        fuzzy_threshold: int = 85,
+    ):
         """
         Args:
             entity_names: 知识库中所有实体名称，用于实体匹配。
+            fuzzy_threshold: rapidfuzz 模糊匹配阈值（0-100），低于此分数的候选
+                将被丢弃。默认 85，可根据数据质量与误召回情况调整。
         """
         self.entity_names = sorted(set(entity_names or []), key=len, reverse=True)
+        self.fuzzy_threshold = max(0, min(100, int(fuzzy_threshold)))
 
     # ==================== 文本预处理 ====================
     @staticmethod
@@ -140,6 +148,20 @@ class IntentClassifier:
         if not q:
             return candidates
 
+        # 0. 实体名作为子串精确出现在文本中（优先级高）
+        #    例如"氢燃料电池汽车的应用"应优先识别"氢燃料电池汽车"，
+        #    避免"燃料电池" synonym 映射为"质子交换膜燃料电池"造成冲突。
+        exact_matched = set()
+        for name in self.entity_names:
+            if name in q and name not in seen_names:
+                candidates.append({
+                    "name": name,
+                    "score": 98,
+                    "type": "exact_contained",
+                })
+                seen_names.add(name)
+                exact_matched.add(name)
+
         # 1. 整句精确匹配
         if q in self.entity_names and q not in seen_names:
             candidates.append({
@@ -148,6 +170,7 @@ class IntentClassifier:
                 "type": "exact_whole",
             })
             seen_names.add(q)
+            exact_matched.add(q)
 
         # 准备分词 token
         tokens = set(self.segment(q) + self.segment_search(q))
@@ -157,16 +180,21 @@ class IntentClassifier:
         for token in tokens:
             for name in self.entity_names:
                 if token == name and name not in seen_names:
-                    score = 100 - max(0, 50 - len(token) * 2)
+                    # 实体名越长，置信度越高；保证精确匹配实体得分高于 synonym
+                    score = min(100, 90 + len(token) / 2)
                     candidates.append({
                         "name": name,
-                        "score": min(100, score),
+                        "score": score,
                         "type": "exact_token",
                     })
                     seen_names.add(name)
+                    exact_matched.add(name)
 
             # 3. 同义词解析
+            #    抑制条件：若同义词已是某精确匹配实体的子串，则跳过，避免冲突。
             if token in SYNONYMS:
+                if any(token in name for name in exact_matched):
+                    continue
                 mapped = SYNONYMS[token]
                 if mapped in self.entity_names and mapped not in seen_names:
                     candidates.append({
@@ -177,10 +205,13 @@ class IntentClassifier:
                     seen_names.add(mapped)
 
         # 4. 模糊匹配（rapidfuzz）
+        # 使用 self.fuzzy_threshold 作为过滤阈值，并要求匹配结果长度不少于 4，
+        # 避免“电池”“风电”等短词引发大量误召回
+        # （如 PERC 电池被模糊匹配到 BC 电池）。
         if process is not None and self.entity_names:
             results = process.extract(q, self.entity_names, scorer=fuzz.WRatio, limit=5)
             for name, score, _ in results:
-                if score >= 70 and name not in seen_names:
+                if score >= self.fuzzy_threshold and len(name) >= 4 and name not in seen_names:
                     candidates.append({
                         "name": name,
                         "score": int(score),
@@ -225,11 +256,11 @@ class IntentClassifier:
     def extract_entities(self, question: str) -> List[Dict[str, Any]]:
         """
         五级降级实体匹配策略：
-        1. 比较结构切分后分别匹配（新增）
+        1. 比较结构切分后分别匹配
         2. 整句精确匹配
         3. Token 精确匹配
         4. 同义词解析
-        5. 模糊匹配（rapidfuzz，阈值 70）
+        5. 模糊匹配（rapidfuzz，阈值 self.fuzzy_threshold，且名称长度≥4）
         """
         q = self.preprocess(question)
         candidates = []
@@ -241,6 +272,13 @@ class IntentClassifier:
             segments = self._split_compare_segments(q)
             for seg in segments:
                 seg_candidates = self._extract_entities_from_text(seg, seen_names)
+                # 若该片段已存在非 fuzzy 匹配（精确或同义词），则丢弃 fuzzy 候选，
+                # 避免“PERC 电池和 HJT 电池有什么区别”额外召回 BC 电池，
+                # 以及“光伏逆变器和锂电池比较”额外召回三元锂电池。
+                has_non_fuzzy = any(c["type"] != "fuzzy" for c in seg_candidates)
+                if has_non_fuzzy:
+                    seg_candidates = [c for c in seg_candidates
+                                      if c["type"] != "fuzzy"]
                 candidates.extend(seg_candidates)
 
         # 2-5. 对整句再做一次完整抽取，补充可能遗漏的实体
