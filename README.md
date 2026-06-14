@@ -20,36 +20,41 @@
 
 ```
 NewEnergyKG/
+├── AGENTS.md                      # 面向 AI 编程助手的项目约定文档
+├── 知识工程实验.pdf                # 知识工程实验文档
 ├── data/                          # 数据层：原始 JSON 与合并脚本
 │   ├── new_energy.json            # 主数据文件（63 条技术记录）
-│   ├── energy_storage_10.json     # 储能技术数据
-│   ├── hydrogen_10.json           # 氢能技术数据
-│   ├── ne_vehicle_10.json         # 新能源汽车数据
-│   ├── nuclear_8.json             # 核能技术数据
-│   ├── pv_batch_15.json           # 光伏技术数据
-│   ├── wind_power_7.json          # 风电技术数据
-│   ├── merge_data.py              # JSON 数据合并与去重脚本
-│   └── generate_mock_data.py      # 旧版 py2neo 构建脚本（参考用）
+│   ├── energy_storage_10.json     # 储能技术数据（9 条记录）
+│   ├── hydrogen_10.json           # 氢能技术数据（10 条记录）
+│   ├── ne_vehicle_10.json         # 新能源汽车数据（10 条记录）
+│   ├── nuclear_8.json             # 核能技术数据（8 条记录）
+│   ├── pv_batch_15.json           # 光伏技术数据（15 条记录）
+│   ├── wind_power_7.json          # 风电技术数据（7 条记录）
+│   └── merge_data.py              # JSON 数据合并与去重脚本
 ├── graph/                         # 图谱层：构建与评估
 │   ├── build_newenergy_graph.py   # 官方 neo4j 驱动版入库脚本
 │   ├── quality_evaluation.py      # 图谱质量评估脚本
+│   ├── config.py                  # 图谱模块配置管理（环境变量 / .env）
+│   ├── .env.example               # 图谱模块环境变量示例
 │   └── graph_data_export.json     # 图谱导出与统计文件
-├── qa/                            # 应用层：智能问答系统
-│   ├── config.py                  # 配置管理（API Key / Neo4j 连接）
-│   ├── llm_client.py              # LLM 客户端（DashScope / OpenAI）
-│   ├── kg_client.py               # Neo4j 知识图谱客户端
-│   ├── intent_classifier.py       # 意图识别与实体抽取
-│   ├── prompt_builder.py          # Prompt 构建与 KG 上下文注入
-│   ├── answer_engine.py           # 问答引擎（KG 检索 + LLM 生成）
-│   ├── main.py                    # FastAPI 服务入口
-│   ├── test_qa.py                 # 命令行测试脚本
-│   ├── evaluate.py                # 纯 LLM vs KG+RAG 对比评估
-│   ├── eval_dataset.json          # 评估测试集
-│   ├── requirements.txt           # 问答系统依赖
-│   └── .env.example               # 环境变量模板
-└── static/                        # 前端静态页面
-    ├── index.html                 # 系统启动器
-    └── chat.html                  # 智能问答助手界面
+├── static/                        # 前端静态页面
+│   ├── index.html                 # 系统启动器页面
+│   └── chat.html                  # 智能问答助手页面
+└── qa/                            # 应用层：智能问答系统
+    ├── __init__.py
+    ├── config.py                  # 配置管理（API Key / Neo4j 连接）
+    ├── llm_client.py              # LLM 客户端（DashScope / OpenAI）
+    ├── kg_client.py               # Neo4j 知识图谱客户端
+    ├── intent_classifier.py       # 意图识别与实体抽取
+    ├── data_fallback.py           # 本地 JSON 数据兜底
+    ├── prompt_builder.py          # Prompt 构建与 KG 上下文注入
+    ├── answer_engine.py           # 问答引擎（KG 检索 + LLM 生成）
+    ├── main.py                    # FastAPI 服务入口
+    ├── test_qa.py                 # 命令行测试脚本
+    ├── evaluate.py                # 纯 LLM vs KG+RAG 对比评估
+    ├── eval_dataset.json          # 评估测试集
+    ├── requirements.txt           # 问答系统依赖
+    └── .env.example               # 环境变量模板
 ```
 
 ---
@@ -95,19 +100,37 @@ cd qa
 pip install -r requirements.txt
 ```
 
-### 3. 配置环境变量（可选）
+### 3. 配置环境变量
+
+首次运行前，请复制环境变量示例文件并填写真实密码：
 
 ```bash
+# 图谱模块
+cd graph
+cp .env.example .env
+# 编辑 .env，填写 NEO4J_PASSWORD
+
+# 问答系统
 cd qa
 cp .env.example .env
-# 编辑 .env 文件，填写：
+# 编辑 .env，填写：
 #   DASHSCOPE_API_KEY 或 OPENAI_API_BASE + OPENAI_API_KEY
 #   NEO4J_URI / NEO4J_USER / NEO4J_PASSWORD
 ```
 
 > 💡 未配置 API Key 时，系统将自动使用本地 JSON 数据生成规则兜底回答；未配置 Neo4j 时，仍可依靠本地 JSON 与 LLM 回答。
 
-### 4. 构建知识图谱
+### 4. 合并批次数据（可选）
+
+```bash
+cd data
+python merge_data.py
+```
+
+- 默认以 `new_energy.json` 为基础，合并 `ne_vehicle_10.json`，输出 `new_energy_merged.json`。
+- 如需合并其他批次，修改脚本中的 `source_files` 列表后运行。
+
+### 5. 构建知识图谱
 
 ```bash
 cd graph
@@ -121,19 +144,22 @@ python build_newenergy_graph.py
 4. 导出统计到 `graph_data_export.json`
 5. 在 Neo4j 中验证统计结果
 
-### 5. 质量评估
+### 6. 质量评估
 
 ```bash
 cd graph
 python quality_evaluation.py
 ```
 
-### 6. 启动问答服务
+### 7. 启动问答服务
 
 ```bash
-# 命令行测试
+# 命令行测试（单问题）
 cd NewEnergyKG
 python -m qa.test_qa "磷酸铁锂电池有哪些优点？"
+
+# 命令行交互模式
+python -m qa.test_qa
 
 # 启动 FastAPI 服务
 python -m qa.main
@@ -145,7 +171,7 @@ python -m qa.main
 - 📖 API 文档：`http://127.0.0.1:8000/docs`
 - ✅ 健康检查：`http://127.0.0.1:8000/health`
 
-### 7. 批量对比评估
+### 8. 批量对比评估
 
 ```bash
 python -m qa.evaluate --mode both --output qa/eval_report.md --csv qa/eval_result.csv
@@ -185,12 +211,22 @@ python -m qa.evaluate --mode both --output qa/eval_report.md --csv qa/eval_resul
 
 ---
 
-## ⚠️ 注意事项
+## 🧪 测试说明
 
-1. **路径配置**：`graph/build_newenergy_graph.py` 中默认使用绝对路径 `D:\NewEnergyKG\data\new_energy.json`，请根据实际项目位置修改或使用相对路径。
-2. **数据库安全**：`clear_database()` 方法会清空 Neo4j 中全部数据，生产环境请慎用。
-3. **密码管理**：建议将 Neo4j 密码等敏感信息通过环境变量或 `.env` 文件管理，避免硬编码。
-4. **Windows 路径**：部分脚本使用 `/` 分割路径，在 Windows 下建议改用 `pathlib` 处理。
+本项目当前没有自动化测试框架（无 `pytest`、`unittest` 等），验证方式以脚本输出和 Neo4j 查询为主：
+
+- 运行 `build_newenergy_graph.py` 查看节点/关系数量统计
+- 运行 `quality_evaluation.py` 查看准确性、完整性、一致性报告
+- 运行 `qa/test_qa.py` 测试问答系统意图识别、实体抽取与兜底回答
+- 在 Neo4j Browser 中执行 Cypher 查询交叉验证
+
+---
+
+## ⚠️ 安全注意事项
+
+1. **密码管理**：`graph/` 与 `qa/` 模块均已从硬编码改为从环境变量 / `.env` 文件读取密码。运行前请复制 `.env.example` 为 `.env` 并填写真实密码，**切勿将含真实密码的 `.env` 提交到版本控制**。
+2. **数据库清空**：`build_newenergy_graph.py::clear_database()` 会删除 Neo4j 中全部节点和关系，生产环境请慎用。
+3. **Cypher 注入风险**：`build_newenergy_graph.py` 中关系类型使用字符串拼接构造，虽然节点匹配已参数化，但应避免直接拼接用户输入。
 
 ---
 
@@ -201,6 +237,14 @@ python -m qa.evaluate --mode both --output qa/eval_report.md --csv qa/eval_resul
 - **大语言模型**：DashScope（通义千问）/ OpenAI 兼容接口
 - **自然语言处理**：jieba 分词, RapidFuzz 模糊匹配
 - **数据格式**：JSON（UTF-8）
+
+---
+
+## ❗ 已知约束与常见问题
+
+- 项目没有 `pyproject.toml`、`setup.py` 或 `requirements.txt`（根目录）；`qa/requirements.txt` 为问答系统专用依赖清单，其他脚本依赖仍需手动安装。
+- `graph_data_export.json` 是构建产物，不需要手工编辑。
+- 当前数据文件均为中文内容，编码为 UTF-8，读取时需指定 `encoding='utf-8'`。
 
 ---
 
