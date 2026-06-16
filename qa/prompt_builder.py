@@ -10,7 +10,7 @@ Prompt 构建模块
 """
 
 import json
-from typing import Dict, Any, Optional
+from typing import Dict, Any, List, Optional
 
 
 # ==================== System Prompt ====================
@@ -56,6 +56,7 @@ class PromptBuilder:
         intent: str = "property",
         entities: Optional[list] = None,
         kg_context: Optional[Dict[str, Any]] = None,
+        history: Optional[List[Dict[str, str]]] = None,
     ) -> str:
         """
         构建 User Prompt。
@@ -64,10 +65,20 @@ class PromptBuilder:
             question: 用户原始问题。
             intent: 意图标签。
             entities: 抽取到的实体列表。
-            kg_context: 第二阶段预留：知识图谱检索到的结构化上下文。
+            kg_context: 知识图谱检索到的结构化上下文。
+            history: 当前会话历史消息列表，用于多轮对话上下文理解。
         """
         lines = []
-        lines.append(f"用户问题：{question}")
+
+        # 注入历史对话，帮助 LLM 进行指代消解和上下文理解
+        if history:
+            lines.append("以下是当前会话的历史对话，请结合上下文理解后续问题：")
+            for msg in history:
+                role_label = "用户" if msg.get("role") == "user" else "助手"
+                lines.append(f"{role_label}：{msg.get('content', '')}")
+            lines.append("")
+
+        lines.append(f"当前问题：{question}")
         lines.append("")
 
         if entities:

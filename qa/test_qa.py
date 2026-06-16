@@ -13,6 +13,7 @@
 
 import sys
 import json
+import uuid
 from qa.answer_engine import AnswerEngine
 
 
@@ -23,6 +24,7 @@ def print_result(result: dict):
     print(f"意图：{result['intent']}")
     print(f"实体：{result['entities']}")
     print(f"来源：{result['source']} | LLM：{result['llm_used']} | 模型：{result['llm_model']}")
+    print(f"会话：{result.get('session_id')} | 历史轮数：{result.get('history_rounds', 0)}")
     print(f"耗时：{result['response_time_ms']} ms")
     print("-" * 50)
     print(f"回答：{result['answer']}")
@@ -30,11 +32,13 @@ def print_result(result: dict):
 
 
 def interactive_test():
-    """交互式测试"""
+    """交互式测试（支持会话记忆）"""
     print("正在初始化问答引擎...")
     engine = AnswerEngine()
+    session_id = str(uuid.uuid4())
     print(f"引擎状态：{json.dumps(engine.get_status(), ensure_ascii=False, indent=2)}")
-    print("\n请输入新能源领域的问题（输入 'quit' 退出）：\n")
+    print(f"\n当前会话 ID：{session_id}")
+    print("请输入新能源领域的问题（输入 'quit' 退出，输入 'new' 开启新会话）：\n")
 
     while True:
         try:
@@ -42,10 +46,14 @@ def interactive_test():
             if question.lower() in ("quit", "exit", "q", "退出"):
                 print("再见！")
                 break
+            if question.lower() == "new":
+                session_id = str(uuid.uuid4())
+                print(f"\n已开启新会话：{session_id}\n")
+                continue
             if not question:
                 continue
 
-            result = engine.answer(question)
+            result = engine.answer(question, session_id=session_id)
             print_result(result)
         except KeyboardInterrupt:
             print("\n再见！")
@@ -55,7 +63,7 @@ def interactive_test():
 
 
 def single_test(question: str):
-    """单次测试"""
+    """单次测试（无会话记忆）"""
     engine = AnswerEngine()
     result = engine.answer(question)
     print_result(result)

@@ -48,6 +48,7 @@ NewEnergyKG-myself/
     ├── prompt_builder.py           # Prompt 构建（支持注入 kg_context）
     ├── answer_engine.py            # 问答引擎（KG 检索 + LLM 生成 + 本地兜底）
     ├── main.py                     # FastAPI 服务入口
+    ├── memory.py                   # 会话记忆管理器（纯内存，保留最近 N 轮）
     ├── test_qa.py                  # 命令行测试脚本
     ├── evaluate.py                 # 纯 LLM 与 KG+RAG 对比评估脚本
     ├── eval_dataset.json           # 评估测试集
@@ -141,8 +142,9 @@ pip install -r requirements.txt
   - `qa/kg_client.py`：封装 `neo4j` 官方驱动，提供连接测试、技术综合查询、关系查询、类别查询、技术对比等接口。
   - `qa/intent_classifier.py`：基于 jieba 分词 + 关键词匹配 + RapidFuzz 模糊匹配 + 比较结构切分的意图识别与多实体抽取。
   - `qa/prompt_builder.py`：根据意图构建 System Prompt 与 User Prompt，支持将 `kg_context` 注入 User Prompt。
-  - `qa/answer_engine.py`：编排问答流程；根据意图调用 `kg_client` 检索知识图谱上下文，再调用 LLM 生成回答；失败时启用本地 JSON 兜底。
-  - `qa/main.py`：FastAPI 服务，挂载项目根目录 `static/` 为 `/static`，提供 `/`（系统启动器）、`/chat`（问答助手）、`/qa`、`/health`、`/status`、`/kg/status` 接口。
+  - `qa/answer_engine.py`：编排问答流程；根据意图调用 `kg_client` 检索知识图谱上下文，再调用 LLM 生成回答；失败时启用本地 JSON 兜底；支持按 `session_id` 维护多轮对话记忆。
+  - `qa/memory.py`：基于内存的会话记忆管理器，按 `session_id` 维护最近 `MAX_HISTORY_ROUNDS` 轮问答历史，用于多轮对话中的指代消解与上下文理解；服务重启后记忆丢失。
+  - `qa/main.py`：FastAPI 服务，挂载项目根目录 `static/` 为 `/static`，提供 `/`（系统启动器）、`/chat`（问答助手）、`/qa`、`/health`、`/status`、`/kg/status` 接口；`/qa` 支持可选 `session_id` 参数。
   - `qa/test_qa.py`：命令行交互式/单问题测试脚本。
   - `qa/evaluate.py`：批量对比评估脚本，支持纯 LLM 与 KG+RAG 两种模式，输出 Markdown 报告与 CSV 原始数据。
 

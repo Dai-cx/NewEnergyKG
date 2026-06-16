@@ -22,6 +22,7 @@ from qa.data_fallback import LocalDataStore
 from qa.prompt_builder import PromptBuilder
 from qa.llm_client import create_llm_client, LLMError
 from qa.kg_client import KGClient, _NullKGClient
+from qa.memory import ConversationMemory
 
 
 class AnswerEngine:
@@ -53,6 +54,8 @@ class AnswerEngine:
         # 初始化 Neo4j 知识图谱客户端（未配置密码时自动禁用）
         self.kg_client = KGClient() if enable_kg else _NullKGClient()
         self.prompt_builder = PromptBuilder()
+        # 初始化会话记忆（纯内存，保留最近 N 轮）
+        self.memory = ConversationMemory()
 
     # ==================== 知识图谱检索 ====================
     def _detect_relation_type(self, question: str) -> Optional[str]:
@@ -192,9 +195,13 @@ class AnswerEngine:
         return None
 
     # ==================== 核心问答接口 ====================
-    def answer(self, question: str) -> Dict[str, Any]:
+    def answer(self, question: str, session_id: Optional[str] = None) -> Dict[str, Any]:
         """
         回答用户问题，返回统一格式响应。
+
+        Args:
+            question: 用户问题。
+            session_id: 会话 ID，用于维护多轮对话记忆。为空时不保存历史。
 
         Returns:
             {
@@ -210,26 +217,30 @@ class AnswerEngine:
         """
         start = time.time()
 
-        # Step 1: 意图识别与实体抽取
+        # Step 1: 读取会话历史
+        history = self.memory.get_history(session_id)
+
+        # Step 2: 意图识别与实体抽取
         analysis = self.classifier.analyze(question)
         intent = analysis["intent"]
         entities = analysis["entities"]
         top_entity = entities[0]["name"] if entities else None
 
-        # Step 2: 知识图谱检索
+        # Step 3: 知识图谱检索
         kg_context = self._retrieve_from_kg(entities, intent, analysis["question"])
         kg_used = kg_context is not None
 
-        # Step 3: 构建 Prompt
+        # Step 4: 构建 Prompt
         system_prompt = self.prompt_builder.build_system_prompt(intent)
         user_prompt = self.prompt_builder.build_user_prompt(
             question=analysis["question"],
             intent=intent,
             entities=entities,
             kg_context=kg_context,
+            history=history,
         )
 
-        # Step 4: 调用 LLM 生成回答
+        # Step 5: 调用 LLM 生成回答
         llm_result = None
         answer = ""
         source = "local_fallback"
@@ -263,6 +274,9 @@ class AnswerEngine:
                 entities=entities,
             )
 
+        # Step 6: 保存本轮问答到会话记忆
+        self.memory.add_exchange(session_id, analysis["question"], answer)
+
         elapsed_ms = int((time.time() - start) * 1000)
 
         return {
@@ -275,6 +289,8 @@ class AnswerEngine:
             "source": source,
             "kg_used": kg_used,
             "kg_context": kg_context,
+            "session_id": session_id,
+            "history_rounds": len(history) // 2,
             "response_time_ms": elapsed_ms,
         }
 
@@ -291,4 +307,6 @@ class AnswerEngine:
             "kg_node_count": kg_status["node_count"],
             "kg_rel_count": kg_status["rel_count"],
             "kg_uri": kg_status["uri"],
+            "memory_sessions": self.memory.count(),
+            "memory_max_rounds": config.MAX_HISTORY_ROUNDS,
         }

@@ -152,6 +152,29 @@
             color: var(--primary-dark);
         }
 
+        .clear-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            padding: 0 14px;
+            border-radius: 10px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+        }
+
+        .clear-btn:hover {
+            background: #fee2e2;
+            border-color: #ef4444;
+            color: #dc2626;
+        }
+
         /* Main Chat */
         main {
             flex: 1;
@@ -491,6 +514,7 @@
                     <span class="status-dot"></span>
                     <span>Neo4j 已连接</span>
                 </div>
+                <button class="clear-btn" id="clear-btn" title="清空当前会话并开启新对话">新对话</button>
             </div>
             <a href="/" class="home-link" title="返回启动器">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
@@ -547,6 +571,14 @@
         const neo4jStatus = document.getElementById('neo4j-status');
 
         let isProcessing = false;
+
+        // 会话 ID：优先从本地存储读取，否则生成新的
+        const SESSION_KEY = 'nekg_session_id';
+        let sessionId = localStorage.getItem(SESSION_KEY);
+        if (!sessionId) {
+            sessionId = crypto.randomUUID ? crypto.randomUUID() : 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+            localStorage.setItem(SESSION_KEY, sessionId);
+        }
 
         function getTimestamp() {
             return new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
@@ -638,7 +670,7 @@
                 const response = await fetch('/qa', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ question: question.trim() })
+                    body: JSON.stringify({ question: question.trim(), session_id: sessionId })
                 });
 
                 hideTyping();
@@ -705,6 +737,25 @@
             if (e.target.classList.contains('quick-chip')) {
                 sendQuestion(e.target.textContent);
             }
+        });
+
+        document.getElementById('clear-btn').addEventListener('click', () => {
+            localStorage.removeItem(SESSION_KEY);
+            sessionId = crypto.randomUUID ? crypto.randomUUID() : 'sess_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+            localStorage.setItem(SESSION_KEY, sessionId);
+            messagesEl.innerHTML = `
+                <div class="welcome">
+                    <div class="welcome-avatar">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="welcome-content">
+                        <h2>您好！我是新能源知识图谱问答助手</h2>
+                        <p>我可以帮您解答新能源领域的技术、企业、材料、应用等问题。点击下方快捷问题，或直接输入您的问题。</p>
+                    </div>
+                </div>
+            `;
+            showToast('已开启新会话');
+            inputEl.focus();
         });
 
         window.addEventListener('DOMContentLoaded', () => {

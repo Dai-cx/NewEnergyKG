@@ -55,6 +55,10 @@ APP_PORT = int(os.getenv("APP_PORT", "8000"))
 # 阈值越高越严格，可减少误召回；阈值越低越宽松，可能引入更多近似实体。
 ENTITY_FUZZY_THRESHOLD = int(os.getenv("ENTITY_FUZZY_THRESHOLD", "85"))
 
+# ==================== 会话记忆配置 ====================
+# 每个会话保留的最大问答轮数，超过后自动丢弃最旧的记录
+MAX_HISTORY_ROUNDS = int(os.getenv("MAX_HISTORY_ROUNDS", "5"))
+
 # ==================== 调试配置 ====================
 DEBUG = os.getenv("QA_DEBUG", "false").lower() in ("true", "1", "yes")
 

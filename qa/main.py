@@ -50,6 +50,7 @@ engine = AnswerEngine()
 # ==================== 请求/响应模型 ====================
 class QARequest(BaseModel):
     question: str
+    session_id: str | None = None
 
 
 class QAResponse(BaseModel):
@@ -60,6 +61,8 @@ class QAResponse(BaseModel):
     llm_used: bool
     llm_model: str | None
     source: str
+    session_id: str | None
+    history_rounds: int
     response_time_ms: int
 
 
@@ -98,7 +101,7 @@ def qa_endpoint(req: QARequest):
     if not req.question or not req.question.strip():
         raise HTTPException(status_code=400, detail="问题不能为空")
 
-    result = engine.answer(req.question.strip())
+    result = engine.answer(req.question.strip(), session_id=req.session_id)
     return result
 
 
