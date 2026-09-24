@@ -1,0 +1,21 @@
+# 换行符策略
+#
+# 背景：`qa/ingestion/run.py::compute_doc_id()` 用**文件内容的 SHA-256** 作为 doc_id。
+# 若同一个语料文件在不同机器上换行符不同（本仓库 core.autocrlf=true），
+# 哈希就会不同 —— 结果是：
+#   1. 同一份语料被当成"新文档"重复摄取；
+#   2. 增量判断失效，`--recreate` 之外无法保证幂等。
+#
+# 因此这里是**契约**而非风格偏好：文本文件一律以 LF 存储与检出，
+# 让"内容哈希 -> doc_id"与平台无关。
+* text=auto eol=lf
+
+# 显式声明二进制，避免被文本规则处理
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.zip binary
+*.coverage binary
