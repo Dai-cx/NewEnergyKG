@@ -1,0 +1,322 @@
+[
+  {
+    "question": "BC电池的转换效率能达到多少？",
+    "expected_intent": "property",
+    "expected_entities": ["BC电池"],
+    "expected_answer_keywords": ["25", "26", "效率", "背接触"],
+    "expected_relation_entities": [],
+    "reference_answer": "BC电池采用背接触结构，正面无栅线遮挡，量产转换效率约25-26.5%，实验室最高可达27%。"
+  },
+  {
+    "question": "半片组件相比整片组件能提升多少功率？",
+    "expected_intent": "property",
+    "expected_entities": ["半片组件"],
+    "expected_answer_keywords": ["5-10W", "电阻损耗", "功率"],
+    "expected_relation_entities": [],
+    "reference_answer": "半片组件通过把电池片切成两半降低工作电流，通常可比同版型整片组件提升5-10W功率，并显著降低电阻损耗。"
+  },
+  {
+    "question": "飞轮储能有哪些优点？",
+    "expected_intent": "property",
+    "expected_entities": ["飞轮储能"],
+    "expected_answer_keywords": ["毫秒级", "响应", "循环寿命", "效率"],
+    "expected_relation_entities": [],
+    "reference_answer": "飞轮储能响应速度达毫秒级、循环寿命接近无限（超过100万次）、能量效率约90-95%，且无化学反应、维护简单。"
+  },
+  {
+    "question": "重力储能的原理是什么？",
+    "expected_intent": "property",
+    "expected_entities": ["重力储能"],
+    "expected_answer_keywords": ["重物", "势能", "升降"],
+    "expected_relation_entities": [],
+    "reference_answer": "重力储能通过电动机把重物提升到高处储存势能，放电时重物下落驱动发电机发电，往返效率约80-90%。"
+  },
+  {
+    "question": "氢储能相比电池储能有什么优势？",
+    "expected_intent": "property",
+    "expected_entities": ["氢储能"],
+    "expected_answer_keywords": ["跨季节", "容量大", "长时"],
+    "expected_relation_entities": [],
+    "reference_answer": "氢储能的储能容量极大、可跨季节存储数周至数月，氢气还能用于发电、交通与工业，适合可再生能源消纳和季节性调峰。"
+  },
+  {
+    "question": "锌溴液流电池有什么优缺点？",
+    "expected_intent": "property",
+    "expected_entities": ["锌溴液流电池"],
+    "expected_answer_keywords": ["能量密度", "溴", "成本", "腐蚀"],
+    "expected_relation_entities": [],
+    "reference_answer": "锌溴液流电池能量密度较高（约70-80Wh/L）、原材料成本低、安全性好，但溴具有腐蚀性且自放电率较高。"
+  },
+  {
+    "question": "小型模块化反应堆有哪些优势？",
+    "expected_intent": "property",
+    "expected_entities": ["小型模块化反应堆"],
+    "expected_answer_keywords": ["模块化", "建设周期", "选址灵活", "安全"],
+    "expected_relation_entities": [],
+    "reference_answer": "小型模块化反应堆采用工厂预制、现场组装，建设周期短、投资规模小、选址灵活，并可采用非能动设计提升安全性。"
+  },
+  {
+    "question": "换电技术的补能时间大约是多少？",
+    "expected_intent": "property",
+    "expected_entities": ["换电技术"],
+    "expected_answer_keywords": ["3-5分钟", "换电", "电池包"],
+    "expected_relation_entities": [],
+    "reference_answer": "换电技术通过机械装置直接更换满电电池包，全程约3-5分钟，比充电快得多，适合出租车和网约车等高频场景。"
+  },
+  {
+    "question": "无线充电技术的传输效率是多少？",
+    "expected_intent": "property",
+    "expected_entities": ["无线充电技术"],
+    "expected_answer_keywords": ["90-95%", "效率", "电磁感应"],
+    "expected_relation_entities": [],
+    "reference_answer": "电动汽车无线充电利用电磁感应或磁共振原理，传输效率约为90-95%，功率范围11-300kW，低于有线充电。"
+  },
+  {
+    "question": "托卡马克磁约束聚变有哪些代表性装置？",
+    "expected_intent": "relation",
+    "expected_entities": ["托卡马克磁约束聚变"],
+    "expected_answer_keywords": ["ITER", "EAST", "环流器", "托卡马克"],
+    "expected_relation_entities": [],
+    "reference_answer": "托卡马克是目前最接近可控核聚变的路线，代表性装置包括国际热核聚变实验堆ITER、中国EAST和HL-2M环流器。"
+  },
+  {
+    "question": "熔盐堆可以使用什么燃料？",
+    "expected_intent": "relation",
+    "expected_entities": ["熔盐堆"],
+    "expected_answer_keywords": ["钍", "氟化盐", "熔盐", "液态燃料"],
+    "expected_relation_entities": [],
+    "reference_answer": "熔盐堆以熔融氟化盐同时作为冷却剂和燃料载体，可使用钍基燃料，中国钍基熔盐堆研究处于世界前列。"
+  },
+  {
+    "question": "钠冷快堆的燃料循环有什么特点？",
+    "expected_intent": "relation",
+    "expected_entities": ["钠冷快堆"],
+    "expected_answer_keywords": ["增殖", "铀-238", "闭式燃料循环"],
+    "expected_relation_entities": [],
+    "reference_answer": "钠冷快堆用液态钠作冷却剂、以快中子运行，可将铀-238转化为钚-239实现燃料增殖，把铀资源利用率提高数十倍。"
+  },
+  {
+    "question": "PEM电解水制氢需要哪些关键材料？",
+    "expected_intent": "relation",
+    "expected_entities": ["PEM电解水制氢"],
+    "expected_answer_keywords": ["质子交换膜", "铂", "铱", "催化剂"],
+    "expected_relation_entities": [],
+    "reference_answer": "PEM电解水制氢需要质子交换膜作为固体电解质，催化剂通常使用铂和铱等贵金属。"
+  },
+  {
+    "question": "惯性约束核聚变有哪些技术路线？",
+    "expected_intent": "relation",
+    "expected_entities": ["惯性约束核聚变"],
+    "expected_answer_keywords": ["激光", "离子束", "Z箍缩"],
+    "expected_relation_entities": [],
+    "reference_answer": "惯性约束核聚变通过激光或离子束瞬间压缩氘氚靶丸实现聚变，技术路线包括激光驱动、离子束驱动和Z箍缩等。"
+  },
+  {
+    "question": "低温液态储氢主要用于哪些领域？",
+    "expected_intent": "relation",
+    "expected_entities": ["低温液态储氢"],
+    "expected_answer_keywords": ["航天", "长距离", "液氢"],
+    "expected_relation_entities": [],
+    "reference_answer": "低温液态储氢把氢气冷却到-253℃液化，储氢密度极高，主要用于大规模长距离运输和航天发射场景。"
+  },
+  {
+    "question": "固态储氢适合哪些应用场景？",
+    "expected_intent": "relation",
+    "expected_entities": ["固态储氢"],
+    "expected_answer_keywords": ["车载", "分布式", "安全"],
+    "expected_relation_entities": [],
+    "reference_answer": "固态储氢利用金属氢化物等材料把氢储存在晶格中，无需高压或低温，适合车载和分布式储氢等安全性要求高的场景。"
+  },
+  {
+    "question": "有机液态储氢的常用载体有哪些？",
+    "expected_intent": "relation",
+    "expected_entities": ["有机液态储氢"],
+    "expected_answer_keywords": ["二苄基甲苯", "N-乙基咔唑", "加氢"],
+    "expected_relation_entities": [],
+    "reference_answer": "有机液态储氢常用二苄基甲苯、N-乙基咔唑等不饱和有机液体，通过催化加氢和脱氢实现氢的储存与释放。"
+  },
+  {
+    "question": "AEM电解水制氢能使用哪些催化剂？",
+    "expected_intent": "relation",
+    "expected_entities": ["AEM电解水制氢"],
+    "expected_answer_keywords": ["镍", "钴", "铁", "非贵金属"],
+    "expected_relation_entities": [],
+    "reference_answer": "AEM电解水制氢作为第三代电解技术，可使用镍、钴、铁等非贵金属催化剂，兼具成本低和效率高的潜力。"
+  },
+  {
+    "question": "碳纤维叶片主要应用在什么风机上？",
+    "expected_intent": "relation",
+    "expected_entities": ["碳纤维叶片"],
+    "expected_answer_keywords": ["大型化", "海上风电", "5MW"],
+    "expected_relation_entities": [],
+    "reference_answer": "碳纤维叶片比强度和刚度远高于玻璃纤维，主要用于5MW以上大型风机，特别是追求更长叶片的海上风电。"
+  },
+  {
+    "question": "BC电池和TOPCon电池有什么区别？",
+    "expected_intent": "compare",
+    "expected_entities": ["BC电池", "TOPCon电池"],
+    "expected_answer_keywords": ["背面", "栅线", "钝化", "叠加"],
+    "expected_relation_entities": [],
+    "reference_answer": "BC电池把电极全部移到背面、正面无栅线遮挡，效率更高但工艺复杂；TOPCon电池是隧穿氧化层钝化接触路线，量产更成熟，两者还可以技术叠加。"
+  },
+  {
+    "question": "钠冷快堆和熔盐堆有什么区别？",
+    "expected_intent": "compare",
+    "expected_entities": ["钠冷快堆", "熔盐堆"],
+    "expected_answer_keywords": ["钠", "熔盐", "冷却剂", "燃料"],
+    "expected_relation_entities": [],
+    "reference_answer": "钠冷快堆以液态钠作冷却剂、固体燃料快中子运行；熔盐堆以熔融氟化盐同时作冷却剂和燃料载体，可在高温低压下运行。"
+  },
+  {
+    "question": "碱性电解水和PEM电解水制氢哪个好？",
+    "expected_intent": "compare",
+    "expected_entities": ["碱性电解水制氢", "PEM电解水制氢"],
+    "expected_answer_keywords": ["响应速度", "成本", "纯度", "贵金属"],
+    "expected_relation_entities": [],
+    "reference_answer": "碱性电解成本低、技术成熟但响应慢；PEM电解响应快、氢纯度高、适合配合波动性可再生能源，但依赖贵金属催化剂、成本较高。"
+  },
+  {
+    "question": "换电和无线充电哪个更适合出租车高频补能？",
+    "expected_intent": "compare",
+    "expected_entities": ["换电技术", "无线充电技术"],
+    "expected_answer_keywords": ["3-5分钟", "效率", "补能", "电池"],
+    "expected_relation_entities": [],
+    "reference_answer": "换电技术3-5分钟即可完成补能，更适合出租车等高频运营场景；无线充电便利但传输效率和功率受限，更适合私家车自动补能。"
+  },
+  {
+    "question": "有哪些物理储能技术？",
+    "expected_intent": "list",
+    "expected_entities": ["抽水蓄能", "压缩空气储能", "飞轮储能", "重力储能"],
+    "expected_answer_keywords": ["抽水蓄能", "压缩空气", "飞轮", "重力"],
+    "expected_relation_entities": [],
+    "reference_answer": "物理储能主要包括抽水蓄能、压缩空气储能、飞轮储能和重力储能等。"
+  },
+  {
+    "question": "有哪些薄膜太阳能电池技术？",
+    "expected_intent": "list",
+    "expected_entities": ["碲化镉薄膜电池", "铜铟镓硒薄膜电池"],
+    "expected_answer_keywords": ["碲化镉", "CIGS", "薄膜"],
+    "expected_relation_entities": [],
+    "reference_answer": "主流薄膜太阳能电池包括碲化镉薄膜电池和铜铟镓硒（CIGS）薄膜电池等。"
+  },
+  {
+    "question": "有哪些四代核电技术？",
+    "expected_intent": "list",
+    "expected_entities": ["高温气冷堆", "钠冷快堆", "熔盐堆"],
+    "expected_answer_keywords": ["高温气冷堆", "钠冷快堆", "熔盐堆"],
+    "expected_relation_entities": [],
+    "reference_answer": "代表性第四代核电技术包括高温气冷堆、钠冷快堆、熔盐堆等。"
+  },
+  {
+    "question": "有哪些氢能制取技术？",
+    "expected_intent": "list",
+    "expected_entities": ["碱性电解水制氢", "PEM电解水制氢", "SOEC电解水制氢", "AEM电解水制氢"],
+    "expected_answer_keywords": ["碱性", "PEM", "SOEC", "AEM"],
+    "expected_relation_entities": [],
+    "reference_answer": "氢能制取技术主要有碱性电解水制氢、PEM电解水制氢、SOEC电解水制氢和AEM电解水制氢。"
+  },
+  {
+    "question": "有哪些核聚变技术路线？",
+    "expected_intent": "list",
+    "expected_entities": ["托卡马克磁约束聚变", "惯性约束核聚变"],
+    "expected_answer_keywords": ["磁约束", "惯性约束", "托卡马克"],
+    "expected_relation_entities": [],
+    "reference_answer": "核聚变主要分为磁约束和惯性约束两条路线，磁约束以托卡马克为代表，惯性约束以激光驱动为代表。"
+  },
+  {
+    "question": "有哪些液流电池技术？",
+    "expected_intent": "list",
+    "expected_entities": ["全钒液流电池", "铁铬液流电池", "锌溴液流电池"],
+    "expected_answer_keywords": ["全钒", "铁铬", "锌溴", "液流"],
+    "expected_relation_entities": [],
+    "reference_answer": "常见液流电池包括全钒液流电池、铁铬液流电池和锌溴液流电池等。"
+  },
+  {
+    "question": "一共有几类电解水制氢技术？",
+    "expected_intent": "aggregate",
+    "expected_entities": ["碱性电解水制氢", "PEM电解水制氢", "SOEC电解水制氢", "AEM电解水制氢"],
+    "expected_answer_keywords": ["碱性", "PEM", "SOEC", "四类"],
+    "expected_relation_entities": [],
+    "reference_answer": "知识库共收录四类电解水制氢技术：碱性、PEM、SOEC和AEM电解水制氢。"
+  },
+  {
+    "question": "新能源汽车的补能方式一共有几种？",
+    "expected_intent": "aggregate",
+    "expected_entities": ["纯电动汽车", "换电技术", "无线充电技术"],
+    "expected_answer_keywords": ["充电", "换电", "无线", "三种"],
+    "expected_relation_entities": [],
+    "reference_answer": "新能源汽车的补能方式主要有三种：有线充电、换电和无线充电，其中800V高压平台可提升充电速度。"
+  },
+  {
+    "question": "氢能储运一共有哪几种主要方式？",
+    "expected_intent": "aggregate",
+    "expected_entities": ["高压气态储氢", "低温液态储氢", "固态储氢", "有机液态储氢"],
+    "expected_answer_keywords": ["高压气态", "低温液态", "固态", "有机液态"],
+    "expected_relation_entities": [],
+    "reference_answer": "知识库共收录四种主要储氢方式：高压气态储氢、低温液态储氢、固态储氢和有机液态储氢。"
+  },
+  {
+    "question": "风力发电机按传动结构有哪几种类型？",
+    "expected_intent": "aggregate",
+    "expected_entities": ["双馈风力发电", "永磁直驱风力发电", "半直驱风力发电"],
+    "expected_answer_keywords": ["双馈", "永磁直驱", "半直驱", "三种"],
+    "expected_relation_entities": [],
+    "reference_answer": "按传动结构可分为三类：双馈（带齿轮箱）、永磁直驱（无齿轮箱）和半直驱风力发电。"
+  },
+  {
+    "question": "氢能产业链主要包括哪几个环节？",
+    "expected_intent": "aggregate",
+    "expected_entities": ["氢储能", "碱性电解水制氢", "高压气态储氢", "氢燃料电池汽车"],
+    "expected_answer_keywords": ["制取", "储运", "应用", "三个环节"],
+    "expected_relation_entities": [],
+    "reference_answer": "氢能产业链主要包括制取、储运和应用三大环节，分别对应电解水制氢技术、储氢方式和燃料电池等应用。"
+  },
+  {
+    "question": "氢能产业链的上游环节是什么？",
+    "expected_intent": "path",
+    "expected_entities": ["碱性电解水制氢", "PEM电解水制氢", "AEM电解水制氢"],
+    "expected_answer_keywords": ["上游", "制氢", "电解水"],
+    "expected_relation_entities": [],
+    "reference_answer": "氢能产业链上游是氢的制取环节，包括碱性、PEM、SOEC和AEM等电解水制氢技术。"
+  },
+  {
+    "question": "光伏产业链从上到下包括哪些环节？",
+    "expected_intent": "path",
+    "expected_entities": ["PERC电池", "TOPCon电池", "光伏逆变器", "分布式光伏发电"],
+    "expected_answer_keywords": ["硅片", "电池片", "组件", "逆变器"],
+    "expected_relation_entities": [],
+    "reference_answer": "光伏产业链主要包括硅料、硅片、电池片、组件和逆变器等下游应用环节。"
+  },
+  {
+    "question": "动力电池产业链从上游到下游有哪些环节？",
+    "expected_intent": "path",
+    "expected_entities": ["磷酸铁锂电池", "三元锂电池", "换电技术", "V2G技术"],
+    "expected_answer_keywords": ["锂矿", "材料", "电芯", "整车"],
+    "expected_relation_entities": [],
+    "reference_answer": "动力电池产业链涵盖上游锂矿与正负极材料、中游电芯制造与电池包集成、下游整车应用及补能体系。"
+  },
+  {
+    "question": "风电产业链上下游之间怎么关联？",
+    "expected_intent": "path",
+    "expected_entities": ["碳纤维叶片", "双馈风力发电", "智能运维系统"],
+    "expected_answer_keywords": ["叶片", "整机", "运维", "上下游"],
+    "expected_relation_entities": [],
+    "reference_answer": "风电产业链上游提供叶片（如碳纤维叶片）、发电机等部件，中游整机厂集成机组，下游风电场运营依赖智能运维系统。"
+  },
+  {
+    "question": "储能系统主要由哪些部分构成？",
+    "expected_intent": "path",
+    "expected_entities": ["磷酸铁锂电池", "全钒液流电池", "光伏逆变器"],
+    "expected_answer_keywords": ["电池", "PCS", "BMS", "变流器"],
+    "expected_relation_entities": [],
+    "reference_answer": "储能系统通常由电池本体（锂电或液流）、电池管理系统BMS、储能变流器PCS和能量管理系统EMS等构成。"
+  },
+  {
+    "question": "核能产业链从燃料到发电包括哪些环节？",
+    "expected_intent": "path",
+    "expected_entities": ["华龙一号", "AP1000", "高温气冷堆"],
+    "expected_answer_keywords": ["铀", "燃料", "反应堆", "发电"],
+    "expected_relation_entities": [],
+    "reference_answer": "核能产业链包括铀矿开采、燃料元件制造、反应堆运行发电、乏燃料后处理等环节，涉及华龙一号、AP1000等堆型。"
+  }
+]

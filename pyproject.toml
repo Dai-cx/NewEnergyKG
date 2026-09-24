@@ -1,0 +1,72 @@
+# ============================================================================
+# NewEnergyKG 项目统一依赖与工程配置
+#
+# 说明：
+# - 本文件是依赖与工程配置的唯一事实来源（取代 qa/requirements.txt）
+# - 安装运行时依赖:   pip install -e .
+# - 安装开发依赖:     pip install -e ".[dev]"
+# - 运行测试:         pytest
+# - 需要 Python >= 3.10（代码中使用了 str | None、list[...] 等新语法）
+# ============================================================================
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "newenergykg"
+version = "0.2.0"
+description = "新能源领域知识图谱与 Agentic RAG 智能问答系统"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # Web 框架
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.23.0",
+    "pydantic>=2.0.0",
+    # 知识图谱
+    "neo4j>=5.0.0",
+    # LLM 调用
+    "dashscope>=1.19.0",
+    "openai>=1.0.0",
+    # NLP 与数据工具
+    "jieba>=0.42.1",
+    "rapidfuzz>=3.0.0",
+    # 文档解析与向量库（D3 摄取管道）
+    "pypdf>=4.0.0",
+    "qdrant-client>=1.9.0",
+    # 日志
+    "loguru>=0.7.0",
+    # 其他
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+# 开发/测试依赖：pip install -e ".[dev]"
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+]
+
+# ==================== 包发现 ====================
+[tool.setuptools.packages.find]
+include = ["qa*"]
+
+# ==================== pytest 配置 ====================
+[tool.pytest.ini_options]
+# 测试目录
+testpaths = ["tests"]
+# 把项目根目录加入 sys.path，测试中可以直接 `import qa`
+pythonpath = ["."]
+# 汇总显示每个测试的结果符号（. F s x 等）
+addopts = "-ra"
+
+# ==================== ruff（代码规范，可选安装） ====================
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# E: pycodestyle 错误  F: pyflakes  F401 未使用导入等
+select = ["E", "F", "I"]

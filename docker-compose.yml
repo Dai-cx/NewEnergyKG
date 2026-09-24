@@ -1,0 +1,105 @@
+# ============================================================
+# NewEnergyKG 全栈编排（docker compose）
+#
+# 前置条件：根目录 .env 文件（可复制 .env.example），
+#           至少包含 NEO4J_PASSWORD=你的密码
+#
+# 常用命令：
+#   启动（后台）        docker compose up -d --build
+#   查看状态            docker compose ps
+#   查看 API 日志       docker compose logs -f api
+#   停止（保留数据卷）  docker compose down
+#   彻底清除（删数据）  docker compose down -v
+#
+# 访问：
+#   问答 API       http://127.0.0.1:8000
+#   Neo4j 管理页   http://127.0.0.1:7474
+#   Qdrant 面板    http://127.0.0.1:6333/dashboard
+# ============================================================
+
+services:
+  # ---------- 图数据库：Neo4j ----------
+  neo4j:
+    image: neo4j:5-community
+    container_name: newenergykg-neo4j
+    environment:
+      # 首次启动时设置初始账号密码（仅首次初始化生效，之后改这里无效）
+      # 注意：不要新增 NEO4J_ 开头的其他变量！Neo4j 镜像会把
+      # NEO4J_XXX 全部当作配置项解析（NEO4J_PASSWORD 会导致启动失败）。
+      NEO4J_AUTH: neo4j/${NEO4J_PASSWORD:?请在 .env 中设置 NEO4J_PASSWORD}
+    ports:
+      - "7474:7474"   # Neo4j Browser（网页管理界面）
+      - "7687:7687"   # Bolt 协议（应用连接端口）
+    volumes:
+      - neo4j_data:/data
+    healthcheck:
+      # 密码从容器内的 NEO4J_AUTH（形如 neo4j/密码）中剥离出 "neo4j/" 前缀得到
+      test: ["CMD-SHELL", "cypher-shell -u neo4j -p \"$${NEO4J_AUTH#neo4j/}\" 'RETURN 1' >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 30s
+
+  # ---------- 向量数据库：Qdrant ----------
+  qdrant:
+    image: qdrant/qdrant:latest   # 开发环境用 latest；生产环境建议固定版本号
+    container_name: newenergykg-qdrant
+    ports:
+      - "6333:6333"   # REST API
+      - "6334:6334"   # gRPC API（可选）
+    volumes:
+      - qdrant_data:/qdrant/storage
+    # 注：镜像内未内置 curl/python，暂不设 healthcheck；
+    #     D3 摄取管道中会加入连接重试逻辑兜底。
+
+  # ---------- 会话缓存：Redis ----------
+  redis:
+    image: redis:7-alpine
+    container_name: newenergykg-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # ---------- 问答 API（本项目服务）----------
+  api:
+    build: .
+    container_name: newenergykg-api
+    environment:
+      # 容器内访问其他服务必须用"服务名"（neo4j/qdrant/redis）作主机名，
+      # 而不是 localhost（每个容器有自己独立的 localhost）
+      NEO4J_URI: bolt://neo4j:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: ${NEO4J_PASSWORD:?请在 .env 中设置 NEO4J_PASSWORD}
+      # LLM 配置（可留空，留空则走本地兜底回答）
+      DASHSCOPE_API_KEY: ${DASHSCOPE_API_KEY:-}
+      LLM_MODEL: ${LLM_MODEL:-qwen-turbo}
+      OPENAI_API_BASE: ${OPENAI_API_BASE:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      # 容器内必须监听 0.0.0.0，才能被宿主机访问
+      APP_HOST: 0.0.0.0
+      APP_PORT: "8000"
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      # D3+ 摄取管道将使用（先注入，后续实现无需改 compose）
+      QDRANT_HOST: qdrant
+      REDIS_HOST: redis
+    ports:
+      - "8000:8000"
+    depends_on:
+      neo4j:
+        condition: service_healthy   # Neo4j 健康后才启动 api
+      redis:
+        condition: service_healthy   # Redis 健康后才启动 api
+      qdrant:
+        condition: service_started   # Qdrant 仅保证已启动（无 healthcheck）
+    restart: unless-stopped
+
+# ---------- 命名数据卷（数据持久化） ----------
+volumes:
+  neo4j_data:
+  qdrant_data:
+  redis_data:

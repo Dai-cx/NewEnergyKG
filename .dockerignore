@@ -1,0 +1,33 @@
+# ============================================================
+# .dockerignore —— 构建上下文排除清单
+# 作用：docker build 时被排除的文件不会发送给 Docker 守护进程，
+#       既加快构建，又避免敏感信息（.env）被打进镜像。
+# ============================================================
+
+# 版本控制
+.git
+.gitignore
+
+# Python 虚拟环境与缓存
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# 敏感配置（绝不进入镜像！）
+.env
+*.env
+qa/.env
+graph/.env
+data/.env
+
+# 测试与文档（镜像内不需要）
+tests/
+LEARNING_LOG.md
+UPGRADE_PLAN.md
+
+# IDE
+.idea/
+.vscode/
