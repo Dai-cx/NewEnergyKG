@@ -7,18 +7,38 @@ qa/config.py 配置模块的单元测试
 用 monkeypatch 直接修改 config 模块属性（该函数调用时读取模块全局变量）。
 """
 
+import importlib
+
 import pytest
 
 from qa import config
 
 
 class TestDefaults:
-    """默认配置值（未设置任何环境变量时）"""
+    """默认配置值（未设置任何环境变量时）
 
-    def test_default_neo4j_settings(self):
-        assert config.NEO4J_URI == "bolt://localhost:7687"
-        assert config.NEO4J_USER == "neo4j"
-        assert config.NEO4J_PASSWORD == ""
+    注意：本模块顶部的 docstring 原写法假定"本机没有 .env"，
+    但开发者本地通常已配置真实密码/Key，断言会随机器而变（CI 过、本机挂）。
+    因此默认值断言统一在**清空相关环境变量后重新导入 config** 的前提下进行，
+    这样它检验的是"代码里的默认值"，而不是"这台机器的 .env 内容"。
+    """
+
+    def test_default_neo4j_settings(self, monkeypatch):
+        # 要点：
+        # 1) 必须 delenv 而不是 setenv("")——空串会让 os.getenv 拿到 "" 而非默认值；
+        # 2) 必须屏蔽 load_dotenv，否则真实 .env 里的密码会被加载进来；
+        # 两者结合才能真正检验"代码里的默认值"。
+        for key in ("NEO4J_URI", "NEO4J_USER", "NEO4J_PASSWORD"):
+            monkeypatch.delenv(key, raising=False)
+        monkeypatch.setattr("dotenv.load_dotenv", lambda *a, **k: False)
+        reloaded = importlib.reload(config)
+        try:
+            assert reloaded.NEO4J_URI == "bolt://localhost:7687"
+            assert reloaded.NEO4J_USER == "neo4j"
+            assert reloaded.NEO4J_PASSWORD == ""
+        finally:
+            # 恢复真实配置，避免影响后续测试
+            importlib.reload(config)
 
     def test_default_llm_settings(self):
         assert config.DEFAULT_MODEL == "qwen-turbo"

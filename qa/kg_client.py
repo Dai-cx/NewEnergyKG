@@ -91,9 +91,11 @@ class KGClient:
             user: 用户名，默认从 config.NEO4J_USER 读取
             password: 密码，默认从 config.NEO4J_PASSWORD 读取
         """
-        self.uri = uri or config.NEO4J_URI
-        self.user = user or config.NEO4J_USER
-        self.password = password or config.NEO4J_PASSWORD
+        # 用 `is None` 而不是 `or`：显式传入空串("")应当保持为空（表示"未配置"），
+        # 否则调用方无法覆盖配置里的密码，也就无法构造"未配置"的客户端用于测试/对比实验。
+        self.uri = uri if uri is not None else config.NEO4J_URI
+        self.user = user if user is not None else config.NEO4J_USER
+        self.password = password if password is not None else config.NEO4J_PASSWORD
         self.driver = None
 
         if not self.password:
