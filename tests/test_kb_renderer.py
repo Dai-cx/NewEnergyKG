@@ -324,7 +324,11 @@ class TestCli:
     def test_check_json_output(self, capsys):
         rc = kb.main(["check", "--json"])
         payload = json.loads(capsys.readouterr().out)
-        assert payload["covered"] == payload["expected_total"]
+        # 报告分两块：评测期望实体覆盖 + 领域词汇（技术名）覆盖
+        assert payload["expected_entities"]["covered"] == \
+            payload["expected_entities"]["expected_total"]
+        assert payload["domain_vocabulary"]["covered"] == \
+            payload["domain_vocabulary"]["expected_total"]
         assert rc == 0
 
     def test_render_dry_run_writes_nothing(self, tmp_path, capsys):
@@ -347,4 +351,4 @@ class TestCli:
         rc = kb.main(["check", "--records", str(records), "--json"])
         assert rc == 1
         payload = json.loads(capsys.readouterr().out)
-        assert payload["missing"], "应报告未覆盖的实体"
+        assert payload["expected_entities"]["missing"], "应报告未覆盖的实体"

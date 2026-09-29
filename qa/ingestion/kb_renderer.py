@@ -508,8 +508,18 @@ def _cmd_check(args: argparse.Namespace) -> int:
     expected = load_expected_entities()
     report = coverage_report(records, expected)
 
+    # 领域词汇覆盖：63 个技术名自身是否都出现在渲染产物里。
+    # 比"期望实体覆盖"更宽的词汇完整性指标 —— 语料缺术语，检索就永远召不回
+    # （背景见 qa/eval/corpus_fix_report.md 第四节之二）。
+    tech_report = coverage_report(
+        records, [str(r.get("name")).strip() for r in records]
+    )
+
     if args.json:
-        print(json.dumps(report, ensure_ascii=False, indent=2))
+        print(json.dumps(
+            {"expected_entities": report, "domain_vocabulary": tech_report},
+            ensure_ascii=False, indent=2,
+        ))
         return 0 if not report["missing"] else 1
 
     print("=" * 64)
@@ -518,6 +528,8 @@ def _cmd_check(args: argparse.Namespace) -> int:
     print(f"知识记录条数      : {report['records']}")
     print(f"评测集期望实体数  : {report['expected_total']}")
     print(f"渲染产物可覆盖    : {report['covered']}  ({report['coverage']:.1%})")
+    print(f"领域词汇覆盖      : {tech_report['covered']}/{tech_report['expected_total']}"
+          f"  ({tech_report['coverage']:.1%})   ← 技术名自身的词汇完整性")
 
     if report["missing"]:
         print(f"\n[!] 未被覆盖的期望实体 {len(report['missing'])} 个：")
@@ -526,7 +538,7 @@ def _cmd_check(args: argparse.Namespace) -> int:
         print("\n提示：这些实体在语料中不可检索，对应题目的文档检索组将零召回。")
         return 1
 
-    print("\n[OK] 全部期望实体均可被渲染语料覆盖。")
+    print("\n[OK] 全部期望实体与领域词汇均可被渲染语料覆盖。")
     return 0
 
 
