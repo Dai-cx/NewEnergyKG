@@ -1,7 +1,7 @@
 [
   {
     "question": "那它的缺点呢？",
-    "answer": "锂离子电池储能的缺点包括成本较高以及循环寿命有限，需要在成本与循环寿命之间寻求平衡[1]。此外，充电基础设施的不完善也会影响使用体验，例如充电桩的兼容性问题和访问限制[2]。",
+    "answer": "锂离子电池储能的缺点包括成本较高以及循环寿命有限，需在成本与使用寿命之间寻求平衡[1]。此外，充电基础设施存在技术壁垒和标准化问题，影响使用便利性[4]。高性能充电设备对电网要求高，部署成本大，可能提高充电价格[3]。",
     "source": "llm",
     "resolved_question": "那它的缺点呢？",
     "query_rewritten": false,
@@ -9,15 +9,15 @@
     "contexts": [
       "锂离子电池储能响应速度快、能量密度高，是目前电化学储能的主流，\n代表企业包括宁德时代、比亚迪。其短板是成本与循环寿命的平衡。",
       "ing that\naccess is limited to part of the population, such as chargers provided by hotels or\nsupermarkets that are only accessible to customers. Such chargers may also have\nphysical barriers and more limited hours, which degrades charging access and\nexperience.\nTechnical barriers can also hinder ease of use , even for fully public charging\nstations, as can occur with  incompatible plug types (e.g. Type 2, C ombined\nCharging System, CHAdeMO). Other factors, such as the payment system or (in\nthe case of Tesla chargers), the brand of the vehicle, can also limit the usability of\ncharging infrastru",
-      "nergy converter.\nThe components of EREVs also differ from those of standard PHEVs. EREVs require\na generator, advanced power electronics and a larger battery,  which can increase\nmanufacturing costs, although the lack of traditional transmission and simpler engine\ndesign can reduce costs. Their competitiveness compared to standard PHEVs  largely\ndepends on optimising the size of the generator and battery, which are responsible\nfor the majority of additional costs. Moreover, their chassis design, which is closer to\nthat of a BEV than a standard PHEV, could accelerate  technology transfer  from\n",
       "The full realisation of these advantages, however,  hinges on deploying ultra -high-\npower charging infrastructure. Megawatt chargers impose significant loads on grids,\noften requiring upgrades that could significantly slow down or limit deployment, and\nare more expensive than fast chargers, which could result in higher charging prices\nfor consumers. Pairing these chargers with battery storage to alleviate peak demand\nand optimise grid usage might offer a pathway to accelerate their roll-out. In\nrecognition of the infrastructural challenge, BYD – together with its Super-e platform\n– has announ",
-      "s), the brand of the vehicle, can also limit the usability of\ncharging infrastructure, reducing overall accessibility . Standardisation, in\ncombination with access to reliable data on the availability and pricing of charging\nstations, will therefore be important for making public charging infrastructure more\naccessible."
+      "s), the brand of the vehicle, can also limit the usability of\ncharging infrastructure, reducing overall accessibility . Standardisation, in\ncombination with access to reliable data on the availability and pricing of charging\nstations, will therefore be important for making public charging infrastructure more\naccessible.",
+      "iciency,\nrather than imposing a flat rate, which would mean owners of less efficient, older\nvehicles bear a higher tax burden. While this could further incentivise EV growth,\nit might disproportionally affect people in lower -income demographics who are\nmore likely to own an older vehicle, potentially reducing the public acceptance of\nelectromobility in the long-term.\nSimilarly, there is a risk of public pushback in response to the introduction of taxes\non EVs to cover fuel excise duty losses. To minimise this risk, any tax reform will\nneed to be designed in a way that protects low-income hous"
     ],
     "ground_truth": "磷酸铁锂电池的主要缺点是能量密度相对较低（约140-160Wh/kg），低温性能较差，且导电性略差。"
   },
   {
     "question": "它和三元锂电池比怎么样？",
-    "answer": "与三元锂电池相比，磷酸铁锂电池具有更高的安全性和更长的循环寿命，成本也相对较低[2]。两者充放电效率相近，均为约95%[1]。三元锂电池能量密度更高，适用于高端电动汽车，而磷酸铁锂电池在储能、电动船舶等领域应用更广泛[3]。",
+    "answer": "与三元锂电池相比，磷酸铁锂电池在安全性、循环寿命和成本方面更具优势，但能量密度较低[2]。两者充放电效率相近，均为约95%。磷酸铁锂电池更适用于对成本敏感的场景，如电动汽车和储能电站，而三元锂电池则更多用于高端电动汽车和消费电子领域[1]。",
     "source": "llm",
     "resolved_question": "它和三元锂电池比怎么样？",
     "query_rewritten": false,
@@ -25,9 +25,9 @@
     "contexts": [
       "锂离子电池储能响应速度快、能量密度高，是目前电化学储能的主流，\n代表企业包括宁德时代、比亚迪。其短板是成本与循环寿命的平衡。",
       " for most producers (though not\nall), at the same time as driving up manufacturing efficiency and yields, as well as\naccess to a large skilled workforce, and battery supply chain integration.\nBattery chemistry also plays an important role, with lithium iron phosphate (LFP)\nbatteries – the main battery chemistry used in China – being almost 30% cheaper\nper kilowatt -hour (kWh) than lithium nickel cobalt manganese oxide (NMC)\nbatteries, which remain the most widely us ed batteries in the United  States and\nEurope. NMC batteries still provide an energy density advantage, though the gap\nhas narrow",
-      ", thanks to their larger size and therefore the reduced contribution of\nthe battery pack cost. Electric truck markets in other countries are far less mature,\nand their battery price per kWh remains significantly higher – in 2024, prices were\nmore than double those in China.\nLithium iron phosphate batteries continue to gain market share,\nand with them so do Chinese manufacturers\nIn 2024, LFP batteries made up  nearly half of the global EV battery market,\nunderpinning the efforts of manufacturers to lower EV prices and production costs\nin order to maintain or gain market share in an increasingly",
       "he Shenxing battery, which is able to charge about 30% of\nthe battery in just 5 minutes, providing 200 km of additional range. This was further\nimproved in 2024, when they released a battery offering similar energy density but\nfaster charging speeds in collaboration with SAIC -GM – allowing to recharge over\n40% of the battery capacity in 5 minutes – as well as a battery with the same charging\nspeed (30% in 5 minutes) but increased energy density, providing 300 km of additional\nrange in 5 minutes. For comparison, a typical Tesla supercharger can offer about\n100 km of additional range during the",
-      "olytes – as they could help address some scale-up\nchallenges and reduce production costs.\nLithium-sulphur (Li-S) batteries, promising higher specific energy (Wh/kg)  and\nlower reliance on critical minerals, have also gained momentum. The US start-up\nLyten announced the world’s first Li-S gigafactory, while Stellantis partnered with\nZeta to commercialise this technology by 2030. However, several challenges\nremain, including improving volumetric energy density  (Wh/L), enhancing"
+      "ery storage. In March 2025, HiNa launched\nits new sodium-ion battery, which offers  improved energy density and faster\ncharging compared to the previous generation, heralding a promising year for this\ntechnology. However, r ecent analyses indicate that sodium -ion batteries will\nrequire either increased energy density or more favourable operating conditions –\nparticularly higher lithium prices –  to compete with LFP batteries on a price per\nkWh basis. Nevertheless , sodium-ion technologies could play a significant role\nduring times of elevated lithium prices and may offer a cheaper option for ",
+      "薄膜电池包括碲化镉、铜铟镓硒等路线，弱光性能好，适合光伏建筑一体化场景。"
     ],
     "ground_truth": "磷酸铁锂电池安全性高、循环寿命长、成本低但能量密度偏低；三元锂电池能量密度高但安全性和成本表现较差。"
   },
@@ -49,7 +49,7 @@
   },
   {
     "question": "那它有哪些公司？",
-    "answer": "当前涉及的公司包括：锦浪科技股份有限公司、锦州阳光能源有限公司、晋能清洁能源科技股份公司、晶澳太阳能科技股份有限公司、晶科电力科技股份有限公司、晶科能源股份有限公司、隆基绿能科技股份有限公司、阳光电源股份有限公司、阳光新能源开发股份有限公司、一道新能源科技股份有限公司、英利能源发展有限公司、浙江爱旭太阳能科技有限公司、浙江晶科储能有限公司、浙江正泰新能源开发有限公司、正泰新能科技股份有限公司、中国三峡新能源（集团）股份有限公司、TCL 中环新能源科技股份有限公司、阿特斯光伏科技（苏州）有限公司、阿特斯阳光电力集团股份有限公司、东方日升新能源股份有限公司等[1][2][3]。",
+    "answer": "当前涉及的公司包括：\n\n- 锦浪科技股份有限公司\n- 锦州阳光能源有限公司\n- 晋能清洁能源科技股份公司\n- 晶澳太阳能科技股份有限公司\n- 晶科电力科技股份有限公司\n- 晶科能源股份有限公司\n- 隆基绿能科技股份有限公司\n- 阳光电源股份有限公司\n- 阳光新能源开发股份有限公司\n- 一道新能源科技股份有限公司\n- 英利能源发展有限公司\n- 浙江爱旭太阳能科技有限公司\n- 浙江晶科储能有限公司\n- 浙江正泰新能源开发有限公司\n- 正泰新能科技股份有限公司\n- 通威股份有限公司\n- 通威太阳能有限公司\n- 协鑫科技控股有限公司\n- 新疆大全股份有限公司\n- 新疆东方希望新能源有限公司\n- 新特能源股份有限公司\n- 亚洲硅业（青海）股份有限公司\n- 东方日升新能源股份有限公司\n- 阿特斯光伏科技（苏州）有限公司\n- 阿特斯阳光电力集团股份有限公司\n- 安徽华晟新能源科技股份有限公司\n- 北京海博思创科技股份有限公司\n- 国家电投集团青海光伏产业创新中心有限公司[1]",
     "source": "llm",
     "resolved_question": "那它有哪些公司？",
     "query_rewritten": false,
@@ -58,14 +58,14 @@
       "源科技有限公司\n锦浪科技股份有限公司\n锦州阳光能源有限公司\n晋能清洁能源科技股份公司\n晶澳太阳能科技股份有限公司\n晶科电力科技股份有限公司\n晶科能源股份有限公司\n昆山协鑫光电材料有限公司\n隆基绿能科技股份有限公司\n落基山研究所\n南开大学\n宁波欧达光电有限公司\n青岛高测科技股份有限公司\n青海丽豪清能股份有限公司\n青海南玻新能源科技有限公司\n三一硅能（株洲）有限公司\n厦门科华数能科技有限公司\n陕西有色天宏瑞科硅材料有限责任公司\n上海爱旭新能源股份有限公司\n上海迪熹新能源有限公司\n上海恒羲光伏科技有限公司\n上能电气股份有限公司\n深圳科士达科技股份有限公司\n深圳现象光伏科技有限公司\n双良节能系统股份有限公司\n水电水利规划设计总院有限公司\n四川永祥股份有限公司\n四川永祥光伏科技有限公司\n苏州腾晖光伏技术有限公司\n苏州协鑫零碳能源科技有限公司\n特变电工新疆新能源股份有限公司\n天合富家能源股份有限公司\n天合光能股份有限公司\n天津轻工职业技术学院\n通威股份有限公司\n通威太阳能有限公司\n协鑫科技控股有限公司\n新疆大全股份有限公司\n新疆东方希望新能源有限公司\n新特能源股份有限公司\n亚洲硅业（青海）股份有限公司\n阳光电源股份有限公司\n阳光新能源开发股份有限公司",
       "有限公司\n新疆大全股份有限公司\n新疆东方希望新能源有限公司\n新特能源股份有限公司\n亚洲硅业（青海）股份有限公司\n阳光电源股份有限公司\n阳光新能源开发股份有限公司\n一道新能源科技股份有限公司\n英利能源发展有限公司\n浙江爱旭太阳能科技有限公司\n浙江晶科储能有限公司\n浙江正泰新能源开发有限公司\n正泰新能科技股份有限公司\n智汇光伏\n中国大唐集团技术经济研究院有限责任公司\n中国电建集团西北勘测设计研究院有限公司\n中国恩菲工程技术有限公司\n中国华电科工集团有限公司\n中国华能集团清洁能源技术研究院有限公司\n中国能源建设集团天津电力设计院有限公司\n中国三峡新能源（集团）股份有限公司\n中环低碳新能源（安徽）集团有限公司\n中铝宁夏能源集团有限公司\n中兴通讯股份有限公司\n株洲中车时代电气股份有限公司\n序  言",
       "支持单位\nTCL 中环新能源科技股份有限公司\n阿特斯光伏科技（苏州）有限公司\n阿特斯阳光电力集团股份有限公司\n安徽繁星能源科技有限公司\n安徽华晟新能源科技股份有限公司\n北京海博思创科技股份有限公司\n北京鉴衡认证中心有限公司\n北京京运通科技股份有限公司\n北京瑞科同创科技股份有限公司\n东方日升新能源股份有限公司\n福建省金石能源有限公司\n固德威技术股份有限公司\n广州市儒兴科技股份有限公司\n国晟世安科技股份有限公司\n国家电投集团青海光伏产业创新中心有限公司\n国家发展和改革委员会能源研究所\n国能经济技术研究院有限责任公司\n国网能源研究院有限公司\n杭州纤纳光电科技股份有限公司\n合肥京东方光能科技有限公司\n横店集团东磁股份有限公司\n华润新能源投资有限公司新疆分公司\n华为数字能源技术有限公司\n惠州亿纬锂能股份有限公司\n吉利融和（宁波）新能源有限公司\n极电光能有限公司\n江苏赛福天集团股份有限公司\n江苏天合储能有限公司\n江苏新霖飞能源科技有限公司\n江西电投新能源科技有限公司\n锦浪科技股份有限公司\n锦州阳光能源有限公司\n晋能清洁能源科技股份公司\n晶澳太阳能科技股份有限公司\n晶科电力科技股份有限公司\n晶科能源股份有限公司",
-      "these times. As a result, governments, utilities and\nprivate companies have start ed to develop and deploy technologies to enable",
-      "IEA. CC BY 4.0.\nNotes: Chinese OEMs include BAIC, Geely-Volvo, GWM, GAC, BYD, Chery Automobile, JAC, Neta Auto, Seres Group,\nFAW, Changan, Dongfeng, Jiangling Motors, SAIC, Leap Motor, Xiaopeng, Aiways Automobile. The domestic brands are\nTata Motors, Mahindra & Mahindra (India); Togg Inc. (Türkiye); VinFast (Viet Nam) and Tito (Argentina).\nSources: IEA analysis based on data from EV Volumes."
+      "IEA. CC BY 4.0.\nNotes: Chinese OEMs include BAIC, Geely-Volvo, GWM, GAC, BYD, Chery Automobile, JAC, Neta Auto, Seres Group,\nFAW, Changan, Dongfeng, Jiangling Motors, SAIC, Leap Motor, Xiaopeng, Aiways Automobile. The domestic brands are\nTata Motors, Mahindra & Mahindra (India); Togg Inc. (Türkiye); VinFast (Viet Nam) and Tito (Argentina).\nSources: IEA analysis based on data from EV Volumes.",
+      "rnational Council on Clean Transportation\nICE   internal combustion engine\nICEV   internal combustion engine vehicle\nIFC  International Finance Corporation\nINR   Indian rupee\nIRENA  International Renewable Energy Agency\nITF  International Transport Forum\nKRW  Korean won\nLCV   light commercial vehicle\nLDV   light-duty vehicle\nLEZ  Low emissions zone\nLFMP  lithium iron manganese phosphate\nLFP   lithium iron phosphate\nLi-S  lithium sulphur"
     ],
     "ground_truth": "碱性电解水制氢相关的企业包括电解槽制造与系统集成厂商。"
   },
   {
     "question": "它的主要材料是什么？",
-    "answer": "它的主要材料包括碲化镉、铜铟镓硒等[2]。对于光伏组件，主要材料有镀膜玻璃、EVA胶膜、POE胶膜等[3]。在电池领域，主要材料包括NMC、LFP等正极材料以及石墨负极材料[1]。",
+    "answer": "它的主要材料包括碲化镉、铜铟镓硒等[2]。对于光伏组件，主要材料有镀膜玻璃、EVA胶膜、POE胶膜等[3][4]。在电池方面，主要材料包括NMC、LFP等正极材料和石墨负极材料[1]。",
     "source": "llm",
     "resolved_question": "它的主要材料是什么？",
     "query_rewritten": false,
@@ -97,7 +97,7 @@
   },
   {
     "question": "半片组件相比整片组件能提升多少功率？",
-    "answer": "半片组件相比整片组件，功率提升约5-10W（约2-3%）[1]。这是通过降低电池片工作电流，减少电阻损耗和隐裂风险实现的。",
+    "answer": "半片组件相比整片组件可提升5-10W功率，约2-3%的功率增益[1]。",
     "source": "llm",
     "resolved_question": "半片组件相比整片组件能提升多少功率？",
     "query_rewritten": false,
@@ -107,7 +107,7 @@
       "......................... 33\n15、水耗 ...................................................................................................................................... 34\n16、电池单位产能设备投资额 ................................................................................................ 34\n（四）组件环节 ................................ ................................ ................................ ................................  35\n1、不同类型组件功率 ............................................................................................................... 35\n2、单/双面发电组件市场占比 ...........................",
       "1.3\n1.4\n1.5\n1.6\n2025年 2026年 2028年 2030年 2032年 2035年\nPERC组件 TOPCon组件 HJT 组件 XBC组件\n43\n13、组件人均产出率\n组件人均产出率主要指产线直接员工的人均产出（不含管理人员）。2025 年，随着组件功\n率的进一步提升，单线产能增加，生产节拍加快，我国组件工厂人均产出率也提升至约 5.7MW/\n（人·年） 。 未来随着产线自动化、 数字化和智能化水平的提高， 以及组件功率的进一步提升， 人\n均产出率将不断增长，到 2035 年有望达到 7.1MW/（人·年）。\n图 62  2025-2035 年组件人均产出率变化趋势（单位：MW/（人·年））\n14、组件单位产能设备投资额\n目前，国内组件生产线设备主要包括串焊机、划片机、层压机、EL 测试仪、IV 测试仪、装\n框机、 打胶机、 上下载机械手等， 已经全部实现本土化。2025 年 TOPCon、HJT、XBC 产线的设\n备投资额分别为 4800、5240、6100 万元/GW。由于行业整体处于调整状态，新增组件项目受\n限，暂不对未来设备投资值进行预测。\n4.0\n5.0\n6.0\n7.0\n8.0\n2025年 2026年 2028年 2030年 2032年 2035年",
       "35\n（四）组件环节9\n1、不同类型组件功率\n2025 年，采用 182mm 方片尺寸 72 片 PERC 单晶电池的组件功率达到 555W； 采用210mm\n方片尺寸 66 片 PERC 单晶电池的组件功率达到 665W，预计 2028 年以后 p 型技术路线基本退\n出市场，其功率进一步增长将基本停滞。采用 182mm 方片尺寸 72 片 TOPCon 单晶电池组件功\n率达到 595W， 采用182*210mm 尺寸 66 片 TOPCon 单晶电池组件功率达到 630W，采用 210mm\n方片尺寸 66 片 TOPCon 单晶电池组件功率达到 720W；采用 210mm 方片尺寸 66 片异质结电\n池组件功率达到 728W；采用 182*210mm 尺寸 66 片 XBC 电池组件功率达到 650W。\n表 3  2025-2035 年不同类型组件功率变化趋势\n晶硅电池组件平均功率（W） 2025 年 2026 年 2028 年 2030 年 2032 年 2035 年\np 型\n单晶\nPERC p 型单晶组件（182mm 方片） 555 555 557 557 557 557\nPERC p 型单晶组件（210mm 方片） 665 665 667 667 667 667\nn 型\n单晶\nTOPCon 单晶组件（182mm 方片） 595 600 606 609 612 615\nTOP",
-      " 每公斤单晶方棒出片量约为 121 片，n 型 210R（半\n片）尺寸 HJT 每公斤单晶方棒出片量约为 139 片。\n18\n22\n26\n30\n2025年 2026年 2028年 2030年 2032年 2035年"
+      "一步提升； 同时部分双玻组件使用 1.6mm 厚度玻璃， 其市\n场占有率小幅提升，约为 3.4%。 未来， 在保证组件可靠性的前提下， 盖板玻璃会向薄片化发展。\n图 56  2025-2035 年不同厚度的前盖板玻璃组件市场占比变化趋势\n8、不同封装材料的市场占比\n目前，市场上封装材料主要有透明 EVA 胶膜、白色 EVA 胶膜、聚烯烃（POE）胶膜、共挤\n型聚烯烃复合膜 EPE（EVA-POE-EVA） 胶膜与其他封装胶膜 （包括PDMS/Silicon 胶膜、PVB 胶\n膜、TPU 胶膜） 等。 共挤型EPE 胶膜不仅有 POE 胶膜的高阻水性能，同时具有 EVA 的高粘附特\n性，可作为 POE 胶膜的替代产品，双玻组件通常采用的是 EPE 胶膜；白色 EVA 胶膜具有提高反\n射率的作用，可提高组件的正面输出功率。2025 年，组件封装材料仍以透明 EVA 胶膜为主，约\n占 46%的市场份额。随着 TOPCon 组件及双玻组件市场占比的提升，共挤型 EPE 胶膜 2025 年\n市场占比提升至 40.7%，未来预计其市场占比将进一步增大。\n0.0%\n25.0%\n50.0%\n75.0%\n100.0%\n2025年 2026年 2028年 2030年 2032年 2035年\n前盖板玻璃厚度为2.0mm的组件 其他前盖板玻璃厚度的组件（包含2.5/2.8/3.2mm）\n前盖板玻璃厚度为1.6mm的组件"
     ],
     "ground_truth": "半片组件通过把电池片切成两半降低工作电流，通常可比同版型整片组件提升5-10W功率，并显著降低电阻损耗。"
   },
@@ -129,7 +129,7 @@
   },
   {
     "question": "重力储能的原理是什么？",
-    "answer": "重力储能通过电动机将重物提升至高处储存电能，放电时重物下落驱动发电机发电，实现能量的存储与释放[1]。其原理基于重力势能的转化，储能阶段将电能转化为势能（E=mgh），放电阶段再将其转回电能[2]。",
+    "answer": "重力储能通过电动机将重物提升至高处储存电能，放电时重物下落驱动发电机发电，实现能量的存储与释放[1]。其原理基于重力势能的转化，储能阶段将电能转化为势能（E=mgh），放电阶段再将其转回电能[2]。该技术具有环境友好、循环寿命长等优势，往返效率可达80-90%[3]。",
     "source": "llm",
     "resolved_question": "重力储能的原理是什么？",
     "query_rewritten": false,
@@ -145,7 +145,7 @@
   },
   {
     "question": "氢储能相比电池储能有什么优势？",
-    "answer": "氢储能相比电池储能具有以下优势：  \n1. **储能周期长**：氢储能可实现数天至数月的长期储能，适合可再生能源波动性大的场景[2]。  \n2. **储能容量大**：氢气可大规模存储，适用于大规模能源调节需求[4]。  \n3. **应用场景广泛**：氢储能不仅可用于电力系统，还可作为工业热源或交通燃料，实现多能互补[1]。  \n\n相比之下，电池储能更适合短时、高频次的能量调节。",
+    "answer": "氢储能相比电池储能具有以下优势：\n\n1. **储能容量大**：氢储能可实现大规模、长时间的能量存储，适合应对可再生能源的波动性[2]。\n2. **调节周期长**：氢储能具备较长的调节周期，适用于电网调峰和季节性储能需求[2]。\n3. **应用场景广泛**：氢储能不仅可用于电力系统，还可用于工业、交通、船舶等多领域[1]。\n\n相比之下，电池储能更适合短时、高频次的能量调节。",
     "source": "llm",
     "resolved_question": "氢储能相比电池储能有什么优势？",
     "query_rewritten": false,
@@ -153,15 +153,15 @@
     "contexts": [
       "10\n能在工业生产中作为高品质热源的应用。扩大工业领域氢能替代化\n石能源应用规模，积极引导合成氨、合成甲醇、炼化、煤制油气等\n行业由高碳工艺向低碳工艺转变，促进高耗能行业绿色低碳发展。\n专栏“十四五”时期氢能产业创新应用示范工程\n交通\n在矿区、港口、工业园区等运营强度大、行驶线路固定区域，探索开\n展氢燃料电池货车运输示范应用及 70MPa 储氢瓶车辆应用验证。\n在有条件的地方，可在城市公交车、物流配送车、环卫车等公共服务\n领域，试点应用燃料电池商用车。\n结合重点区域生态环保需求和电力基础设施条件，探索氢燃料电池在\n船舶、航空器等领域的示范应用。\n储能\n重点在可再生能源资源富集、氢气需求量大的地区，开展集中式可再\n生能源制氢示范工程，探索氢储能与波动性可再生能源发电协同运行的商\n业化运营模式。\n鼓励在燃料电池汽车示范线路等氢气需求量集中区域，布局基于分布\n式可再生能源或电网低谷负荷的储能/加氢一体站，充分利用站内制氢运输\n成本低的优势，推动氢能分布式生产和就近利用。\n发电\n结合增量配电改革和综合能源服务试点，开展氢电融合的微电网示范，\n推动燃料电池热电联供应用实践。\n鼓励结合新建和改造通讯基站工程，开展氢燃料电池通信基站备用电\n源示范应用，并逐步在金融、医院、学校、商业、工矿企业等领域引入氢\n燃料电池应用。\n工业\n结合国内冶金和化工行业市场环境和产业基础，探索氢能冶金示范应\n用，探索",
       "业\n化路径。\n（一）有序推进交通领域示范应用\n立足本地氢能供应能力、产业环境和市场空间等基础条件，结\n合道路运输行业发展特点，重点推进氢燃料电池中重型车辆应用，\n9\n有序拓展氢燃料电池等新能源客、货汽车市场应用空间，逐步建立\n燃料电池电动汽车与锂电池纯电动汽车的互补发展模式。积极探索\n燃料电池在船舶、航空器等领域的应用，推动大型氢能航空器研发，\n不断提升交通领域氢能应用市场规模。\n（二）积极开展储能领域示范应用\n发挥氢能调节周期长、储能容量大的优势，开展氢储能在可再\n生能源消纳、电网调峰等应用场景的示范，探索培育“风光发电+\n氢储能”一体化应用新模式，逐步形成抽水蓄能、电化学储能、氢\n储能等多种储能技术相互融合的电力系统储能体系。探索氢能跨能\n源网络协同优化潜力，促进电能、热能、燃料等异质能源之间的互\n联互通。\n（三）合理布局发电领域多元应用\n根据各地既有能源基础设施条件和经济承受能力，因地制宜布\n局氢燃料电池分布式热电联供设施，推动在社区、园区、矿区、港\n口等区域内开展氢能源综合利用示范。依托通信基站、数据中心、\n铁路通信站点、电网变电站等基础设施工程建设，推动氢燃料电池\n在备用电源领域的市场应用。在可再生能源基地，探索以燃料电池\n为基础的发电调峰技术研发与示范。结合偏远地区、海岛等用电需\n求，开展燃料电池分布式发电示范应用。\n（四）逐步探索工业领域替代应用\n不断提升氢能利用经济性，拓展清洁低碳氢能在化工行业替代\n的应用空间。开展以氢作为还原剂的氢冶金技术研发应用。探索氢",
-      "ery storage. In March 2025, HiNa launched\nits new sodium-ion battery, which offers  improved energy density and faster\ncharging compared to the previous generation, heralding a promising year for this\ntechnology. However, r ecent analyses indicate that sodium -ion batteries will\nrequire either increased energy density or more favourable operating conditions –\nparticularly higher lithium prices –  to compete with LFP batteries on a price per\nkWh basis. Nevertheless , sodium-ion technologies could play a significant role\nduring times of elevated lithium prices and may offer a cheaper option for ",
       "现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储和释放的储能形式。\n氢储能 将电能转化为氢气并存储起来，待需要时再将氢气转化为电能的储能形式。",
-      "61\n（八）新型储能环节\n新型储能是指除抽水蓄能外，以输出电力为主要形式的各类储能技术，包含锂/钠离子电池\n储能、液流电池储能、压缩空气储能、飞轮储能、氢储能等不同技术路线。\n表 13  部分新型储能技术释义\n名称 释义\n锂离子电池储能\n基于锂离子电池的储能形式。锂离子电池主要依靠锂离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n铅炭电池储能\n基于铅炭电池的储能形式。铅炭电池是指正极为二氧化铅、负极为铅炭复合电极、电解\n液为硫酸溶液，通过化学能和电能相互转换实现充放电的电池。\n液流电池储能\n基于液流电池的储能形式。液流电池是指通过流动的正极和/或负极电解液中活性物质的\n电化学反应，进行化学能和电能相互转换实现充放电的电池。\n钠离子电池储能\n基于钠离子电池的储能形式。钠离子电池主要依靠钠离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n压缩空气储能 通过空气介质的压缩和膨胀，实现能量存储和释放的储能形式。\n飞轮储能 以飞轮为储能载体，通过动能和电能相互转换实现电能存储、释放的储能形式。\n超级电容器储能\n通过电极/电解液界面形成的双电层电容或电极表面快速氧化还原反应形成的赝电容，实\n现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储"
+      "61\n（八）新型储能环节\n新型储能是指除抽水蓄能外，以输出电力为主要形式的各类储能技术，包含锂/钠离子电池\n储能、液流电池储能、压缩空气储能、飞轮储能、氢储能等不同技术路线。\n表 13  部分新型储能技术释义\n名称 释义\n锂离子电池储能\n基于锂离子电池的储能形式。锂离子电池主要依靠锂离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n铅炭电池储能\n基于铅炭电池的储能形式。铅炭电池是指正极为二氧化铅、负极为铅炭复合电极、电解\n液为硫酸溶液，通过化学能和电能相互转换实现充放电的电池。\n液流电池储能\n基于液流电池的储能形式。液流电池是指通过流动的正极和/或负极电解液中活性物质的\n电化学反应，进行化学能和电能相互转换实现充放电的电池。\n钠离子电池储能\n基于钠离子电池的储能形式。钠离子电池主要依靠钠离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n压缩空气储能 通过空气介质的压缩和膨胀，实现能量存储和释放的储能形式。\n飞轮储能 以飞轮为储能载体，通过动能和电能相互转换实现电能存储、释放的储能形式。\n超级电容器储能\n通过电极/电解液界面形成的双电层电容或电极表面快速氧化还原反应形成的赝电容，实\n现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储",
+      "氢供给成本。在风光水电资源丰富地区，开展\n可再生能源制氢示范，逐步扩大示范规模，探索季节性储能和电网\n调峰。推进固体氧化物电解池制氢、光解水制氢、海水制氢、核能\n8\n高温制氢等技术研发。探索在氢能应用规模较大的地区设立制氢基\n地。\n（二）稳步构建储运体系\n以安全可控为前提，积极推进技术材料工艺创新，支持开展多\n种储运方式的探索和实践。提高高压气态储运效率，加快降低储运\n成本，有效提升高压气态储运商业化水平。推动低温液氢储运产业\n化应用，探索固态、深冷高压、有机液体等储运方式应用。开展掺\n氢天然气管道、纯氢管道等试点示范。逐步构建高密度、轻量化、\n低成本、多元化的氢能储运体系。\n（三）统筹规划加氢网络\n坚持需求导向，统筹布局建设加氢站，有序推进加氢网络体系\n建设。坚持安全为先，节约集约利用土地资源，支持依法依规利用\n现有加油加气站的场地设施改扩建加氢站。探索站内制氢、储氢和\n加氢一体化的加氢站等新模式。\n六、稳步推进氢能多元化示范应用\n坚持以市场应用为牵引，合理布局、把握节奏，有序推进氢能\n在交通领域的示范应用，拓展在储能、分布式发电、工业等领域的\n应用，推动规模化发展，加快探索形成有效的氢能产业发展的商业\n化路径。\n（一）有序推进交通领域示范应用\n立足本地氢能供应能力、产业环境和市场空间等基础条件，结\n合道路运输行业发展特点，重点推进氢燃料电池中重型车辆应用，"
     ],
     "ground_truth": "氢储能的储能容量极大、可跨季节存储数周至数月，氢气还能用于发电、交通与工业，适合可再生能源消纳和季节性调峰。"
   },
   {
     "question": "锌溴液流电池有什么优缺点？",
-    "answer": "锌溴液流电池具有能量密度较高、成本低、安全性好的优点，但存在溴的腐蚀性和自放电问题[1]。其能量效率约为70%，往返效率约65%[1]。",
+    "answer": "锌溴液流电池具有能量密度较高、成本低、安全性好的优点，但存在溴的腐蚀性和自放电问题[1]。其能量效率约为70%，往返效率约65%[2]。",
     "source": "llm",
     "resolved_question": "锌溴液流电池有什么优缺点？",
     "query_rewritten": false,
@@ -171,13 +171,13 @@
       " for most producers (though not\nall), at the same time as driving up manufacturing efficiency and yields, as well as\naccess to a large skilled workforce, and battery supply chain integration.\nBattery chemistry also plays an important role, with lithium iron phosphate (LFP)\nbatteries – the main battery chemistry used in China – being almost 30% cheaper\nper kilowatt -hour (kWh) than lithium nickel cobalt manganese oxide (NMC)\nbatteries, which remain the most widely us ed batteries in the United  States and\nEurope. NMC batteries still provide an energy density advantage, though the gap\nhas narrow",
       "C batteries still provide an energy density advantage, though the gap\nhas narrowed in recent years. The energy density of LFP battery packs is about\none-fifth lower by mass (Wh/kg) and about one-third lower by volume (Wh/L) than\nthat of NMC packs. This is, however, partially offset by LFP’s ability to reach 100%\nstate of charge when required without significant degradation, whereas NMC\nbatteries are typically limited to 80% to preserve long-term performance.\nThe higher energy density of NMC batteries remains an advantage for applications\nrequiring longer ranges or operation in cold climates, w",
       "ery storage. In March 2025, HiNa launched\nits new sodium-ion battery, which offers  improved energy density and faster\ncharging compared to the previous generation, heralding a promising year for this\ntechnology. However, r ecent analyses indicate that sodium -ion batteries will\nrequire either increased energy density or more favourable operating conditions –\nparticularly higher lithium prices –  to compete with LFP batteries on a price per\nkWh basis. Nevertheless , sodium-ion technologies could play a significant role\nduring times of elevated lithium prices and may offer a cheaper option for ",
-      " state and lithium -sulphur batteries could\nalso accelerate electrification in sectors that require or would benefit from higher\nenergy densities, such as long-haul electric trucks or short-haul boats and planes.\nHowever, their deployment in these sectors will depend on meeting stringent\nsafety requirements and on their total cost of ownership.\n0%\n20%\n40%\n60%\n80%\n100%\n2022 2023 2024 2022 2023 2024 2022 2023 2024 2022 2023 2024\nWorld China European Union United States\nChina Korea Japan Rest of WorldBattery manufacturer headquarters:"
+      "损失。\nMWT\n金属穿透电极技术（Metal-wrap through）——通过在电池上开孔并填充导电浆料而将\n电池正面电极引到背面，使得电池的正、负电极均位于电池背面，从而发挥电池组件的\n低挡光、低应力衰减、不含铅等优势。\nHBC\n异质结背接触 (Heterojunction Back Contact) ——利用异质结（HJT）电池结构与交指\n式背接触（IBC）电池结构相结合，形成的新型太阳电池结构。这种电池结构结合了 IBC\n电池高的短路电流与 HJT 电池高的开路电压的优势，因此能获得更高的电池效率。\nTBC\n隧穿氧化层钝化背接触 （Tunneling Oxide Passivated Back Contact）——利用隧穿氧化\n层钝化接触（TOPCon）电池结构与交指式背接触（IBC）电池结构相结合，形成的新型\n太阳电池结构。 这种电池结构结合了IBC 电池高的短路电流与 TOPCon 优异的钝化接触\n特性，因此能获得更高的电池效率。\nHTBC\n隧穿氧化层钝化与异质结背接触 （Tunneling Oxide Passivated and Heterojunction Back\nContact）——利用隧穿氧化层钝化接触（TOPCon）和异质结（HJT）电池结构与背接\n触（BC）电池结构相结合，形成的新型太阳电池结构。这种电池结合了TOPCon 和 HJT\n电池各自的钝化优势"
     ],
     "ground_truth": "锌溴液流电池能量密度较高（约70-80Wh/L）、原材料成本低、安全性好，但溴具有腐蚀性且自放电率较高。"
   },
   {
     "question": "小型模块化反应堆有哪些优势？",
-    "answer": "小型模块化反应堆（SMR）具有建设周期短、投资规模小、选址灵活、可逐步扩容和安全性高等优势，适合偏远地区、工业园区等场景[1]。其采用模块化设计，在工厂预制后运输到现场组装，可提升施工效率并降低现场作业风险[2]。此外，SMR多采用非能动安全设计，实现固有安全，热效率约30-40%[3]。",
+    "answer": "小型模块化反应堆（SMR）具有建设周期短、投资规模小、选址灵活、可逐步扩容和安全性高等优势，适合偏远地区、工业园区等场景供电[1]。其采用模块化设计，在工厂预制后运输到现场组装，可实现非能动安全设计，提升运行安全性[2]。此外，SMR的热效率约为30-40%，具备良好的经济性和扩展性[3]。",
     "source": "llm",
     "resolved_question": "小型模块化反应堆有哪些优势？",
     "query_rewritten": false,
@@ -186,14 +186,14 @@
       "frastructure costs.\nOn the other hand, chargers can be built modularly and more easily scaled as the\nfleet grows, beginning with depot charging, with en route high-powered charging\nfollowing later to enable a greater share of journeys to be electrified.\nPolicies such as the EU Renewable Energy Directive, California’s Low Carbon\nFuel Standard, or China’s multiple cross-cutting policies promote reductions in\nemissions associated with electricity and hydrogen production, but can  also\nimpact the future fuel costs. A smaller share of electrolysis projects reached final\ninvestment decision between ",
       "\n4、逆变器功率模块在地化供应率 .......................................................................................... 49\n5、逆变器主控制芯片在地化供应率...................................................................................... 49\n6、逆变器人均产出率............................................................................................................... 50",
       "........ 45\n（六）逆变器 ................................ ................................ ................................ ................................ .... 48\n1、不同类型逆变器市场占比 ................................................................................................... 48\n2、逆变器单机主流额定功率 .................................................................................................. 48\n3、逆变器功率密度 ................................................................................................................... 49\n4、逆变器功率模块在地化供应率 ...............................................................",
-      "ate battery\ndevelopment. Despite this, their potential advantages, including enabling higher\nranges and safety, still need to be demonstrated for battery packs manufactured\nat scale and tested under controlled, realistic and standardised conditions . The\ntechnology readiness level (TRL) of solid-state batteries therefore remains at large\npilot stage (TRL 6), although this could change rapidly with companies like Toyota\nand BYD planning first mass production by 2027-2028. However, volumes will be\nlimited initially, and it will take several years following roll -out for solid -state\nbatteries to",
-      "The full realisation of these advantages, however,  hinges on deploying ultra -high-\npower charging infrastructure. Megawatt chargers impose significant loads on grids,\noften requiring upgrades that could significantly slow down or limit deployment, and\nare more expensive than fast chargers, which could result in higher charging prices\nfor consumers. Pairing these chargers with battery storage to alleviate peak demand\nand optimise grid usage might offer a pathway to accelerate their roll-out. In\nrecognition of the infrastructural challenge, BYD – together with its Super-e platform\n– has announ"
+      "The full realisation of these advantages, however,  hinges on deploying ultra -high-\npower charging infrastructure. Megawatt chargers impose significant loads on grids,\noften requiring upgrades that could significantly slow down or limit deployment, and\nare more expensive than fast chargers, which could result in higher charging prices\nfor consumers. Pairing these chargers with battery storage to alleviate peak demand\nand optimise grid usage might offer a pathway to accelerate their roll-out. In\nrecognition of the infrastructural challenge, BYD – together with its Super-e platform\n– has announ",
+      "en higher levels of utilisation than LDV chargers, given that logistics\noperations are typically planned according to a predetermined schedule.\nIncreasing the utilisation rate of an EV charger from 5% to 30% lowers the\nlevelised infrastructure cost per kWh by about 80%, which would cut the overall\nfuel cost per kilometre by half based on  2024 prices. Increasing utilisation of en\nroute chargers even further is possible, but may require solutions such as adaptive\nroute planning.\nWhile a single HRS is more costly to build than a charging point , it can serve a\nlarge number of trucks daily  witho"
     ],
     "ground_truth": "小型模块化反应堆采用工厂预制、现场组装，建设周期短、投资规模小、选址灵活，并可采用非能动设计提升安全性。"
   },
   {
     "question": "换电技术的补能时间大约是多少？",
-    "answer": "换电技术的补能时间通常在3-5分钟[1]。对于重卡等车型，换电时间约为10分钟[2]。",
+    "answer": "换电技术的补能时间约为3-5分钟[1]。",
     "source": "llm",
     "resolved_question": "换电技术的补能时间大约是多少？",
     "query_rewritten": false,
@@ -202,46 +202,46 @@
       "time savings. While at least 20 minutes (and typically several hours) is required\nfor recharging an electric 2W, battery swapping can be performed in just 2-5\nminutes – approximately the same amount of time needed to refuel a gasoline\nmotorcycle. It can eliminate the need for home charging, making electric 2/3Ws\nmore accessible to drivers with limited electricity access. In addition, in countries\nwith underdeveloped power grids , the more centralised load/demand\nmanagement offered by some battery swap stations can be beneficial.\nThailand, for example, is targeting 1 450 battery swapping statio",
       "e suitable for long-distance transportation can\nbe exchanged in around 10 minutes – almost as fast as refuelling a diesel truck.\nBattery swapping for trucks can offer greater benefit in terms of preserving battery\nhealth compared to other EV segments; the constant use and long distances\ntravelled by trucks result in increased battery degradation, which is compounded\nby reliance on fast-charging solutions that further accelerate degradation.\nBattery swapping is particularly well-suited to fleets of identical trucks with heavy\noperational demands, operating on well-defined routes. These fleets c",
       "For trucks, battery swapping can offer savings in terms\nof reducing charging time\nAs of June 2023, there were around 400 battery swap stations for trucks in China.\nWhile battery swapping for heavy -duty trucks is still at an early stage of\ndeployment, it  has the potential to support faster uptake of electric trucks by\nextending battery lifespan and reducing the wait time for charging, thus enhancing\nefficiency for commercial operations. For example, even electric truck batteries\nlarge enough to enable daily mileage suitable for long-distance transportation can\nbe exchanged in around 10 minute",
-      "pport wider adoption. The EU Alternative Fuels\nInfrastructure Regulation sets specific targets for HDV charging, including\ncharging points with an individual power output of at least 350  kW every 60 km\nalong primary roads and every 100  km along secondary roads. Megawatt\nchargers are also expected to play a role in HDV charging, given that reducing\ncharging time is highly valued in the sector.  An HDV with a battery pack of\n300 kWh (similar to the global sales -weighted average in 2024) would require\nabout 30 minutes to recharge2 using a 350 kW charger, but only about 15 minutes\nusing a megaw",
-      "l trucking, the\nwait time for recharging an electric truck can pose difficulties for logistics\noperators. However, the 45-minute rest period mandated in the European Union\ncan accommodate the addition of around 150 km of driving range for a heavy-duty\ntruck using a 350  kW charger, and up to about 4 00 km if a megawatt charger is\nused. While the United States and China also hav e mandated rest periods, the\ndesign of the EU policy is currently most conducive to supporting EV adoption."
+      "l trucking, the\nwait time for recharging an electric truck can pose difficulties for logistics\noperators. However, the 45-minute rest period mandated in the European Union\ncan accommodate the addition of around 150 km of driving range for a heavy-duty\ntruck using a 350  kW charger, and up to about 4 00 km if a megawatt charger is\nused. While the United States and China also hav e mandated rest periods, the\ndesign of the EU policy is currently most conducive to supporting EV adoption.",
+      "nd electric range added in 5\nminutes by electric car model or battery technology\nIEA. CC BY 4.0.\nNotes: SoC = state of charge. Battery SoC added indicates how much the battery is recharged starting from a low SoC\n(20%). For example, adding 30% SoC means charging the battery from 20% to 50%. The additional range is calculated by\nmultiplying the manufacturer’s stated electric range by the proportion of the battery that can be recharged in 5 minutes under\noptimal conditions. Tesla model Y and S are assumed to be charged through a third generation supercharger.\nSources: IEA analysis based on data from EV Volumes, Tesla, Porsche, Hyundai, Lucid, CATL, GM authority, and BYD."
     ],
     "ground_truth": "换电技术通过机械装置直接更换满电电池包，全程约3-5分钟，比充电快得多，适合出租车和网约车等高频场景。"
   },
   {
     "question": "无线充电技术的传输效率是多少？",
-    "answer": "无线充电技术的传输效率约为90-95%[1]。",
+    "answer": "无线充电技术的传输效率约为90-95%[1]。该技术通过电磁感应或磁共振原理实现电能传输，适用于电动汽车等场景，功率范围为11-300kW。",
     "source": "llm",
     "resolved_question": "无线充电技术的传输效率是多少？",
     "query_rewritten": false,
     "intent_source": "llm",
     "contexts": [
       " 1km ERS announced in 2022 as part of E|MPOWER pilot project.\nBrescia, Italy Arena del Futuro test project uses 1km of induction charging.\nKashiwa, Japan Tests began in October 2023 on a system using embedded wire coils for\ninductive power transfer at traffic lights.\nTrondheim, Norway Induction charging installed by ElectReon to power an electric bus, with\nfunding from the Norwegian government.\nUnited States\nIn late 2023, the country’s first wireless charging road system entered\noperation. Technology developer ElectReon is now partnering with parcel\ndelivery service UPS and electric truck manu",
-      "ies can increase a commercial\nvehicle’s payload and profitability. Research has highlighted the benefits of\nwireless charging of buses to resolve space constraints at depots and to enable\nen route charging that can make battery electric buses more comparable to\ngasoline fuelled buses in terms of operations. Similar benefits exist for catenary\ncharging solutions strategically located at bus stops. However, ERS infrastructure\nis expensive to install –  depending on the type of system, the cost per kilometre\ncould range from EUR 1.5 million for overhead catenary to over EUR 3 million for\ninductiv",
       "The public charging infrastructure in cities and urban areas consists mainly of slow\nchargers (less than or equal to 22  kW), which was the most widely adopted\ntechnology until relatively recently. O nly 1 5% of th e urban public chargers  in\nEurope are rated over 22 kW. This share is slightly higher  in the United  States,\nwhere nearly 30% of urban public chargers are fast. While deploying fast chargers\ncan help to serve more EVs per charging point each day, limited available network\ncapacity in city centres or urban areas can present a hurdle.\n0%\n20%\n40%\n60%\n80%\n100%\nEUR EU GBR NLD USA ESP D",
-      "Global EV Outlook 2025 Electric vehicle charging\nPAGE | 106\nIEA. CC BY 4.0.\nMaximum share of battery capacity charged and electric range added in 5\nminutes by electric car model or battery technology",
-      "IEA. CC BY 4.0.\nNotes: TEN-T = Trans-European Transport Network. Chargers between 22 kW and 150 kW are classified as fast, and ultra-\nfast chargers are those of 150 kW or more. For regional groupings for the United States see Annex B. Only chargers within\na radius of 150 metres of the highway are included; stations with less than 4 charging points are excluded. Coverage is\ncalculated by setting a radius of 25 km around each charging point, so actual driving distance between two charging points\nlikely exceeds 50 km based on the curvature of the road and the routing. To determine the number of s"
+      "IEA. CC BY 4.0.\nNotes: TEN-T = Trans-European Transport Network. Chargers between 22 kW and 150 kW are classified as fast, and ultra-\nfast chargers are those of 150 kW or more. For regional groupings for the United States see Annex B. Only chargers within\na radius of 150 metres of the highway are included; stations with less than 4 charging points are excluded. Coverage is\ncalculated by setting a radius of 25 km around each charging point, so actual driving distance between two charging points\nlikely exceeds 50 km based on the curvature of the road and the routing. To determine the number of s",
+      "re energy\nper day than slow chargers and thus serve a higher number of vehicles. In 2024,\nthe global stock of fast chargers (with a power output higher than 22 kW and lower\nthan 150 kW ) reached 2 million, and ultra-fast chargers – capable of delivering\n150 kW or above – growing by over 50% in 2024  and now accounting for nearly\n10% of all fast chargers. Falling costs have played a role in this shift, with the price\nof ultra-fast chargers falling by 20% between 2022 and 2024.\nChina remained the largest player in fast charging deployment  last year ,\nresponsible for 80% of the global growth, wi",
+      "typical Tesla supercharger can offer about\n100 km of additional range during the same time.\nIn March 2025, BYD set a new benchmark with its Super-e platform, which is claimed\nto deliver around 400 km of range in 5 minutes. This leap was made possible by next-\ngeneration silicon carbide power chips, all-liquid-cooling, and a 1 000 V architecture,\nwhich allows for coupling with 1 MW charging.  Just one month later, CATL announced\nthe second generation of its Shenxing battery, offering even higher charging speeds.\nMegawatt charging was previously limited to heavy-duty vehicles, where the energy\nw"
     ],
     "ground_truth": "电动汽车无线充电利用电磁感应或磁共振原理，传输效率约为90-95%，功率范围11-300kW，低于有线充电。"
   },
   {
     "question": "托卡马克磁约束聚变有哪些代表性装置？",
-    "answer": "托卡马克磁约束聚变的代表性装置包括：  \n- 欧洲联合环（JET）[1]  \n- 美国托卡马克实验（TFTR）[1]  \n- 中国环形聚集装置（EAST）[1]",
+    "answer": "托卡马克磁约束聚变是一种核聚变技术，但提供的知识图谱数据中未列出具体的代表性装置。因此，关于托卡马克磁约束聚变的代表性装置信息暂不可得。",
     "source": "llm",
     "resolved_question": "托卡马克磁约束聚变有哪些代表性装置？",
     "query_rewritten": false,
     "intent_source": "llm",
     "contexts": [
-      "MD   medium-duty\nMPV  multi-purpose vehicle\nNCA   lithium nickel cobalt aluminium oxide\nNEV   new energy vehicle\nNEVI  National Electric Vehicle Infrastructure\nNMC   nickel manganese cobalt oxide\nNMCA   lithium nickel manganese cobalt aluminium oxide\nNREL  National Renewable Energy Laboratory\nNOK  Norwegian kroner\nNZD  New Zealand dollars\nOEM   original equipment manufacturer\nOPEX  Operating expenditure\nPHEV   plug-in hybrid electric vehicle\nPLDV   passenger light-duty vehicle\nPM-E-DRIVE PM Electric Drive Revolution in Innovative Vehicle Enhancement\nSEK  Swedish kronor\nSTEPS Stated Policies Sc",
       "推进核心零部件\n以及关键装备研发制造。加快提高可再生能源制氢转化效率和单台\n装置制氢规模，突破氢能基础设施环节关键核心技术。开发临氢设\n备关键影响因素监测与测试技术，加大制、储、输、用氢全链条安",
       "6、异质结电池金属电极技术市场占比 ................................................................................. 26\n7、栅线印刷技术市场占比 ...................................................................................................... 27\n8、电池发射极方块电阻 .......................................................................................................... 28\n9、TOPCon 电池背钝化技术市场占比 ................................................................................. 28\n10、异质结电池 TCO 沉积方法市场占比 ............................................................................. 29\n11、电池正面细栅线宽度 ..................................",
       "触（TOPCon）和异质结（HJT）电池结构与背接\n触（BC）电池结构相结合，形成的新型太阳电池结构。这种电池结合了TOPCon 和 HJT\n电池各自的钝化优势，具有高效率和低成本的特点。",
-      "现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储和释放的储能形式。\n氢储能 将电能转化为氢气并存储起来，待需要时再将氢气转化为电能的储能形式。"
+      "以 PVD 为主，市场占\n比达到约 99.3%。RPD 成本较高，且维护频率高，目前市场占比约为 0.7%左右。预计到 2035\n年，PVD 仍将保持市场主流。\n图 42  2025-2035 年异质结电池 TCO 沉积方法市场占比变化趋势\n11、电池正面细栅线宽度7\n晶硅太阳电池正面金属化电极由汇流、 串联的主栅线和收集载流子的细栅线组成。对于双面\n率要求较高的 TOPCon 电池技术，在保持电池串联电阻不提高的条件下，减小细栅宽度有利于\n降低遮光损失并减少正银用量。2025 年，细栅线宽度一般控制在 17.8μm 左右，印刷设备精度\n在±6.1μm。随着浆料技术和印刷设备精度的提升，细栅宽度将会保持下降趋势，金属版印刷技\n术的成熟将在一定程度上促进栅线宽度下降。在印刷设备精度方面，预计2028 年以后，机械精\n度的进步速度将保持平缓。预计到 2035 年印刷设备精度可提高至±4.9μm，细栅线宽度或将下\n降至 11.0μm 左右。需要注意的是，BC 电池技术由于栅线集中于背面，其栅线宽度要求相对较\n低。\n7 该指标主要为 TOPCon 电池烧结后栅线宽度。\n0.0%\n25.0%\n50.0%\n75.0%\n100.0%\n2025年 2026年 2028年 2030年 2032年 2035年\nPVD RPD\n30",
+      "665 665 667 667 667 667\nn 型\n单晶\nTOPCon 单晶组件（182mm 方片） 595 600 606 609 612 615\nTOPCon 单晶组件（182*210mm） 630 640 650 655 660 665\nTOPCon 单晶组件（210mm 方片） 720 730 740 745 755 760\n异质结组件（210mm 方片） 728 738 746 751 755 760\nXBC 组件（182*210mm） 650 655 665 670 675 680\n注：1、 本指标均以采用11BB 的 PERC 电池、 采用16BB 的 TOPCon 电池的单玻单面组件为基准， 双面组件\n为正面功率；\n2、PERC 单晶组件（210mm 方片）、TOPCon 单晶组件（182*210mm）、TOPCon 单晶组件（210mm 方\n片） 、 异质结组件 （210mm 方片） 和XBC（182*210mm） 组件以66 片为基准，PERC 单晶组件 （182mm 方片）\n和 TOPCon（182mm 方片）以 72 片为基准；\n3、以上组件均采用半片封装形式。\n2、单/双面发电组件市场占比10\n2025 年， 随着下游应用端对双面发电组件发电增益的认可， 双面组件市场占比提升至 80.4%，\n远超单面组件，成为市场主流。 受市场需求因素的影响，未来双面"
     ],
     "ground_truth": "托卡马克是目前最接近可控核聚变的路线，代表性装置包括国际热核聚变实验堆ITER、中国EAST和HL-2M环流器。"
   },
   {
     "question": "熔盐堆可以使用什么燃料？",
-    "answer": "熔盐堆可以使用铀或钍的氟化物作为燃料，例如氟化钍（ThF₄）和氟化铀（UF₄）[1]。这些燃料溶解在熔融氟化盐中，既作为燃料又作为冷却剂。",
+    "answer": "熔盐堆可以使用铀或钍的氟化物作为燃料，例如氟化钍和氟化铀[1]。这些燃料溶解在熔融氟化盐中，既作为燃料又作为冷却剂[1]。",
     "source": "llm",
     "resolved_question": "熔盐堆可以使用什么燃料？",
     "query_rewritten": false,
@@ -257,17 +257,17 @@
   },
   {
     "question": "钠冷快堆的燃料循环有什么特点？",
-    "answer": "钠冷快堆的燃料循环具有闭式燃料循环特点，能够将铀-238转化为钚-239，实现核燃料增殖，提高铀资源利用率[1]。其燃料循环过程包括燃料的再处理和再利用，减少核废料产生量，并提升能源利用效率。",
+    "answer": "钠冷快堆的燃料循环具有闭式循环特点，能够将铀-238转化为钚-239，实现核燃料增殖，提高铀资源利用率[1]。其燃料循环包括乏燃料后处理、钚再加工和燃料再制造等环节，减少核废料量并提升燃料利用效率[2]。",
     "source": "llm",
     "resolved_question": "钠冷快堆的燃料循环有什么特点？",
     "query_rewritten": false,
     "intent_source": "llm",
     "contexts": [
-      "inished chassis and cab Powertrain Hydrogen tank\nFuel cell Battery Manufacturing and assembly\nIndirect costs and margins",
-      "rnational Council on Clean Transportation\nICE   internal combustion engine\nICEV   internal combustion engine vehicle\nIFC  International Finance Corporation\nINR   Indian rupee\nIRENA  International Renewable Energy Agency\nITF  International Transport Forum\nKRW  Korean won\nLCV   light commercial vehicle\nLDV   light-duty vehicle\nLEZ  Low emissions zone\nLFMP  lithium iron manganese phosphate\nLFP   lithium iron phosphate\nLi-S  lithium sulphur",
-      "ing station\nUSD/km\nFuel High infrastructure utilisation Low infrastructure utilisation",
       "ithium ions are released from the cathode to the anode. If the\nprocess is too slow compared to the desired charging speed, lithium can accumulate\non the anode surface, forming dendrites  – needle-like structures that can pierce the\nbattery, potentially causing short circuits and uncontrolled fires. Recently, however,\nsome battery manufacturers have largely succeeded in addressing this through\nadvanced anode designs, such as multi-gradient layered structures, which accelerate\nlithium uptake.\nIn 2023, CATL launched the Shenxing battery, which is able to charge about 30% of\nthe battery in just 5 ",
-      "1\n氢能产业发展中长期规划（2021-2035 年）\n氢能是一种来源丰富、绿色低碳、应用广泛的二次能源，正逐\n步成为全球能源转型发展的重要载体之一。为助力实现碳达峰、碳\n中和目标，深入推进能源生产和消费革命，构建清洁低碳、安全高\n效的能源体系，促进氢能产业高质量发展，根据《中华人民共和国\n国民经济和社会发展第十四个五年规划和 2035 年远景目标纲要》，\n编制本规划。规划期限为 2021-2035 年。\n一、现状与形势\n当今世界正经历百年未有之大变局，新一轮科技革命和产业变\n革同我国经济高质量发展要求形成历史性交汇。以燃料电池为代表\n的氢能开发利用技术取得重大突破，为实现零排放的能源利用提供\n重要解决方案，需要牢牢把握全球能源变革发展大势和机遇，加快\n培育发展氢能产业，加速推进我国能源清洁低碳转型。\n从国际看，全球主要发达国家高度重视氢能产业发展，氢能已\n成为加快能源转型升级、培育经济新增长点的重要战略选择。全球\n氢能全产业链关键核心技术趋于成熟，燃料电池出货量快速增长、\n成本持续下降，氢能基础设施建设明显提速，区域性氢能供应网络\n正在形成。\n从国内看，我国是世界上最大的制氢国，年制氢产量约 3300\n万吨，其中，达到工业氢气质量标准的约 1200 万吨。可再生能源"
+      "1\n氢能产业发展中长期规划（2021-2035 年）\n氢能是一种来源丰富、绿色低碳、应用广泛的二次能源，正逐\n步成为全球能源转型发展的重要载体之一。为助力实现碳达峰、碳\n中和目标，深入推进能源生产和消费革命，构建清洁低碳、安全高\n效的能源体系，促进氢能产业高质量发展，根据《中华人民共和国\n国民经济和社会发展第十四个五年规划和 2035 年远景目标纲要》，\n编制本规划。规划期限为 2021-2035 年。\n一、现状与形势\n当今世界正经历百年未有之大变局，新一轮科技革命和产业变\n革同我国经济高质量发展要求形成历史性交汇。以燃料电池为代表\n的氢能开发利用技术取得重大突破，为实现零排放的能源利用提供\n重要解决方案，需要牢牢把握全球能源变革发展大势和机遇，加快\n培育发展氢能产业，加速推进我国能源清洁低碳转型。\n从国际看，全球主要发达国家高度重视氢能产业发展，氢能已\n成为加快能源转型升级、培育经济新增长点的重要战略选择。全球\n氢能全产业链关键核心技术趋于成熟，燃料电池出货量快速增长、\n成本持续下降，氢能基础设施建设明显提速，区域性氢能供应网络\n正在形成。\n从国内看，我国是世界上最大的制氢国，年制氢产量约 3300\n万吨，其中，达到工业氢气质量标准的约 1200 万吨。可再生能源",
+      " use lithium iron phosphate (LFP), and fuel cell electric trucks lithium\nnickel cobalt manganese oxide (NMC); in 2024 and 2030 these are assumed to have energy densities of 190 Wh/kg and\n230 Wh/kg, and 250 Wh/kg and 280 Wh/kg. All values are rounded to the nearest 100 kg.\nSources: Values for the specific mass of diesel trucks, hydrogen tanks, fuel cells, powertrain or motors, and trailers come\nfrom the ICCT, and were validated against assumptions from Riccardo.",
+      "\n源示范应用，并逐步在金融、医院、学校、商业、工矿企业等领域引入氢\n燃料电池应用。\n工业\n结合国内冶金和化工行业市场环境和产业基础，探索氢能冶金示范应\n用，探索开展可再生能源制氢在合成氨、甲醇、炼化、煤制油气等行业替\n代化石能源的示范。\n七、加快完善氢能发展政策和制度保障体系\n牢固树立安全底线，完善标准规范体系，加强制度创新供给，\n着力破除制约产业发展的制度性障碍和政策性瓶颈，不断夯实产业\n发展制度基础，保障氢能产业创新可持续发展。\n（一）建立健全氢能政策体系",
+      "锂离子电池储能响应速度快、能量密度高，是目前电化学储能的主流，\n代表企业包括宁德时代、比亚迪。其短板是成本与循环寿命的平衡。"
     ],
     "ground_truth": "钠冷快堆用液态钠作冷却剂、以快中子运行，可将铀-238转化为钚-239实现燃料增殖，把铀资源利用率提高数十倍。"
   },
@@ -289,7 +289,7 @@
   },
   {
     "question": "惯性约束核聚变有哪些技术路线？",
-    "answer": "惯性约束核聚变的主要技术路线包括：  \n- 激光惯性约束核聚变  \n- 电磁惯性约束核聚变  \n- 等离子体惯性约束核聚变 [1]",
+    "answer": "惯性约束核聚变的技术路线主要包括以下几种：\n\n- 激光惯性约束核聚变\n- 电磁驱动惯性约束核聚变\n- 离子束惯性约束核聚变[1]",
     "source": "llm",
     "resolved_question": "惯性约束核聚变有哪些技术路线？",
     "query_rewritten": false,
@@ -298,8 +298,8 @@
       "池 MBB、0BB 技术路线银浆消\n耗量分别约为 12.2 mg/W、10.0mg/W。受银价上涨的驱动，未来 0BB、贱金属等“少银化”、“去\n银化”技术的导入或加速，促使银浆耗量在一段时间内加速下降。",
       ".................................. 22\n2、不同电池技术路线市场占比 .............................................................................................. 22\n3、不同 BC 电池技术市场占比 ............................................................................................... 23\n4、电池铝浆消耗量 ................................................................................................................... 23\n5、电池含银浆料消耗量 .......................................................................................................... 24",
       "图 30  2025-2035 年不同电池技术路线市场占比变化趋势\n0%\n25%\n50%\n75%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\np型PERC电池 n型TOPCon电池 n型异质结电池 XBC电池 其他",
-      "5%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\np型PERC电池 n型TOPCon电池 n型异质结电池 XBC电池 其他\n23\n3、不同 BC 电池技术市场占比\n2025 年，BC 技术路线中 TBC 电池市场占比为 87.4%，为占比最高的 BC 电池技术路线；\nHTBC 电池市场占比为 1.0%；p 型 BC 电池、IBC、HBC 等其他 BC 电池市场占比为 11.6%，其中\np 型 BC 电池虽在 2025 年上半年保有一定市占率，但 2026 年将不再生产。 随着BC 电池技术全\n面转向 n 型，预计 TBC 电池 2026 年市占率将达到 98.3%。结合 TOPCon 和 HJT 电池特点的\nHTBC 电池未来市场占比将持续提升。\n图 31  2025-2035 年不同 BC 电池技术路线市场占比变化趋势\n4、电池铝浆消耗量\n铝浆消耗量主要为晶硅电池中铝背场消耗的铝浆。 随着双面PERC 电池技术的发展， 电池铝\n浆平均消耗量保持下降趋势。2025 年双面 PERC 电池铝浆消耗量约为 29.3mg/W。随着未来\nPERC 技术逐渐退出市场，电池耗铝量的水平预计在2027 年以后将停滞。\n0%\n25%\n50%\n75%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\nTBC电池 HTBC电池 其他BC电池",
-      "未来人均产出率或将略高于 TOPCon。2026 年\n以后， 随着行业形势的好转，预计将有新的设备研发与应用投入， 从而促进n 型电池各技术路线\n人均产出率的提升。\n0.0%\n25.0%\n50.0%\n75.0%\n100.0%\n2025年 2026年 2028年 2030年 2032年 2035年\nXBC电池-MBB XBC电池-0BB"
+      "未来人均产出率或将略高于 TOPCon。2026 年\n以后， 随着行业形势的好转，预计将有新的设备研发与应用投入， 从而促进n 型电池各技术路线\n人均产出率的提升。\n0.0%\n25.0%\n50.0%\n75.0%\n100.0%\n2025年 2026年 2028年 2030年 2032年 2035年\nXBC电池-MBB XBC电池-0BB",
+      "0%\n75.0%\n100.0%\n2025年 2026年 2028年 2030年 2032年 2035年\nMBB红外焊接 0BB互联 其他（导电胶、电磁、激光等）\n37\n4、0BB 工艺路线市场占比\n目前，市场上 0BB 工艺路线主要有焊接，覆膜或点胶，焊接和点胶。目前市场上 0BB 工艺\n路线以焊接和点胶为主，2025 年市场占比为 60.9%。当前 BC 组件已普遍采用焊接技术，未来\n随着 BC 组件市占率的提升，焊接工艺的占比预计会进一步提升。\n图 53  2025-2035 年 0BB 工艺路线市场占比变化趋势\n5、组件封装用钢化镀膜玻璃透光率11\n晶体硅太阳电池光谱响应范围为 300-1200nm， 减反射镀膜玻璃可以有效降低此波段内太阳\n光反射损失， 提升玻璃透光率。2025 年， 钢化镀膜玻璃透光率较 2024 年变化不大，平均约 94.2%。\n随着玻璃薄片化、铁含量进一步降低及多层镀膜等技术的进步，透光率仍有一定的增长空间。\n11 此透光率是指 380-1100nm 波段的加权平均值。\n0.0%\n20.0%\n40.0%\n60.0%\n80.0%\n100.0%\n2025年 2026年 2028年 2030年 2032年 2035年\n焊接和点胶 覆膜或点胶 焊接\n38"
     ],
     "ground_truth": "惯性约束核聚变通过激光或离子束瞬间压缩氘氚靶丸实现聚变，技术路线包括激光驱动、离子束驱动和Z箍缩等。"
   },
@@ -321,7 +321,7 @@
   },
   {
     "question": "固态储氢适合哪些应用场景？",
-    "answer": "固态储氢适用于氢能自行车、便携式电源、潜艇/舰船、分布式供能、备用电源和氢燃料电池叉车等场景[1]。其高安全性与便于运输的特点，使其在需要灵活储能和移动应用的领域具有优势。",
+    "answer": "固态储氢适用于氢能自行车、便携式电源、潜艇/舰船、分布式供能、备用电源和氢燃料电池叉车等场景[1]。",
     "source": "llm",
     "resolved_question": "固态储氢适合哪些应用场景？",
     "query_rewritten": false,
@@ -337,7 +337,7 @@
   },
   {
     "question": "有机液态储氢的常用载体有哪些？",
-    "answer": "有机液态储氢的常用载体包括：甲基环己烷、二甲基环己烷、联苯、萘、十二氢化萘等[1]。这些有机化合物能够可逆地吸收和释放氢气，便于运输和储存。",
+    "answer": "有机液态储氢的常用载体包括：  \n- 甲苯  \n- 二甲基环己烷  \n- 甲基环己烷  \n- 萘  \n- 苯 [1]",
     "source": "llm",
     "resolved_question": "有机液态储氢的常用载体有哪些？",
     "query_rewritten": false,
@@ -353,7 +353,7 @@
   },
   {
     "question": "AEM电解水制氢能使用哪些催化剂？",
-    "answer": "AEM电解水制氢可使用钴基催化剂和镍基催化剂[1]。这些非贵金属催化剂降低了成本，同时保持了较高的催化活性和稳定性。",
+    "answer": "AEM电解水制氢可使用钴基催化剂和镍基催化剂[1]，这些非贵金属催化剂有助于降低制氢成本，同时保持较高的电解效率。",
     "source": "llm",
     "resolved_question": "AEM电解水制氢能使用哪些催化剂？",
     "query_rewritten": false,
@@ -363,7 +363,7 @@
       "，提升\n我国能源安全水平。发挥氢能对碳达峰、碳中和目标的支撑作用，\n深挖跨界应用潜力，因地制宜引导多元应用，推动交通、工业等用\n能终端的能源消费转型和高耗能、高排放行业绿色发展，减少温室",
       "氢供给成本。在风光水电资源丰富地区，开展\n可再生能源制氢示范，逐步扩大示范规模，探索季节性储能和电网\n调峰。推进固体氧化物电解池制氢、光解水制氢、海水制氢、核能\n8\n高温制氢等技术研发。探索在氢能应用规模较大的地区设立制氢基\n地。\n（二）稳步构建储运体系\n以安全可控为前提，积极推进技术材料工艺创新，支持开展多\n种储运方式的探索和实践。提高高压气态储运效率，加快降低储运\n成本，有效提升高压气态储运商业化水平。推动低温液氢储运产业\n化应用，探索固态、深冷高压、有机液体等储运方式应用。开展掺\n氢天然气管道、纯氢管道等试点示范。逐步构建高密度、轻量化、\n低成本、多元化的氢能储运体系。\n（三）统筹规划加氢网络\n坚持需求导向，统筹布局建设加氢站，有序推进加氢网络体系\n建设。坚持安全为先，节约集约利用土地资源，支持依法依规利用\n现有加油加气站的场地设施改扩建加氢站。探索站内制氢、储氢和\n加氢一体化的加氢站等新模式。\n六、稳步推进氢能多元化示范应用\n坚持以市场应用为牵引，合理布局、把握节奏，有序推进氢能\n在交通领域的示范应用，拓展在储能、分布式发电、工业等领域的\n应用，推动规模化发展，加快探索形成有效的氢能产业发展的商业\n化路径。\n（一）有序推进交通领域示范应用\n立足本地氢能供应能力、产业环境和市场空间等基础条件，结\n合道路运输行业发展特点，重点推进氢燃料电池中重型车辆应用，",
       "推进核心零部件\n以及关键装备研发制造。加快提高可再生能源制氢转化效率和单台\n装置制氢规模，突破氢能基础设施环节关键核心技术。开发临氢设\n备关键影响因素监测与测试技术，加大制、储、输、用氢全链条安",
-      "1\n氢能产业发展中长期规划（2021-2035 年）\n氢能是一种来源丰富、绿色低碳、应用广泛的二次能源，正逐\n步成为全球能源转型发展的重要载体之一。为助力实现碳达峰、碳\n中和目标，深入推进能源生产和消费革命，构建清洁低碳、安全高\n效的能源体系，促进氢能产业高质量发展，根据《中华人民共和国\n国民经济和社会发展第十四个五年规划和 2035 年远景目标纲要》，\n编制本规划。规划期限为 2021-2035 年。\n一、现状与形势\n当今世界正经历百年未有之大变局，新一轮科技革命和产业变\n革同我国经济高质量发展要求形成历史性交汇。以燃料电池为代表\n的氢能开发利用技术取得重大突破，为实现零排放的能源利用提供\n重要解决方案，需要牢牢把握全球能源变革发展大势和机遇，加快\n培育发展氢能产业，加速推进我国能源清洁低碳转型。\n从国际看，全球主要发达国家高度重视氢能产业发展，氢能已\n成为加快能源转型升级、培育经济新增长点的重要战略选择。全球\n氢能全产业链关键核心技术趋于成熟，燃料电池出货量快速增长、\n成本持续下降，氢能基础设施建设明显提速，区域性氢能供应网络\n正在形成。\n从国内看，我国是世界上最大的制氢国，年制氢产量约 3300\n万吨，其中，达到工业氢气质量标准的约 1200 万吨。可再生能源"
+      "新融通发展。\n（三）推动建设氢能专业人才队伍\n以氢能技术创新需求为导向，支持引进和培育高端人才，提升\n氢能基础前沿技术研发能力。加快培育氢能技术及装备专业人才队\n7\n伍，夯实氢能产业发展的创新基础。建立健全人才培养培训机制，\n加快推进氢能相关学科专业建设，壮大氢能创新研发人才群体。鼓\n励职业院校（含技工院校）开设相关专业，培育高素质技术技能人\n才及其他从业人员。\n（四）积极开展氢能技术创新国际合作\n鼓励开展氢能科学和技术国际联合研发，推动氢能全产业链关\n键核心技术、材料和装备创新合作，积极构建国际氢能创新链、产\n业链。积极参与国际氢能标准化活动。坚持共商共建共享原则，探\n索与共建“一带一路”国家开展氢能贸易、基础设施建设、产品开\n发等合作。加强与氢能技术领先的国家和地区开展项目合作，共同\n开拓第三方国际市场。\n五、统筹推进氢能基础设施建设\n统筹全国氢能产业布局，合理把握产业发展进度，避免无序竞\n争，有序推进氢能基础设施建设，强化氢能基础设施安全管理，加\n快构建安全、稳定、高效的氢能供应网络。\n（一）合理布局制氢设施\n结合资源禀赋特点和产业布局，因地制宜选择制氢技术路线，\n逐步推动构建清洁化、低碳化、低成本的多元制氢体系。在焦化、\n氯碱、丙烷脱氢等行业集聚地区，优先利用工业副产氢，鼓励就近\n消纳，降低工业副产氢供给成本。在风光水电资源丰富地区，开展\n可再生能源制氢示范，逐步扩大示范规模，探索季节性储能和电网\n调峰。推进固体氧化物电解池制氢、光解水制氢、海水制氢、核能"
     ],
     "ground_truth": "AEM电解水制氢作为第三代电解技术，可使用镍、钴、铁等非贵金属催化剂，兼具成本低和效率高的潜力。"
   },
@@ -376,16 +376,16 @@
     "intent_source": "llm",
     "contexts": [
       " use lithium iron phosphate (LFP), and fuel cell electric trucks lithium\nnickel cobalt manganese oxide (NMC); in 2024 and 2030 these are assumed to have energy densities of 190 Wh/kg and\n230 Wh/kg, and 250 Wh/kg and 280 Wh/kg. All values are rounded to the nearest 100 kg.\nSources: Values for the specific mass of diesel trucks, hydrogen tanks, fuel cells, powertrain or motors, and trailers come\nfrom the ICCT, and were validated against assumptions from Riccardo.",
-      "支持单位\nTCL 中环新能源科技股份有限公司\n阿特斯光伏科技（苏州）有限公司\n阿特斯阳光电力集团股份有限公司\n安徽繁星能源科技有限公司\n安徽华晟新能源科技股份有限公司\n北京海博思创科技股份有限公司\n北京鉴衡认证中心有限公司\n北京京运通科技股份有限公司\n北京瑞科同创科技股份有限公司\n东方日升新能源股份有限公司\n福建省金石能源有限公司\n固德威技术股份有限公司\n广州市儒兴科技股份有限公司\n国晟世安科技股份有限公司\n国家电投集团青海光伏产业创新中心有限公司\n国家发展和改革委员会能源研究所\n国能经济技术研究院有限责任公司\n国网能源研究院有限公司\n杭州纤纳光电科技股份有限公司\n合肥京东方光能科技有限公司\n横店集团东磁股份有限公司\n华润新能源投资有限公司新疆分公司\n华为数字能源技术有限公司\n惠州亿纬锂能股份有限公司\n吉利融和（宁波）新能源有限公司\n极电光能有限公司\n江苏赛福天集团股份有限公司\n江苏天合储能有限公司\n江苏新霖飞能源科技有限公司\n江西电投新能源科技有限公司\n锦浪科技股份有限公司\n锦州阳光能源有限公司\n晋能清洁能源科技股份公司\n晶澳太阳能科技股份有限公司\n晶科电力科技股份有限公司\n晶科能源股份有限公司",
       "气候变化是全球性问题， 世界各国认识到需要共同采取行动应对这一挑战。 《巴\n黎协定》 等国际协议的达成， 体现了国际社会在减排温室气体、 控制全球气温上升方\n面的共同意愿和责任，为全球应对气候变化提供了基本框架和目标导向。2020 年 9\n月 22 日，习近平总书记在第七十五届联合国大会一般性辩论上宣布，中国力争于\n2030 年前二氧化碳排放达到峰值、2060 年前实现碳中和。推进碳达峰碳中和是党\n中央经过深思熟虑作出的重大战略决策，既是对国际社会的庄严承诺， 也是推动高质\n量发展的内在要求。\n在 2025 年《巴黎协定》达成 10 周年之际，习近平主席在联合国气候变化峰会\n上宣布中国新一轮国家自主贡献， 其中指出，到 2035 年， 非化石能源消费占能源消\n费总量的比重达到 30%以上，风电和太阳能发电总装机容量达到 2020 年的 6 倍以\n上、力争达到 36 亿千瓦。发展可再生能源，不仅有助于推动我国加快能源转型，提\n高可再生能源的占比，也能增强能源供应的稳定性和安全性，降低对传统化石能源的\n依赖。\n各种可再生能源中， 太阳能以其清洁、 安全、 取之不尽、 用之不竭等显著优势，\n已成为发展最快的可再生能源。 开发利用太阳能对调整能源结构、 推进能源生产和消\n费革命、 促进生态文明建设均具有重要意义。 我国作为全球光伏制造大国， 应通过制\n定光伏产业发展路线图， 引导我国光伏产",
-      ".................................. 35\n2、单/双面发电组件市场占比 ................................................................................................ 35\n3、不同电池互联技术的组件市场占比 ................................................................................. 36\n4、0BB 工艺路线市场占比 ...................................................................................................... 37\n5、组件封装用钢化镀膜玻璃透光率...................................................................................... 37\n6、不同材质正面盖板组件市场占比...................................................................................... 38\n7、不同厚度的前盖板玻",
-      "10\n能在工业生产中作为高品质热源的应用。扩大工业领域氢能替代化\n石能源应用规模，积极引导合成氨、合成甲醇、炼化、煤制油气等\n行业由高碳工艺向低碳工艺转变，促进高耗能行业绿色低碳发展。\n专栏“十四五”时期氢能产业创新应用示范工程\n交通\n在矿区、港口、工业园区等运营强度大、行驶线路固定区域，探索开\n展氢燃料电池货车运输示范应用及 70MPa 储氢瓶车辆应用验证。\n在有条件的地方，可在城市公交车、物流配送车、环卫车等公共服务\n领域，试点应用燃料电池商用车。\n结合重点区域生态环保需求和电力基础设施条件，探索氢燃料电池在\n船舶、航空器等领域的示范应用。\n储能\n重点在可再生能源资源富集、氢气需求量大的地区，开展集中式可再\n生能源制氢示范工程，探索氢储能与波动性可再生能源发电协同运行的商\n业化运营模式。\n鼓励在燃料电池汽车示范线路等氢气需求量集中区域，布局基于分布\n式可再生能源或电网低谷负荷的储能/加氢一体站，充分利用站内制氢运输\n成本低的优势，推动氢能分布式生产和就近利用。\n发电\n结合增量配电改革和综合能源服务试点，开展氢电融合的微电网示范，\n推动燃料电池热电联供应用实践。\n鼓励结合新建和改造通讯基站工程，开展氢燃料电池通信基站备用电\n源示范应用，并逐步在金融、医院、学校、商业、工矿企业等领域引入氢\n燃料电池应用。\n工业\n结合国内冶金和化工行业市场环境和产业基础，探索氢能冶金示范应\n用，探索"
+      "10\n能在工业生产中作为高品质热源的应用。扩大工业领域氢能替代化\n石能源应用规模，积极引导合成氨、合成甲醇、炼化、煤制油气等\n行业由高碳工艺向低碳工艺转变，促进高耗能行业绿色低碳发展。\n专栏“十四五”时期氢能产业创新应用示范工程\n交通\n在矿区、港口、工业园区等运营强度大、行驶线路固定区域，探索开\n展氢燃料电池货车运输示范应用及 70MPa 储氢瓶车辆应用验证。\n在有条件的地方，可在城市公交车、物流配送车、环卫车等公共服务\n领域，试点应用燃料电池商用车。\n结合重点区域生态环保需求和电力基础设施条件，探索氢燃料电池在\n船舶、航空器等领域的示范应用。\n储能\n重点在可再生能源资源富集、氢气需求量大的地区，开展集中式可再\n生能源制氢示范工程，探索氢储能与波动性可再生能源发电协同运行的商\n业化运营模式。\n鼓励在燃料电池汽车示范线路等氢气需求量集中区域，布局基于分布\n式可再生能源或电网低谷负荷的储能/加氢一体站，充分利用站内制氢运输\n成本低的优势，推动氢能分布式生产和就近利用。\n发电\n结合增量配电改革和综合能源服务试点，开展氢电融合的微电网示范，\n推动燃料电池热电联供应用实践。\n鼓励结合新建和改造通讯基站工程，开展氢燃料电池通信基站备用电\n源示范应用，并逐步在金融、医院、学校、商业、工矿企业等领域引入氢\n燃料电池应用。\n工业\n结合国内冶金和化工行业市场环境和产业基础，探索氢能冶金示范应\n用，探索",
+      "氢供给成本。在风光水电资源丰富地区，开展\n可再生能源制氢示范，逐步扩大示范规模，探索季节性储能和电网\n调峰。推进固体氧化物电解池制氢、光解水制氢、海水制氢、核能\n8\n高温制氢等技术研发。探索在氢能应用规模较大的地区设立制氢基\n地。\n（二）稳步构建储运体系\n以安全可控为前提，积极推进技术材料工艺创新，支持开展多\n种储运方式的探索和实践。提高高压气态储运效率，加快降低储运\n成本，有效提升高压气态储运商业化水平。推动低温液氢储运产业\n化应用，探索固态、深冷高压、有机液体等储运方式应用。开展掺\n氢天然气管道、纯氢管道等试点示范。逐步构建高密度、轻量化、\n低成本、多元化的氢能储运体系。\n（三）统筹规划加氢网络\n坚持需求导向，统筹布局建设加氢站，有序推进加氢网络体系\n建设。坚持安全为先，节约集约利用土地资源，支持依法依规利用\n现有加油加气站的场地设施改扩建加氢站。探索站内制氢、储氢和\n加氢一体化的加氢站等新模式。\n六、稳步推进氢能多元化示范应用\n坚持以市场应用为牵引，合理布局、把握节奏，有序推进氢能\n在交通领域的示范应用，拓展在储能、分布式发电、工业等领域的\n应用，推动规模化发展，加快探索形成有效的氢能产业发展的商业\n化路径。\n（一）有序推进交通领域示范应用\n立足本地氢能供应能力、产业环境和市场空间等基础条件，结\n合道路运输行业发展特点，重点推进氢燃料电池中重型车辆应用，",
+      "2\n装机量全球第一，在清洁低碳的氢能供给上具有巨大潜力。国内氢\n能产业呈现积极发展态势，已初步掌握氢能制备、储运、加氢、燃\n料电池和系统集成等主要技术和生产工艺，在部分区域实现燃料电\n池汽车小规模示范应用。全产业链规模以上工业企业超过 300 家，\n集中分布在长三角、粤港澳大湾区、京津冀等区域。\n但总体看，我国氢能产业仍处于发展初期，相较于国际先进水\n平，仍存在产业创新能力不强、技术装备水平不高，支撑产业发展\n的基础性制度滞后，产业发展形态和发展路径尚需进一步探索等问\n题和挑战。同时，一些地方盲目跟风、同质化竞争、低水平建设的\n苗头有所显现。面对新形势、新机遇、新挑战，亟需加强顶层设计\n和统筹谋划，进一步提升氢能产业创新能力，不断拓展市场应用新\n空间，引导产业健康有序发展。\n二、战略定位\n氢能是未来国家能源体系的重要组成部分。充分发挥氢能作为\n可再生能源规模化高效利用的重要载体作用及其大规模、长周期储\n能优势，促进异质能源跨地域和跨季节优化配置，推动氢能、电能\n和热能系统融合，促进形成多元互补融合的现代能源供应体系。\n氢能是用能终端实现绿色低碳转型的重要载体。以绿色低碳为\n方针，加强氢能的绿色供应，营造形式多样的氢能消费生态，提升\n我国能源安全水平。发挥氢能对碳达峰、碳中和目标的支撑作用，\n深挖跨界应用潜力，因地制宜引导多元应用，推动交通、工业等用\n能终端的能源消费转型和高耗能、高"
     ],
     "ground_truth": "碳纤维叶片比强度和刚度远高于玻璃纤维，主要用于5MW以上大型风机，特别是追求更长叶片的海上风电。"
   },
   {
     "question": "BC电池和TOPCon电池有什么区别？",
-    "answer": "BC电池与TOPCon电池的主要区别如下：\n\n| 特性         | TOPCon电池                          | BC电池                              |\n|--------------|-------------------------------------|-------------------------------------|\n| 结构特点     | 背面有隧穿氧化层和掺杂多晶硅层      | 正面无金属电极，全部转移至背面      |\n| 转换效率     | 量产约25-26.5%，实验室最高28%       | 量产约25-26.5%，实验室最高27%       |\n| 成本         | 中                                                   | 高                                                   |\n| 发展阶段     | 大规模量产                          | 中试到量产过渡                      |\n| 市场占比     | 2024年新建产能主流技术              | 2024年开始小规模量产，隆基主推      |\n| 应用场景     | 渔光互补、分布式光伏、地面电站      | 建筑一体化、车顶光伏、高端户用      |",
+    "answer": "BC电池与TOPCon电池的主要区别如下：\n\n| 特性         | TOPCon电池                          | BC电池                              |\n|--------------|-------------------------------------|-------------------------------------|\n| 结构特点     | 背面有隧穿氧化层和掺杂多晶硅层      | 正面无金属电极，全部转移至背面      |\n| 转换效率     | 量产约25-26.5%，实验室最高28%       | 量产约25-26.5%，实验室最高27%       |\n| 成本         | 中                                  | 高                                  |\n| 发展阶段     | 大规模量产                          | 中试到量产过渡                      |\n| 市场占比     | 2024年新建产能主流技术              | 2024年开始小规模量产，隆基主推      |\n| 应用场景     | 渔光互补、分布式光伏、地面电站      | 建筑一体化、车顶光伏、高端户用      |",
     "source": "llm",
     "resolved_question": "BC电池和TOPCon电池有什么区别？",
     "query_rewritten": false,
@@ -401,23 +401,23 @@
   },
   {
     "question": "钠冷快堆和熔盐堆有什么区别？",
-    "answer": "钠冷快堆与熔盐堆均为第四代核反应堆技术，主要区别如下：\n\n| 维度         | 钠冷快堆                          | 熔盐堆                              |\n|--------------|-----------------------------------|-------------------------------------|\n| 冷却剂       | 液态金属钠                        | 熔融氟化盐                          |\n| 燃料形式     | 固态燃料（如MOX、铀燃料）         | 液态燃料（如氟化钍、氟化铀）        |\n| 运行温度     | 较高（约500℃）                    | 更高（可达700℃以上）               |\n| 安全性       | 依赖钠的化学活性，需防泄漏        | 固有安全性强，高温低压运行          |\n| 发展阶段     | 示范应用阶段                      | 研发阶段                            |\n| 优势         | 核燃料增殖、闭式循环              | 灵活燃料循环、在线后处理              |\n\n两者均具备高效能和可持续性，但钠冷快堆更接近商业化，而熔盐堆尚处于研发初期[1]。",
+    "answer": "钠冷快堆与熔盐堆均为第四代核反应堆技术，主要区别如下：\n\n| 维度         | 钠冷快堆                          | 熔盐堆                              |\n|--------------|-----------------------------------|-------------------------------------|\n| 冷却剂       | 液态金属钠                        | 熔融氟化盐                          |\n| 燃料形式     | 固态燃料（如MOX、铀燃料）         | 液态燃料（如氟化钍、氟化铀）        |\n| 运行温度     | 较低（约400-550℃）                | 较高（约600-700℃）                 |\n| 安全性       | 需依赖复杂系统保障                  | 具有固有安全性                      |\n| 发展阶段     | 示范应用阶段                      | 研发阶段                            |\n| 热效率       | 35-40%                            | 40-48%                              |\n\n钠冷快堆侧重燃料增殖与闭式循环，而熔盐堆更注重燃料灵活性与高温运行[1]。",
     "source": "llm",
     "resolved_question": "钠冷快堆和熔盐堆有什么区别？",
     "query_rewritten": false,
     "intent_source": "llm",
     "contexts": [
-      "ery storage. In March 2025, HiNa launched\nits new sodium-ion battery, which offers  improved energy density and faster\ncharging compared to the previous generation, heralding a promising year for this\ntechnology. However, r ecent analyses indicate that sodium -ion batteries will\nrequire either increased energy density or more favourable operating conditions –\nparticularly higher lithium prices –  to compete with LFP batteries on a price per\nkWh basis. Nevertheless , sodium-ion technologies could play a significant role\nduring times of elevated lithium prices and may offer a cheaper option for ",
-      "rnational Council on Clean Transportation\nICE   internal combustion engine\nICEV   internal combustion engine vehicle\nIFC  International Finance Corporation\nINR   Indian rupee\nIRENA  International Renewable Energy Agency\nITF  International Transport Forum\nKRW  Korean won\nLCV   light commercial vehicle\nLDV   light-duty vehicle\nLEZ  Low emissions zone\nLFMP  lithium iron manganese phosphate\nLFP   lithium iron phosphate\nLi-S  lithium sulphur",
       "61\n（八）新型储能环节\n新型储能是指除抽水蓄能外，以输出电力为主要形式的各类储能技术，包含锂/钠离子电池\n储能、液流电池储能、压缩空气储能、飞轮储能、氢储能等不同技术路线。\n表 13  部分新型储能技术释义\n名称 释义\n锂离子电池储能\n基于锂离子电池的储能形式。锂离子电池主要依靠锂离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n铅炭电池储能\n基于铅炭电池的储能形式。铅炭电池是指正极为二氧化铅、负极为铅炭复合电极、电解\n液为硫酸溶液，通过化学能和电能相互转换实现充放电的电池。\n液流电池储能\n基于液流电池的储能形式。液流电池是指通过流动的正极和/或负极电解液中活性物质的\n电化学反应，进行化学能和电能相互转换实现充放电的电池。\n钠离子电池储能\n基于钠离子电池的储能形式。钠离子电池主要依靠钠离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n压缩空气储能 通过空气介质的压缩和膨胀，实现能量存储和释放的储能形式。\n飞轮储能 以飞轮为储能载体，通过动能和电能相互转换实现电能存储、释放的储能形式。\n超级电容器储能\n通过电极/电解液界面形成的双电层电容或电极表面快速氧化还原反应形成的赝电容，实\n现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储",
-      "IEA. CC BY 4.0.\nNotes: Chargers less than or equal to 22 kW are defined as slow, chargers between 22 kW and 150 kW are fast, and ultra-\nfast chargers are those of 150 kW or more.\nSources: IEA analysis based on EAFO and US AFDC.\n0% 20% 40% 60% 80% 100%\nNetherlands\nBelgium\nGreece\nDenmark\nSweden\nItaly\nUnited Kingdom\nSwitzerland\nCanada\nFrance\nAustria\nIceland\nEuropean Union\nGermany\nSpain\nUnited States\nFinland\nPortugal\nNorway\nPoland\nLithuania\nTürkiye\nSlow Fast Ultra-fast",
-      "64\n图 82  2025-2035 年新增储能装机平均时长占比变化趋势\n4、各新型储能技术路线电站单位初始投资\n2025 年，锂离子电池储能单位初始投资成本约为 95 万元/MWh，各储能技术成本差异显\n著。2026 年锂离子电池储能系统价格呈现量价齐升态势，主要受原材料成本上涨、供需关系变\n化及行业政策调整驱动，2026 年锂离子电池储能系统价格预计将有一定提高，牵引其单位初始\n投资成本小幅上升。 压缩空气储能与液流电池成本虽有所下降， 但幅度较为平缓， 反映其技术成\n熟度与规模化进程仍处于稳步积累阶段。未来，随着技术迭代持续深化、应用规模进一步扩大，\n叠加行业竞争向“技术+效率”双轮驱动演进，新型储能单位投资成本有望延续下降趋势。差异化\n的成本格局将更精准适配多元化应用场景， 从而推动储能商业化规模持续拓展， 促进行业向高质\n量方向发展。\n图 83  2025-2035 年各新型储能技术路线单位投资金额变化趋势（单位：万元/MWh）\n0%\n20%\n40%\n60%\n80%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\n<4h ≥4h\n0\n50\n100\n150\n200\n250\n300\n2025年 2026年 2028年 2030年 2032年 2035年\n锂离子电池储能 钠离子电池 压缩空气 液流"
+      "监管，落实企业安全生产主体责任和部门安全\n监管责任，落实地方政府氢能产业发展属地管理责任，提高安全管\n理能力水平。推动氢能产业关键核心技术和安全技术协同发展，加\n12\n强氢气泄漏检测报警以及氢能相关特种设备的检验、检测等先进技\n术研发。积极利用互联网、大数据、人工智能等先进技术手段，及\n时预警氢能生产储运装置、场所和应用终端的泄漏、疲劳、爆燃等\n风险状态，有效提升事故预防能力。加强应急能力建设，研究制定\n氢能突发事件处置预案、处置技战术和作业规程，及时有效应对各\n类氢能安全风险。\n八、组织实施\n充分认识发展氢能产业的重要意义，把思想、认识和行动统一\n到党中央、国务院的决策部署上来，加强组织领导和统筹协调，强\n化政策引导和支持，通过开展试点示范、宣传引导、督导评估等措\n施，确保规划目标和重点任务落到实处。\n（一）充分发挥统筹协调机制作用\n建立氢能产业发展部际协调机制，协调解决氢能发展重大问\n题，研究制定相关配套政策。强化规划引导作用，推动地方结合自\n身基础条件理性布局氢能产业，实现产业健康有序和集聚发展。\n（二）加快构建“1+N”政策体系\n坚持以规划为引领，聚焦氢能产业发展的关键环节和重大问\n题，在氢能规范管理、氢能基础设施建设运营管理、关键核心技术\n装备创新、氢能产业多元应用试点示范、国家标准体系建设等方面，\n制定出台相关政策，打造氢能产业发展“1+N”政策体系，有效发\n挥政策引导作用。\n（三）积极推动试点示范",
+      "....................................................................... 13\n3、拉棒单炉投料量 .................................................................................................................... 14\n4、耗硅量 .................................................................................................................................... 15\n5、耗水量 .................................................................................................................................... 15\n6、硅片厚度 ........................................................................................................",
+      "0年 2032年 2035年\n40.0\n43.0\n46.0\n49.0\n52.0\n55.0\n2025年 2026年 2028年 2030年 2032年 2035年\n8\n4、水耗2\n水耗是指生产单位多晶硅产品所需要补充的水量， 水的消耗主要包括蒸发、 清洗等。2025 年\n随着多项节水技术的突破， 多晶硅单位产品水耗得到进一步降低， 综合新疆、 内蒙、 青海、 四川、\n云南等各大厂区的数据，多晶硅平均水耗在 55.0m3/t-Si，同比下降 8.3%。受南北方气候和水资\n源差异的影响， 用水技术和装备有一定的地域差异， 如空冷岛等技术在四川等南方地区适用性较\n差，导致南北方企业的水耗差距较大。预计到 2035 年，通过进一步的余热利用降低蒸发量、提\n高渣浆回收率、提高水资源的循环利用率等措施，可将水耗控制在 45.0m3/t-Si 的水平。目前硅\n烷流化床法颗粒硅水耗较三氯氢硅法棒状硅低 30%左右。",
+      "10\n能在工业生产中作为高品质热源的应用。扩大工业领域氢能替代化\n石能源应用规模，积极引导合成氨、合成甲醇、炼化、煤制油气等\n行业由高碳工艺向低碳工艺转变，促进高耗能行业绿色低碳发展。\n专栏“十四五”时期氢能产业创新应用示范工程\n交通\n在矿区、港口、工业园区等运营强度大、行驶线路固定区域，探索开\n展氢燃料电池货车运输示范应用及 70MPa 储氢瓶车辆应用验证。\n在有条件的地方，可在城市公交车、物流配送车、环卫车等公共服务\n领域，试点应用燃料电池商用车。\n结合重点区域生态环保需求和电力基础设施条件，探索氢燃料电池在\n船舶、航空器等领域的示范应用。\n储能\n重点在可再生能源资源富集、氢气需求量大的地区，开展集中式可再\n生能源制氢示范工程，探索氢储能与波动性可再生能源发电协同运行的商\n业化运营模式。\n鼓励在燃料电池汽车示范线路等氢气需求量集中区域，布局基于分布\n式可再生能源或电网低谷负荷的储能/加氢一体站，充分利用站内制氢运输\n成本低的优势，推动氢能分布式生产和就近利用。\n发电\n结合增量配电改革和综合能源服务试点，开展氢电融合的微电网示范，\n推动燃料电池热电联供应用实践。\n鼓励结合新建和改造通讯基站工程，开展氢燃料电池通信基站备用电\n源示范应用，并逐步在金融、医院、学校、商业、工矿企业等领域引入氢\n燃料电池应用。\n工业\n结合国内冶金和化工行业市场环境和产业基础，探索氢能冶金示范应\n用，探索"
     ],
     "ground_truth": "钠冷快堆以液态钠作冷却剂、固体燃料快中子运行；熔盐堆以熔融氟化盐同时作冷却剂和燃料载体，可在高温低压下运行。"
   },
   {
     "question": "碱性电解水和PEM电解水制氢哪个好？",
-    "answer": "碱性电解水制氢与PEM电解水制氢各有优势：  \n- **碱性电解水**成本较低，技术成熟，适合大规模应用，但效率和响应速度较慢[1]。  \n- **PEM电解水**效率高、动态响应快，适合与波动性强的可再生能源结合，但成本较高[1]。  \n选择取决于具体应用场景和经济性需求。",
+    "answer": "碱性电解水制氢与PEM电解水制氢各有优势：  \n- **碱性电解水**成本较低，技术成熟，适合大规模制氢[1]；  \n- **PEM电解水**效率更高，响应速度快，适合与波动性可再生能源结合[2]。  \n选择取决于应用场景和经济性需求。",
     "source": "llm",
     "resolved_question": "碱性电解水和PEM电解水制氢哪个好？",
     "query_rewritten": false,
@@ -433,7 +433,7 @@
   },
   {
     "question": "换电和无线充电哪个更适合出租车高频补能？",
-    "answer": "换电技术更适合出租车高频补能。换电可在10分钟内完成，接近传统加油速度，显著减少运营 downtime [1]，而无线充电效率较低且仍处于早期发展阶段 [2]。此外，换电有助于延长电池寿命，提升商业运营效率 [3]。",
+    "answer": "换电技术更适合出租车高频补能。换电可在10分钟内完成，接近传统燃油车的加油速度，显著减少运营 downtime [1]，而无线充电通常需要更长时间且依赖固定基础设施 [2]。此外，换电有助于延长电池寿命，提升商业运营效率 [3]。",
     "source": "llm",
     "resolved_question": "换电和无线充电哪个更适合出租车高频补能？",
     "query_rewritten": false,
@@ -481,23 +481,23 @@
   },
   {
     "question": "有哪些四代核电技术？",
-    "answer": "四代核电技术包括：  \n- 小型模块化反应堆  \n- 熔盐堆  \n- 钠冷快堆  \n- 高温气冷堆 [1]",
+    "answer": "四代核电技术包括：  \n1. 小型模块化反应堆  \n2. 熔盐堆  \n3. 钠冷快堆  \n4. 高温气冷堆",
     "source": "llm",
     "resolved_question": "有哪些四代核电技术？",
     "query_rewritten": false,
     "intent_source": "llm",
     "contexts": [
-      "6、异质结电池金属电极技术市场占比 ................................................................................. 26\n7、栅线印刷技术市场占比 ...................................................................................................... 27\n8、电池发射极方块电阻 .......................................................................................................... 28\n9、TOPCon 电池背钝化技术市场占比 ................................................................................. 28\n10、异质结电池 TCO 沉积方法市场占比 ............................................................................. 29\n11、电池正面细栅线宽度 ..................................",
-      ".................................. 22\n2、不同电池技术路线市场占比 .............................................................................................. 22\n3、不同 BC 电池技术市场占比 ............................................................................................... 23\n4、电池铝浆消耗量 ................................................................................................................... 23\n5、电池含银浆料消耗量 .......................................................................................................... 24",
       "uring processes, cell formats and\npack designs , among others. Advances in manufacturing are also  notable: for\nexample, artificial intelligence for image analysis can enable the early detection of\nbattery defects and their root causes, thereby improving production yields and\nreducing scrap rates. This capability is critical for scaling up production given the\npace of modern gigafactories – a 50 GWh facility can produce up to 10  million\n(cylindrical) or hundreds of thousands (prismatic) EV battery cells per day. 4 The\nnature and pace of innovations in legacy technologies are already making a ",
       "图 30  2025-2035 年不同电池技术路线市场占比变化趋势\n0%\n25%\n50%\n75%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\np型PERC电池 n型TOPCon电池 n型异质结电池 XBC电池 其他",
-      "型 4h-构网型\n40%\n45%\n50%\n55%\n60%\n65%\n70%\n75%\n80%\n2025年 2026年 2028年 2030年 2032年 2035年\n67\n8、锂电储能系统能量转化效率\n相较早期投运的储能系统， 当前我国储能系统具有能量转化效率稳步优化的突出特点。2025\n年， 我国储能系统能量转化效率为86.8%。 随着储能核心部件性能的升级、 系统集成方案的迭代，\n以及智能控制与调度技术的完善，我国储能系统能量转化效率或将逐步提升。\n图 87  2025-2035 年锂电储能系统能量转化效率变化趋势21\n9、新增锂电装机中跟网型储能/构网型储能技术路线占比22\n跟网型储能在技术成熟度、地区适应度以及综合成本等方面适配当前多数储能场景的需求，\n是现阶段市场的主流选择。2025 年，我国新增锂电装机中跟网型储能占比为85%，在常规电力\n调节场景下跟网型系统有其成熟适配的独特优势，构网型技术在未来一段时间内占比将持续增\n加，二者将依据不同应用场景的需求协同布局。\n21 该表内所示储能系统额定能量转换效率是依据 GB/T36548-2024 标准，在 35KV 侧进行的首年首次测试\n得到的 2h、4h 系统综合值；\n22 本项指标跟网、构网技术路线按项目招标时的技术路线要求计。\n85.0%\n86.0%\n87.0%\n88.0%\n89.0%\n90.0%\n2025年 2026年 2028年 2030年 2032年 2035年"
+      "型 4h-构网型\n40%\n45%\n50%\n55%\n60%\n65%\n70%\n75%\n80%\n2025年 2026年 2028年 2030年 2032年 2035年\n67\n8、锂电储能系统能量转化效率\n相较早期投运的储能系统， 当前我国储能系统具有能量转化效率稳步优化的突出特点。2025\n年， 我国储能系统能量转化效率为86.8%。 随着储能核心部件性能的升级、 系统集成方案的迭代，\n以及智能控制与调度技术的完善，我国储能系统能量转化效率或将逐步提升。\n图 87  2025-2035 年锂电储能系统能量转化效率变化趋势21\n9、新增锂电装机中跟网型储能/构网型储能技术路线占比22\n跟网型储能在技术成熟度、地区适应度以及综合成本等方面适配当前多数储能场景的需求，\n是现阶段市场的主流选择。2025 年，我国新增锂电装机中跟网型储能占比为85%，在常规电力\n调节场景下跟网型系统有其成熟适配的独特优势，构网型技术在未来一段时间内占比将持续增\n加，二者将依据不同应用场景的需求协同布局。\n21 该表内所示储能系统额定能量转换效率是依据 GB/T36548-2024 标准，在 35KV 侧进行的首年首次测试\n得到的 2h、4h 系统综合值；\n22 本项指标跟网、构网技术路线按项目招标时的技术路线要求计。\n85.0%\n86.0%\n87.0%\n88.0%\n89.0%\n90.0%\n2025年 2026年 2028年 2030年 2032年 2035年",
+      "Battery innovation is accelerating, and it is not limited to\nnew chemistries\nAdvanced battery technologies under development include solid- state, sodium-\nion, lithium -sulphur, iron-air, and redox -flow batteries, among others. Some of\nthem, like iron -air and redox -flow batteries, target different applications to\nestablished lithium -ion technologies, such as longer -duration storage  for grid\napplications. Others, like sodium -ion batteries , aim to reduce dependence on\nlithium. Lastly, technologies like solid- state and lithium -sulphur batteries could\nalso accelerate electrification in s",
+      "........................ ................................ ................................ .......... 44\n1、CdTe 薄膜太阳能电池/组件转换效率 .............................................................................. 44\n2、CIGS 薄膜太阳能电池/组件转换效率 .............................................................................. 44\n3、Ⅲ-Ⅴ族薄膜太阳能电池转换效率 .................................................................................... 45\n4、钙钛矿太阳能电池转换效率 .............................................................................................. 45\n（六）逆变器 ................................ ............................"
     ],
     "ground_truth": "代表性第四代核电技术包括高温气冷堆、钠冷快堆、熔盐堆等。"
   },
   {
     "question": "有哪些氢能制取技术？",
-    "answer": "当前氢能制取技术主要包括：\n\n- AEM电解水制氢  \n- SOEC电解水制氢  \n- PEM电解水制氢  \n- 碱性电解水制氢[1]",
+    "answer": "当前常见的氢能制取技术包括：  \n- AEM电解水制氢  \n- SOEC电解水制氢  \n- PEM电解水制氢  \n- 碱性电解水制氢[1]",
     "source": "llm",
     "resolved_question": "有哪些氢能制取技术？",
     "query_rewritten": false,
@@ -513,23 +513,23 @@
   },
   {
     "question": "有哪些核聚变技术路线？",
-    "answer": "当前核聚变技术路线包括：  \n- 惯性约束核聚变  \n- 托卡马克磁约束聚变",
+    "answer": "当前核聚变技术路线主要包括：  \n- 惯性约束核聚变  \n- 托卡马克磁约束聚变",
     "source": "llm",
     "resolved_question": "有哪些核聚变技术路线？",
     "query_rewritten": false,
     "intent_source": "llm",
     "contexts": [
-      "池 MBB、0BB 技术路线银浆消\n耗量分别约为 12.2 mg/W、10.0mg/W。受银价上涨的驱动，未来 0BB、贱金属等“少银化”、“去\n银化”技术的导入或加速，促使银浆耗量在一段时间内加速下降。",
       ".................................. 22\n2、不同电池技术路线市场占比 .............................................................................................. 22\n3、不同 BC 电池技术市场占比 ............................................................................................... 23\n4、电池铝浆消耗量 ................................................................................................................... 23\n5、电池含银浆料消耗量 .......................................................................................................... 24",
       "图 30  2025-2035 年不同电池技术路线市场占比变化趋势\n0%\n25%\n50%\n75%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\np型PERC电池 n型TOPCon电池 n型异质结电池 XBC电池 其他",
       "未来人均产出率或将略高于 TOPCon。2026 年\n以后， 随着行业形势的好转，预计将有新的设备研发与应用投入， 从而促进n 型电池各技术路线\n人均产出率的提升。\n0.0%\n25.0%\n50.0%\n75.0%\n100.0%\n2025年 2026年 2028年 2030年 2032年 2035年\nXBC电池-MBB XBC电池-0BB",
-      "5%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\np型PERC电池 n型TOPCon电池 n型异质结电池 XBC电池 其他\n23\n3、不同 BC 电池技术市场占比\n2025 年，BC 技术路线中 TBC 电池市场占比为 87.4%，为占比最高的 BC 电池技术路线；\nHTBC 电池市场占比为 1.0%；p 型 BC 电池、IBC、HBC 等其他 BC 电池市场占比为 11.6%，其中\np 型 BC 电池虽在 2025 年上半年保有一定市占率，但 2026 年将不再生产。 随着BC 电池技术全\n面转向 n 型，预计 TBC 电池 2026 年市占率将达到 98.3%。结合 TOPCon 和 HJT 电池特点的\nHTBC 电池未来市场占比将持续提升。\n图 31  2025-2035 年不同 BC 电池技术路线市场占比变化趋势\n4、电池铝浆消耗量\n铝浆消耗量主要为晶硅电池中铝背场消耗的铝浆。 随着双面PERC 电池技术的发展， 电池铝\n浆平均消耗量保持下降趋势。2025 年双面 PERC 电池铝浆消耗量约为 29.3mg/W。随着未来\nPERC 技术逐渐退出市场，电池耗铝量的水平预计在2027 年以后将停滞。\n0%\n25%\n50%\n75%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\nTBC电池 HTBC电池 其他BC电池"
+      "5%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\np型PERC电池 n型TOPCon电池 n型异质结电池 XBC电池 其他\n23\n3、不同 BC 电池技术市场占比\n2025 年，BC 技术路线中 TBC 电池市场占比为 87.4%，为占比最高的 BC 电池技术路线；\nHTBC 电池市场占比为 1.0%；p 型 BC 电池、IBC、HBC 等其他 BC 电池市场占比为 11.6%，其中\np 型 BC 电池虽在 2025 年上半年保有一定市占率，但 2026 年将不再生产。 随着BC 电池技术全\n面转向 n 型，预计 TBC 电池 2026 年市占率将达到 98.3%。结合 TOPCon 和 HJT 电池特点的\nHTBC 电池未来市场占比将持续提升。\n图 31  2025-2035 年不同 BC 电池技术路线市场占比变化趋势\n4、电池铝浆消耗量\n铝浆消耗量主要为晶硅电池中铝背场消耗的铝浆。 随着双面PERC 电池技术的发展， 电池铝\n浆平均消耗量保持下降趋势。2025 年双面 PERC 电池铝浆消耗量约为 29.3mg/W。随着未来\nPERC 技术逐渐退出市场，电池耗铝量的水平预计在2027 年以后将停滞。\n0%\n25%\n50%\n75%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\nTBC电池 HTBC电池 其他BC电池",
+      "67\n9、新增锂电装机中跟网型储能/构网型储能技术路线占比 .............................................. 67\n10、储能电池单体电芯初始体积能量密度 ............................................................................ 68\n11、新增锂电装机中不同储能系统 PCS 技术路线占比 ...................................................... 69\n12、锂电储能系统功率模块在地化供应率 ............................................................................ 69\n13、储能系统主控芯片在地化供应率 .................................................................................... 70"
     ],
     "ground_truth": "核聚变主要分为磁约束和惯性约束两条路线，磁约束以托卡马克为代表，惯性约束以激光驱动为代表。"
   },
   {
     "question": "有哪些液流电池技术？",
-    "answer": "液流电池技术包括全钒液流电池等，其通过电解液中活性物质的价态变化实现充放电，适合4小时以上的长时储能场景[1]。其他相关技术如钠离子电池、压缩空气储能等也被归类为新型储能技术[3]。",
+    "answer": "液流电池技术包括全钒液流电池等，其通过电解液中活性物质的价态变化实现充放电，适合4小时以上的长时储能场景[1]。其他相关技术如铁-空气和氧化还原液流电池也在发展中[2]。",
     "source": "llm",
     "resolved_question": "有哪些液流电池技术？",
     "query_rewritten": false,
@@ -545,7 +545,7 @@
   },
   {
     "question": "一共有几类电解水制氢技术？",
-    "answer": "当前电解水制氢技术主要包括碱性电解、质子交换膜电解、固体氧化物电解和阴离子交换膜电解等四类[2]。",
+    "answer": "电解水制氢技术主要包括碱性电解、质子交换膜电解、固体氧化物电解和阴离子交换膜电解等四类[1]。",
     "source": "llm",
     "resolved_question": "一共有几类电解水制氢技术？",
     "query_rewritten": false,
@@ -561,7 +561,7 @@
   },
   {
     "question": "新能源汽车的补能方式一共有几种？",
-    "answer": "新能源汽车的补能方式主要包括以下几种：充电（包括直流快充、交流慢充）、换电、氢燃料电池加氢、以及V2G技术[4]。此外，还有增程式电动车和插电式混合动力汽车等混合补能方式。具体补能方式数量根据技术分类可归纳为5种以上。",
+    "answer": "新能源汽车的补能方式主要包括以下几种：充电（包括常规充电、快速充电、无线充电）、换电、氢燃料电池加氢、以及V2G技术[4]。此外，还有增程式电动车和插电式混合动力汽车等混合补能方式[1]。总体来看，共有6种主要补能方式。",
     "source": "llm",
     "resolved_question": "新能源汽车的补能方式一共有几种？",
     "query_rewritten": false,
@@ -571,7 +571,7 @@
       "现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储和释放的储能形式。\n氢储能 将电能转化为氢气并存储起来，待需要时再将氢气转化为电能的储能形式。",
       "业\n化路径。\n（一）有序推进交通领域示范应用\n立足本地氢能供应能力、产业环境和市场空间等基础条件，结\n合道路运输行业发展特点，重点推进氢燃料电池中重型车辆应用，\n9\n有序拓展氢燃料电池等新能源客、货汽车市场应用空间，逐步建立\n燃料电池电动汽车与锂电池纯电动汽车的互补发展模式。积极探索\n燃料电池在船舶、航空器等领域的应用，推动大型氢能航空器研发，\n不断提升交通领域氢能应用市场规模。\n（二）积极开展储能领域示范应用\n发挥氢能调节周期长、储能容量大的优势，开展氢储能在可再\n生能源消纳、电网调峰等应用场景的示范，探索培育“风光发电+\n氢储能”一体化应用新模式，逐步形成抽水蓄能、电化学储能、氢\n储能等多种储能技术相互融合的电力系统储能体系。探索氢能跨能\n源网络协同优化潜力，促进电能、热能、燃料等异质能源之间的互\n联互通。\n（三）合理布局发电领域多元应用\n根据各地既有能源基础设施条件和经济承受能力，因地制宜布\n局氢燃料电池分布式热电联供设施，推动在社区、园区、矿区、港\n口等区域内开展氢能源综合利用示范。依托通信基站、数据中心、\n铁路通信站点、电网变电站等基础设施工程建设，推动氢燃料电池\n在备用电源领域的市场应用。在可再生能源基地，探索以燃料电池\n为基础的发电调峰技术研发与示范。结合偏远地区、海岛等用电需\n求，开展燃料电池分布式发电示范应用。\n（四）逐步探索工业领域替代应用\n不断提升氢能利用经济性，拓展清洁低碳氢能在化工行业替代\n的应用空间。开展以氢作为还原剂的氢冶金技术研发应用。探索氢",
       "e involved in efforts to implement\nvehicle-to-grid solutions\nWhile smart charging enables EV owners to choose when to charge their EVs, bi-\ndirectional charging provides them with the opportunity to discharge power from\ntheir EVs to their homes (vehicle- to-home, or V2H), buildings (V2B), or other\nappliance loads (V2L) and the grid (V2G). Bi-directional charging can be used to\nrecharge car batteries when electricity is cheapest, and then sell electricity back\nto the grid (V2G) when prices are higher. It can also be used to discharge car\nbatteries to provide emergency or off-grid power supply t",
-      "锂离子电池储能响应速度快、能量密度高，是目前电化学储能的主流，\n代表企业包括宁德时代、比亚迪。其短板是成本与循环寿命的平衡。"
+      "ly used to power transport\nsystems like trams and light rail systems, or through inductive, wireless charging,\nwhich is at an earlier stage of development and deployment. Both systems can be\ndeployed at strategic locations for stationary charging, such as at bus stops or\nlogistics centres where vehicles already spend time idle.\nThese systems and other innovations, such as solar -coupled charging systems,\ncan play a role in making charging more convenient and/or a source of flexible\ndemand for renewables, as well as reducing charging-related stress on grids.\nBattery swapping for 2/3Ws is increa"
     ],
     "ground_truth": "新能源汽车的补能方式主要有三种：有线充电、换电和无线充电，其中800V高压平台可提升充电速度。"
   },
@@ -586,101 +586,137 @@
       "氢能产业链包括制氢、储运氢、用氢三个环节。\n- 制氢：灰氢（化石燃料制氢）、蓝氢（加装碳捕集）、绿氢（可再生能源电解水）。\n- 储运：高压气态储氢、低温液态储氢、有机液体储氢。\n- 用氢：燃料电池汽车、工业原料、发电调峰。",
       "氢供给成本。在风光水电资源丰富地区，开展\n可再生能源制氢示范，逐步扩大示范规模，探索季节性储能和电网\n调峰。推进固体氧化物电解池制氢、光解水制氢、海水制氢、核能\n8\n高温制氢等技术研发。探索在氢能应用规模较大的地区设立制氢基\n地。\n（二）稳步构建储运体系\n以安全可控为前提，积极推进技术材料工艺创新，支持开展多\n种储运方式的探索和实践。提高高压气态储运效率，加快降低储运\n成本，有效提升高压气态储运商业化水平。推动低温液氢储运产业\n化应用，探索固态、深冷高压、有机液体等储运方式应用。开展掺\n氢天然气管道、纯氢管道等试点示范。逐步构建高密度、轻量化、\n低成本、多元化的氢能储运体系。\n（三）统筹规划加氢网络\n坚持需求导向，统筹布局建设加氢站，有序推进加氢网络体系\n建设。坚持安全为先，节约集约利用土地资源，支持依法依规利用\n现有加油加气站的场地设施改扩建加氢站。探索站内制氢、储氢和\n加氢一体化的加氢站等新模式。\n六、稳步推进氢能多元化示范应用\n坚持以市场应用为牵引，合理布局、把握节奏，有序推进氢能\n在交通领域的示范应用，拓展在储能、分布式发电、工业等领域的\n应用，推动规模化发展，加快探索形成有效的氢能产业发展的商业\n化路径。\n（一）有序推进交通领域示范应用\n立足本地氢能供应能力、产业环境和市场空间等基础条件，结\n合道路运输行业发展特点，重点推进氢燃料电池中重型车辆应用，",
       "2\n装机量全球第一，在清洁低碳的氢能供给上具有巨大潜力。国内氢\n能产业呈现积极发展态势，已初步掌握氢能制备、储运、加氢、燃\n料电池和系统集成等主要技术和生产工艺，在部分区域实现燃料电\n池汽车小规模示范应用。全产业链规模以上工业企业超过 300 家，\n集中分布在长三角、粤港澳大湾区、京津冀等区域。\n但总体看，我国氢能产业仍处于发展初期，相较于国际先进水\n平，仍存在产业创新能力不强、技术装备水平不高，支撑产业发展\n的基础性制度滞后，产业发展形态和发展路径尚需进一步探索等问\n题和挑战。同时，一些地方盲目跟风、同质化竞争、低水平建设的\n苗头有所显现。面对新形势、新机遇、新挑战，亟需加强顶层设计\n和统筹谋划，进一步提升氢能产业创新能力，不断拓展市场应用新\n空间，引导产业健康有序发展。\n二、战略定位\n氢能是未来国家能源体系的重要组成部分。充分发挥氢能作为\n可再生能源规模化高效利用的重要载体作用及其大规模、长周期储\n能优势，促进异质能源跨地域和跨季节优化配置，推动氢能、电能\n和热能系统融合，促进形成多元互补融合的现代能源供应体系。\n氢能是用能终端实现绿色低碳转型的重要载体。以绿色低碳为\n方针，加强氢能的绿色供应，营造形式多样的氢能消费生态，提升\n我国能源安全水平。发挥氢能对碳达峰、碳中和目标的支撑作用，\n深挖跨界应用潜力，因地制宜引导多元应用，推动交通、工业等用\n能终端的能源消费转型和高耗能、高",
-      "11\n制定完善氢能管理有关政策，规范氢能制备、储运和加注等环\n节建设管理程序，落实安全监管责任，加强产业发展和投资引导，\n推动氢能规模化应用，促进氢能生产和消费，为能源绿色转型提供\n支撑。完善氢能基础设施建设运营有关规定，注重在建设要求、审\n批流程和监管方式等方面强化管理，提升安全运营水平。研究探索\n可再生能源发电制氢支持性电价政策，完善可再生能源制氢市场化\n机制，健全覆盖氢储能的储能价格机制，探索氢储能直接参与电力\n市场交易。\n（二）建立完善氢能产业标准体系\n推动完善氢能制、储、输、用标准体系，重点围绕建立健全氢\n能质量、氢安全等基础标准，制氢、储运氢装置、加氢站等基础设\n施标准，交通、储能等氢能应用标准，增加标准有效供给。鼓励龙\n头企业积极参与各类标准研制工作，支持有条件的社会团体制定发\n布相关标准。在政策制定、政府采购、招投标等活动中，严格执行\n强制性标准，积极采用推荐性标准和国家有关规范。推进氢能产品\n检验检测和认证公共服务平台建设，推动氢能产品质量认证体系建\n设。\n（三）加强全链条安全监管\n加强氢能安全管理制度和标准研究，建立健全氢能全产业安全\n标准规范，强化安全监管，落实企业安全生产主体责任和部门安全\n监管责任，落实地方政府氢能产业发展属地管理责任，提高安全管\n理能力水平。推动氢能产业关键核心技术和安全技术协同发展，加",
-      "现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储和释放的储能形式。\n氢储能 将电能转化为氢气并存储起来，待需要时再将氢气转化为电能的储能形式。"
+      "现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储和释放的储能形式。\n氢储能 将电能转化为氢气并存储起来，待需要时再将氢气转化为电能的储能形式。",
+      "11\n制定完善氢能管理有关政策，规范氢能制备、储运和加注等环\n节建设管理程序，落实安全监管责任，加强产业发展和投资引导，\n推动氢能规模化应用，促进氢能生产和消费，为能源绿色转型提供\n支撑。完善氢能基础设施建设运营有关规定，注重在建设要求、审\n批流程和监管方式等方面强化管理，提升安全运营水平。研究探索\n可再生能源发电制氢支持性电价政策，完善可再生能源制氢市场化\n机制，健全覆盖氢储能的储能价格机制，探索氢储能直接参与电力\n市场交易。\n（二）建立完善氢能产业标准体系\n推动完善氢能制、储、输、用标准体系，重点围绕建立健全氢\n能质量、氢安全等基础标准，制氢、储运氢装置、加氢站等基础设\n施标准，交通、储能等氢能应用标准，增加标准有效供给。鼓励龙\n头企业积极参与各类标准研制工作，支持有条件的社会团体制定发\n布相关标准。在政策制定、政府采购、招投标等活动中，严格执行\n强制性标准，积极采用推荐性标准和国家有关规范。推进氢能产品\n检验检测和认证公共服务平台建设，推动氢能产品质量认证体系建\n设。\n（三）加强全链条安全监管\n加强氢能安全管理制度和标准研究，建立健全氢能全产业安全\n标准规范，强化安全监管，落实企业安全生产主体责任和部门安全\n监管责任，落实地方政府氢能产业发展属地管理责任，提高安全管\n理能力水平。推动氢能产业关键核心技术和安全技术协同发展，加"
     ],
     "ground_truth": "知识库共收录四种主要储氢方式：高压气态储氢、低温液态储氢、固态储氢和有机液态储氢。"
   },
   {
     "question": "风力发电机按传动结构有哪几种类型？",
-    "answer": "风力发电机按传动结构主要有以下类型：半直驱风力发电、双馈风力发电、永磁直驱风力发电[1]。",
+    "answer": "风力发电机按传动结构主要有以下类型：  \n- 半直驱风力发电  \n- 双馈风力发电  \n- 永磁直驱风力发电 [1]",
     "source": "llm",
     "resolved_question": "风力发电机按传动结构有哪几种类型？",
     "query_rewritten": false,
     "intent_source": "llm",
     "contexts": [
-      "type; SUV includes C to F segments with SUV body type.\nSources: IEA analysis based on EV Volumes and Marklines.",
       "......................... 33\n15、水耗 ...................................................................................................................................... 34\n16、电池单位产能设备投资额 ................................................................................................ 34\n（四）组件环节 ................................ ................................ ................................ ................................  35\n1、不同类型组件功率 ............................................................................................................... 35\n2、单/双面发电组件市场占比 ...........................",
       ".................................. 35\n2、单/双面发电组件市场占比 ................................................................................................ 35\n3、不同电池互联技术的组件市场占比 ................................................................................. 36\n4、0BB 工艺路线市场占比 ...................................................................................................... 37\n5、组件封装用钢化镀膜玻璃透光率...................................................................................... 37\n6、不同材质正面盖板组件市场占比...................................................................................... 38\n7、不同厚度的前盖板玻",
-      "fall under the “standard” PHEV category. EREVs generally feature larger battery and longer electric\nrange than standard PHEVs.",
-      "2 A hybrid electric vehicle (HEV), which is powered by an ICE in combination with one or more electric motors using energy\nfrom batteries, can be in either a mild configuration or a full configuration. Mild hybrids use a battery and electric motor to\nhelp power the vehicle but cannot power the vehicle using electricity alone. A full hybrid can power a vehicle using electricity\nover short distances and at low speeds, thanks to its more powerful electric motor and larger battery. HEV batteries are\ncharged through regenerative braking and by the ICE; HEVs cannot be plugged in to charge the batter"
+      "2 A hybrid electric vehicle (HEV), which is powered by an ICE in combination with one or more electric motors using energy\nfrom batteries, can be in either a mild configuration or a full configuration. Mild hybrids use a battery and electric motor to\nhelp power the vehicle but cannot power the vehicle using electricity alone. A full hybrid can power a vehicle using electricity\nover short distances and at low speeds, thanks to its more powerful electric motor and larger battery. HEV batteries are\ncharged through regenerative braking and by the ICE; HEVs cannot be plugged in to charge the batter",
+      "储能是新能源消纳的关键环节，按存储介质分为电化学储能与物理储能。",
+      "rom which the figures are derived is behind a paywall.\nVehicle production costs, specifications, and payload\nTruck powertrain components in the United States, the European Union, and China\nused in the analysis\nPowertrain type Component Value\nDiesel Engine power 325 kW\nBattery electric\nElectric drive power 350 kW\nBattery pack size 800 kWh\nOn-board charger 44 kW\nFuel cell electric\nElectric drive power 350 kW\nFuel cell power 362 kW\nBattery pack size 70 kWh\nOn-board charger 6.6 kW\n700 bar hydrogen tank size 60 kg\nNotes: Powertrain sizing values are for a United States class 8 (or equivalent) tract"
     ],
     "ground_truth": "按传动结构可分为三类：双馈（带齿轮箱）、永磁直驱（无齿轮箱）和半直驱风力发电。"
   },
   {
     "question": "氢能产业链主要包括哪几个环节？",
-    "answer": "氢能产业链主要包括制氢、储运和应用等环节。其中，储运环节涉及有机液态储氢、固态储氢、低温液态储氢和高压气态储氢等技术。",
+    "answer": "氢能产业链主要包括制氢、储运氢和用氢三个环节[1]。制氢包括灰氢、蓝氢和绿氢；储运氢涵盖高压气态、低温液态和有机液体储氢等技术；用氢则应用于燃料电池汽车、工业原料及发电调峰等领域。",
     "source": "llm",
     "resolved_question": "氢能产业链主要包括哪几个环节？",
     "query_rewritten": false,
     "intent_source": "llm",
-    "contexts": [],
+    "contexts": [
+      "氢能产业链包括制氢、储运氢、用氢三个环节。\n- 制氢：灰氢（化石燃料制氢）、蓝氢（加装碳捕集）、绿氢（可再生能源电解水）。\n- 储运：高压气态储氢、低温液态储氢、有机液体储氢。\n- 用氢：燃料电池汽车、工业原料、发电调峰。",
+      "1\n氢能产业发展中长期规划（2021-2035 年）\n氢能是一种来源丰富、绿色低碳、应用广泛的二次能源，正逐\n步成为全球能源转型发展的重要载体之一。为助力实现碳达峰、碳\n中和目标，深入推进能源生产和消费革命，构建清洁低碳、安全高\n效的能源体系，促进氢能产业高质量发展，根据《中华人民共和国\n国民经济和社会发展第十四个五年规划和 2035 年远景目标纲要》，\n编制本规划。规划期限为 2021-2035 年。\n一、现状与形势\n当今世界正经历百年未有之大变局，新一轮科技革命和产业变\n革同我国经济高质量发展要求形成历史性交汇。以燃料电池为代表\n的氢能开发利用技术取得重大突破，为实现零排放的能源利用提供\n重要解决方案，需要牢牢把握全球能源变革发展大势和机遇，加快\n培育发展氢能产业，加速推进我国能源清洁低碳转型。\n从国际看，全球主要发达国家高度重视氢能产业发展，氢能已\n成为加快能源转型升级、培育经济新增长点的重要战略选择。全球\n氢能全产业链关键核心技术趋于成熟，燃料电池出货量快速增长、\n成本持续下降，氢能基础设施建设明显提速，区域性氢能供应网络\n正在形成。\n从国内看，我国是世界上最大的制氢国，年制氢产量约 3300\n万吨，其中，达到工业氢气质量标准的约 1200 万吨。可再生能源",
+      "2\n装机量全球第一，在清洁低碳的氢能供给上具有巨大潜力。国内氢\n能产业呈现积极发展态势，已初步掌握氢能制备、储运、加氢、燃\n料电池和系统集成等主要技术和生产工艺，在部分区域实现燃料电\n池汽车小规模示范应用。全产业链规模以上工业企业超过 300 家，\n集中分布在长三角、粤港澳大湾区、京津冀等区域。\n但总体看，我国氢能产业仍处于发展初期，相较于国际先进水\n平，仍存在产业创新能力不强、技术装备水平不高，支撑产业发展\n的基础性制度滞后，产业发展形态和发展路径尚需进一步探索等问\n题和挑战。同时，一些地方盲目跟风、同质化竞争、低水平建设的\n苗头有所显现。面对新形势、新机遇、新挑战，亟需加强顶层设计\n和统筹谋划，进一步提升氢能产业创新能力，不断拓展市场应用新\n空间，引导产业健康有序发展。\n二、战略定位\n氢能是未来国家能源体系的重要组成部分。充分发挥氢能作为\n可再生能源规模化高效利用的重要载体作用及其大规模、长周期储\n能优势，促进异质能源跨地域和跨季节优化配置，推动氢能、电能\n和热能系统融合，促进形成多元互补融合的现代能源供应体系。\n氢能是用能终端实现绿色低碳转型的重要载体。以绿色低碳为\n方针，加强氢能的绿色供应，营造形式多样的氢能消费生态，提升\n我国能源安全水平。发挥氢能对碳达峰、碳中和目标的支撑作用，\n深挖跨界应用潜力，因地制宜引导多元应用，推动交通、工业等用\n能终端的能源消费转型和高耗能、高",
+      "3\n气体排放。\n氢能产业是战略性新兴产业和未来产业重点发展方向。以科技\n自立自强为引领，紧扣全球新一轮科技革命和产业变革发展趋势，\n加强氢能产业创新体系建设，加快突破氢能核心技术和关键材料瓶\n颈，加速产业升级壮大，实现产业链良性循环和创新发展。践行创\n新驱动，促进氢能技术装备取得突破，加快培育新产品、新业态、\n新模式，构建绿色低碳产业体系，打造产业转型升级的新增长点，\n为经济高质量发展注入新动能。\n三、总体要求\n（一）指导思想\n以习近平新时代中国特色社会主义思想为指导，全面贯彻落实\n党的十九大和十九届历次全会精神，弘扬伟大建党精神，立足新发\n展阶段，完整准确全面贯彻新发展理念，构建新发展格局，以推动\n高质量发展为主题，以深化供给侧结构性改革为主线，紧扣实现碳\n达峰、碳中和目标，贯彻“四个革命、一个合作”能源安全新战略，\n着眼抢占未来产业发展先机，统筹氢能产业布局，提升创新能力，\n完善管理体系，规范有序发展，提高氢能在能源消费结构中的比重，\n为构建清洁低碳、安全高效的能源体系提供有力支撑。\n（二）基本原则\n创新引领，自立自强。坚持创新驱动发展，加快氢能创新体系\n建设，以需求为导向，带动产品创新、应用创新和商业模式创新。\n集中突破氢能产业技术瓶颈，建立健全产业技术装备体系，增强产",
+      "5\n建立以工业副产氢和可再生能源制氢就近利用为主的氢能供应体\n系。燃料电池车辆保有量约 5 万辆，部署建设一批加氢站。可再生\n能源制氢量达到 10-20 万吨/年，成为新增氢能消费的重要组成部分，\n实现二氧化碳减排 100-200 万吨/年。\n再经过 5 年的发展，到 2030 年，形成较为完备的氢能产业技\n术创新体系、清洁能源制氢及供应体系，产业布局合理有序，可再\n生能源制氢广泛应用，有力支撑碳达峰目标实现。\n到 2035 年，形成氢能产业体系，构建涵盖交通、储能、工业\n等领域的多元氢能应用生态。可再生能源制氢在终端能源消费中的\n比重明显提升，对能源绿色转型发展起到重要支撑作用。\n四、系统构建支撑氢能产业高质量发展创新体系\n围绕氢能高质量发展重大需求，准确把握氢能产业创新发展方\n向，聚焦短板弱项，适度超前部署一批氢能项目，持续加强基础研\n究、关键技术和颠覆性技术创新，建立完善更加协同高效的创新体\n系，不断提升氢能产业竞争力和创新力。\n（一）持续提升关键核心技术水平\n加快推进质子交换膜燃料电池技术创新，开发关键材料，提高\n主要性能指标和批量化生产能力，持续提升燃料电池可靠性、稳定\n性、耐久性。支持新型燃料电池等技术发展。着力推进核心零部件\n以及关键装备研发制造。加快提高可再生能源制氢转化效率和单台\n装置制氢规模，突破氢能基础设施环节关键核心技术。开发临氢设\n备关键影响因素监测与测试"
+    ],
     "ground_truth": "氢能产业链主要包括制取、储运和应用三大环节，分别对应电解水制氢技术、储氢方式和燃料电池等应用。"
   },
   {
     "question": "氢能产业链的上游环节是什么？",
-    "answer": "氢能产业链的上游环节主要包括氢气的制备，如通过化石燃料、电解水或工业副产等方式获取氢气。",
+    "answer": "氢能产业链的上游环节是制氢，主要包括灰氢、蓝氢和绿氢三种类型[1]。",
     "source": "llm",
     "resolved_question": "氢能产业链的上游环节是什么？",
     "query_rewritten": false,
     "intent_source": "llm",
-    "contexts": [],
+    "contexts": [
+      "氢能产业链包括制氢、储运氢、用氢三个环节。\n- 制氢：灰氢（化石燃料制氢）、蓝氢（加装碳捕集）、绿氢（可再生能源电解水）。\n- 储运：高压气态储氢、低温液态储氢、有机液体储氢。\n- 用氢：燃料电池汽车、工业原料、发电调峰。",
+      "1\n氢能产业发展中长期规划（2021-2035 年）\n氢能是一种来源丰富、绿色低碳、应用广泛的二次能源，正逐\n步成为全球能源转型发展的重要载体之一。为助力实现碳达峰、碳\n中和目标，深入推进能源生产和消费革命，构建清洁低碳、安全高\n效的能源体系，促进氢能产业高质量发展，根据《中华人民共和国\n国民经济和社会发展第十四个五年规划和 2035 年远景目标纲要》，\n编制本规划。规划期限为 2021-2035 年。\n一、现状与形势\n当今世界正经历百年未有之大变局，新一轮科技革命和产业变\n革同我国经济高质量发展要求形成历史性交汇。以燃料电池为代表\n的氢能开发利用技术取得重大突破，为实现零排放的能源利用提供\n重要解决方案，需要牢牢把握全球能源变革发展大势和机遇，加快\n培育发展氢能产业，加速推进我国能源清洁低碳转型。\n从国际看，全球主要发达国家高度重视氢能产业发展，氢能已\n成为加快能源转型升级、培育经济新增长点的重要战略选择。全球\n氢能全产业链关键核心技术趋于成熟，燃料电池出货量快速增长、\n成本持续下降，氢能基础设施建设明显提速，区域性氢能供应网络\n正在形成。\n从国内看，我国是世界上最大的制氢国，年制氢产量约 3300\n万吨，其中，达到工业氢气质量标准的约 1200 万吨。可再生能源",
+      "2\n装机量全球第一，在清洁低碳的氢能供给上具有巨大潜力。国内氢\n能产业呈现积极发展态势，已初步掌握氢能制备、储运、加氢、燃\n料电池和系统集成等主要技术和生产工艺，在部分区域实现燃料电\n池汽车小规模示范应用。全产业链规模以上工业企业超过 300 家，\n集中分布在长三角、粤港澳大湾区、京津冀等区域。\n但总体看，我国氢能产业仍处于发展初期，相较于国际先进水\n平，仍存在产业创新能力不强、技术装备水平不高，支撑产业发展\n的基础性制度滞后，产业发展形态和发展路径尚需进一步探索等问\n题和挑战。同时，一些地方盲目跟风、同质化竞争、低水平建设的\n苗头有所显现。面对新形势、新机遇、新挑战，亟需加强顶层设计\n和统筹谋划，进一步提升氢能产业创新能力，不断拓展市场应用新\n空间，引导产业健康有序发展。\n二、战略定位\n氢能是未来国家能源体系的重要组成部分。充分发挥氢能作为\n可再生能源规模化高效利用的重要载体作用及其大规模、长周期储\n能优势，促进异质能源跨地域和跨季节优化配置，推动氢能、电能\n和热能系统融合，促进形成多元互补融合的现代能源供应体系。\n氢能是用能终端实现绿色低碳转型的重要载体。以绿色低碳为\n方针，加强氢能的绿色供应，营造形式多样的氢能消费生态，提升\n我国能源安全水平。发挥氢能对碳达峰、碳中和目标的支撑作用，\n深挖跨界应用潜力，因地制宜引导多元应用，推动交通、工业等用\n能终端的能源消费转型和高耗能、高",
+      "新融通发展。\n（三）推动建设氢能专业人才队伍\n以氢能技术创新需求为导向，支持引进和培育高端人才，提升\n氢能基础前沿技术研发能力。加快培育氢能技术及装备专业人才队\n7\n伍，夯实氢能产业发展的创新基础。建立健全人才培养培训机制，\n加快推进氢能相关学科专业建设，壮大氢能创新研发人才群体。鼓\n励职业院校（含技工院校）开设相关专业，培育高素质技术技能人\n才及其他从业人员。\n（四）积极开展氢能技术创新国际合作\n鼓励开展氢能科学和技术国际联合研发，推动氢能全产业链关\n键核心技术、材料和装备创新合作，积极构建国际氢能创新链、产\n业链。积极参与国际氢能标准化活动。坚持共商共建共享原则，探\n索与共建“一带一路”国家开展氢能贸易、基础设施建设、产品开\n发等合作。加强与氢能技术领先的国家和地区开展项目合作，共同\n开拓第三方国际市场。\n五、统筹推进氢能基础设施建设\n统筹全国氢能产业布局，合理把握产业发展进度，避免无序竞\n争，有序推进氢能基础设施建设，强化氢能基础设施安全管理，加\n快构建安全、稳定、高效的氢能供应网络。\n（一）合理布局制氢设施\n结合资源禀赋特点和产业布局，因地制宜选择制氢技术路线，\n逐步推动构建清洁化、低碳化、低成本的多元制氢体系。在焦化、\n氯碱、丙烷脱氢等行业集聚地区，优先利用工业副产氢，鼓励就近\n消纳，降低工业副产氢供给成本。在风光水电资源丰富地区，开展\n可再生能源制氢示范，逐步扩大示范规模，探索季节性储能和电网\n调峰。推进固体氧化物电解池制氢、光解水制氢、海水制氢、核能",
+      "3\n气体排放。\n氢能产业是战略性新兴产业和未来产业重点发展方向。以科技\n自立自强为引领，紧扣全球新一轮科技革命和产业变革发展趋势，\n加强氢能产业创新体系建设，加快突破氢能核心技术和关键材料瓶\n颈，加速产业升级壮大，实现产业链良性循环和创新发展。践行创\n新驱动，促进氢能技术装备取得突破，加快培育新产品、新业态、\n新模式，构建绿色低碳产业体系，打造产业转型升级的新增长点，\n为经济高质量发展注入新动能。\n三、总体要求\n（一）指导思想\n以习近平新时代中国特色社会主义思想为指导，全面贯彻落实\n党的十九大和十九届历次全会精神，弘扬伟大建党精神，立足新发\n展阶段，完整准确全面贯彻新发展理念，构建新发展格局，以推动\n高质量发展为主题，以深化供给侧结构性改革为主线，紧扣实现碳\n达峰、碳中和目标，贯彻“四个革命、一个合作”能源安全新战略，\n着眼抢占未来产业发展先机，统筹氢能产业布局，提升创新能力，\n完善管理体系，规范有序发展，提高氢能在能源消费结构中的比重，\n为构建清洁低碳、安全高效的能源体系提供有力支撑。\n（二）基本原则\n创新引领，自立自强。坚持创新驱动发展，加快氢能创新体系\n建设，以需求为导向，带动产品创新、应用创新和商业模式创新。\n集中突破氢能产业技术瓶颈，建立健全产业技术装备体系，增强产"
+    ],
     "ground_truth": "氢能产业链上游是氢的制取环节，包括碱性、PEM、SOEC和AEM等电解水制氢技术。"
   },
   {
     "question": "光伏产业链从上到下包括哪些环节？",
-    "answer": "抱歉，我暂时没有找到与“光伏产业链从上到下包括哪些环节？”相关的本地数据。请检查名称是否准确，或稍后重试。",
-    "source": "local_fallback",
+    "answer": "光伏产业链从上到下主要包括多晶硅、硅棒/硅片、电池、组件、薄膜、逆变器、系统等环节[2]。这些环节涵盖了从原材料到终端应用的完整链条。",
+    "source": "llm",
     "resolved_question": "光伏产业链从上到下包括哪些环节？",
     "query_rewritten": false,
-    "intent_source": "rules",
-    "contexts": [],
+    "intent_source": "llm",
+    "contexts": [
+      "1\n光伏产业是半导体技术与新能源需求相结合而衍生的产业。 大力发展光伏产业， 对调整能源\n结构、 推进能源生产和消费革命、 促进生态文明建设具有重要意义。 我国已将光伏产业列为国家\n战略性新兴产业之一， 在产业政策引导和市场需求驱动的双重作用下， 全国光伏产业实现了快速\n发展， 已经成为我国为数不多可参与国际竞争并取得领先优势的产业。 光伏产业链构成如下图所\n示。\n图 1  光伏产业链构成\n一、路线图编制说明\n（一）涵盖内容\n路线图编制以为国家制定产业政策提供支撑、 为行业技术发展指明方向、 为企业战略决策提\n供参考为主要目标，基于当前光伏技术和产业发展现状，从光伏产业链多晶硅、硅棒/硅片、电\n池、组件、薄膜、逆变器、系统、新型储能等各个环节抽取出可代表该领域发展水平的指标，这\n些指标涵盖产业、技术、市场等各个层面。",
+      "从光伏产业链多晶硅、硅棒/硅片、电\n池、组件、薄膜、逆变器、系统、新型储能等各个环节抽取出可代表该领域发展水平的指标，这\n些指标涵盖产业、技术、市场等各个层面。\n（二）指标值的确定\n本次路线图的修订，在前九版的基础上，秉持客观性、科学性、广泛性和前瞻性的原则， 再\n次通过调查问卷、 现场调研、 专家研讨等形式， 广泛征求意见尤其是重点企业和专家的建议， 由\n此确定各环节关键指标 2025-2035 年发展现状与趋势。本次修订问卷调查以产业链各环节主要\n光伏企业为主， 同时， 多次通过邮件等书面形式广泛征求企业和专家意见， 并组织2 次以上专家\n研讨会，对各个指标的合理性及必要性等进行详尽分析，以此确定指标取值。2025 年光伏行业\n处于转型调整期， 路线图作为指导行业发展的重要工具， 也在持续演进以适应新的市场需求和技\n术趋势。经与行业专家探讨， 本次路线图针对技术发展情况新增或删除部分指标，如：硅片环节\n新增 XBC 硅片厚度、出片量及钨丝线线径相关指标；电池环节增加了不同 BC 电池技术市场占",
+      "经过十几年的发展， 光伏产业已成为我国少有的形成国际竞争优势、 实现端到端\n自主可控、 并有望率先成为高质量发展典范的战略性新兴产业， 也是推动我国能源变\n革的重要引擎。 目前我国光伏产业在制造业规模、 产业化技术水平、 应用市场拓展、\n产业体系建设等方面均位居全球前列。\n为引领产业发展方向， 引导我国光伏产业健康良性发展， 在工业和信息化部电子\n信息司指导下， 中国光伏行业协会、赛迪智库集成电路研究所已发布九版 《中国光伏\n产业发展路线图》 。 在此基础上， 我们组织行业专家编制了 《中国光伏产业发展路线\n图（2025-2026 年）》（以下简称《路线图（2025-2026 年）》），内容涵盖了光\n伏产业链上下游各环节，包括多晶硅、硅棒/硅片、电池、组件、薄膜、逆变器、系\n统、新型储能等各环节共 84 个关键指标。 《路线图（2025-2026 年）》根据产业实\n际情况，结合技术演进进程以及企业技改现状，总结了 2025 年发展情况并预测了\n2026、2028、2030、2032 和 2035 年的发展趋势。这些指标体现了产业、技术、市\n场等发展现状和发展趋势， 具有一定的前瞻性， 供社会各界参考。 我们将根据产业发\n展变化情况及时进行修订， 使其能够更及时、 准确地反映产业的实际情况， 更好地指\n导行业发展。\n《路线图 （2025-2026 年） 》 在编写过程中得到了行业主管",
+      "目  录\n一、路线图编制说明 ............................................................................................................... 1\n（一）涵盖内容 ................................ ................................ ................................ ................................ ... 1\n（二）指标值的确定 ................................ ................................ ................................ ...........................  1\n二、中国光伏产业发展简况 .................................................................................................. 3\n三、产业链各环节关键指标 ..........................................................",
+      "...... 3\n三、产业链各环节关键指标 .................................................................................................. 6\n（一）多晶硅环节 ................................ ................................ ................................ ............................... 6\n1、还原电耗 ................................................................................................................................... 6\n2、冷氢化电耗 .............................................................................................................................. 6\n3、综合电耗 .................................................."
+    ],
     "ground_truth": "光伏产业链主要包括硅料、硅片、电池片、组件和逆变器等下游应用环节。"
   },
   {
     "question": "动力电池产业链从上游到下游有哪些环节？",
-    "answer": "抱歉，我暂时没有找到与“动力电池产业链从上游到下游有哪些环节？”相关的本地数据。请检查名称是否准确，或稍后重试。",
-    "source": "local_fallback",
+    "answer": "动力电池产业链从上游到下游主要包括以下环节：上游为原材料供应，如锂、钴、镍等矿产资源；中游为电池材料和电芯制造；下游为电池组装配及新能源汽车整车生产[3]。",
+    "source": "llm",
     "resolved_question": "动力电池产业链从上游到下游有哪些环节？",
     "query_rewritten": false,
-    "intent_source": "rules",
+    "intent_source": "llm",
     "contexts": [
       "...... 3\n三、产业链各环节关键指标 .................................................................................................. 6\n（一）多晶硅环节 ................................ ................................ ................................ ............................... 6\n1、还原电耗 ................................................................................................................................... 6\n2、冷氢化电耗 .............................................................................................................................. 6\n3、综合电耗 ..................................................",
       "24.0%\n26.0%\n28.0%\n单晶电池片 黑硅多晶 PERC黑硅多晶 PERC单晶\nn-TOPCon电池片 n-HJT电池片 n-XBC电池片 多晶电池片\n6\n三、产业链各环节关键指标\n（一）多晶硅环节1\n1、还原电耗\n多晶硅还原是指三氯氢硅和氢气发生还原反应生成高纯硅料的过程，其电耗包括硅芯预热、\n沉积、保温、结束换气等工艺过程中的电力消耗。2025 年随着还原自动化技术的提升、工艺的\n进一步优化、 硅芯尺寸的增加等因素， 多晶硅还原电耗进一步下降， 平均还原电耗为40.5kWh/kg-\nSi，较2024 年下降 2.4%。 未来随着还原技术的进步， 还原电耗仍将呈现持续下降趋势， 到2035\n年还原电耗有望下降至 36.5kWh/kg-Si。 但有可能随着下游对多晶硅产品质量的要求变化， 还原\n电耗会有所浮动。",
+      " will be even more crucial for manufacturers to remain competitive.\nThe battery supply chain remains geographically\nconcentrated\nThe EV and battery supply chain becomes increasingly geographically\nconcentrated when moving upstream from car manufacturing to battery cell and\ncomponent production. China was responsible for  80% of global battery cell\nproduction in 2024, while the remainder was  produced in the United  States, the\nEuropean Union, Korea and Japan. Importantly, the production of lithium -ion\nbattery manufacturing equipment is also highly concentrated, with China, Korea,\nand Japan le",
       "经过十几年的发展， 光伏产业已成为我国少有的形成国际竞争优势、 实现端到端\n自主可控、 并有望率先成为高质量发展典范的战略性新兴产业， 也是推动我国能源变\n革的重要引擎。 目前我国光伏产业在制造业规模、 产业化技术水平、 应用市场拓展、\n产业体系建设等方面均位居全球前列。\n为引领产业发展方向， 引导我国光伏产业健康良性发展， 在工业和信息化部电子\n信息司指导下， 中国光伏行业协会、赛迪智库集成电路研究所已发布九版 《中国光伏\n产业发展路线图》 。 在此基础上， 我们组织行业专家编制了 《中国光伏产业发展路线\n图（2025-2026 年）》（以下简称《路线图（2025-2026 年）》），内容涵盖了光\n伏产业链上下游各环节，包括多晶硅、硅棒/硅片、电池、组件、薄膜、逆变器、系\n统、新型储能等各环节共 84 个关键指标。 《路线图（2025-2026 年）》根据产业实\n际情况，结合技术演进进程以及企业技改现状，总结了 2025 年发展情况并预测了\n2026、2028、2030、2032 和 2035 年的发展趋势。这些指标体现了产业、技术、市\n场等发展现状和发展趋势， 具有一定的前瞻性， 供社会各界参考。 我们将根据产业发\n展变化情况及时进行修订， 使其能够更及时、 准确地反映产业的实际情况， 更好地指\n导行业发展。\n《路线图 （2025-2026 年） 》 在编写过程中得到了行业主管",
-      "氢能产业链包括制氢、储运氢、用氢三个环节。\n- 制氢：灰氢（化石燃料制氢）、蓝氢（加装碳捕集）、绿氢（可再生能源电解水）。\n- 储运：高压气态储氢、低温液态储氢、有机液体储氢。\n- 用氢：燃料电池汽车、工业原料、发电调峰。",
-      "目  录\n一、路线图编制说明 ............................................................................................................... 1\n（一）涵盖内容 ................................ ................................ ................................ ................................ ... 1\n（二）指标值的确定 ................................ ................................ ................................ ...........................  1\n二、中国光伏产业发展简况 .................................................................................................. 3\n三、产业链各环节关键指标 .........................................................."
+      "氢能产业链包括制氢、储运氢、用氢三个环节。\n- 制氢：灰氢（化石燃料制氢）、蓝氢（加装碳捕集）、绿氢（可再生能源电解水）。\n- 储运：高压气态储氢、低温液态储氢、有机液体储氢。\n- 用氢：燃料电池汽车、工业原料、发电调峰。"
     ],
     "ground_truth": "动力电池产业链涵盖上游锂矿与正负极材料、中游电芯制造与电池包集成、下游整车应用及补能体系。"
   },
   {
     "question": "风电产业链上下游之间怎么关联？",
-    "answer": "抱歉，我暂时没有找到与“风电产业链上下游之间怎么关联？”相关的本地数据。请检查名称是否准确，或稍后重试。",
-    "source": "local_fallback",
+    "answer": "风电产业链上游主要包括原材料供应和设备制造，如钢材、叶片材料、齿轮箱等；中游为风电机组的生产和组装；下游则涉及风电场的建设与运营，以及电力输送和并网[1]。各环节相互依赖，上游材料质量影响中游设备性能，下游应用需求又反过来推动上游和中游的技术升级。",
+    "source": "llm",
     "resolved_question": "风电产业链上下游之间怎么关联？",
     "query_rewritten": false,
     "intent_source": "llm",
-    "contexts": [],
+    "contexts": [
+      "经过十几年的发展， 光伏产业已成为我国少有的形成国际竞争优势、 实现端到端\n自主可控、 并有望率先成为高质量发展典范的战略性新兴产业， 也是推动我国能源变\n革的重要引擎。 目前我国光伏产业在制造业规模、 产业化技术水平、 应用市场拓展、\n产业体系建设等方面均位居全球前列。\n为引领产业发展方向， 引导我国光伏产业健康良性发展， 在工业和信息化部电子\n信息司指导下， 中国光伏行业协会、赛迪智库集成电路研究所已发布九版 《中国光伏\n产业发展路线图》 。 在此基础上， 我们组织行业专家编制了 《中国光伏产业发展路线\n图（2025-2026 年）》（以下简称《路线图（2025-2026 年）》），内容涵盖了光\n伏产业链上下游各环节，包括多晶硅、硅棒/硅片、电池、组件、薄膜、逆变器、系\n统、新型储能等各环节共 84 个关键指标。 《路线图（2025-2026 年）》根据产业实\n际情况，结合技术演进进程以及企业技改现状，总结了 2025 年发展情况并预测了\n2026、2028、2030、2032 和 2035 年的发展趋势。这些指标体现了产业、技术、市\n场等发展现状和发展趋势， 具有一定的前瞻性， 供社会各界参考。 我们将根据产业发\n展变化情况及时进行修订， 使其能够更及时、 准确地反映产业的实际情况， 更好地指\n导行业发展。\n《路线图 （2025-2026 年） 》 在编写过程中得到了行业主管",
+      "...... 3\n三、产业链各环节关键指标 .................................................................................................. 6\n（一）多晶硅环节 ................................ ................................ ................................ ............................... 6\n1、还原电耗 ................................................................................................................................... 6\n2、冷氢化电耗 .............................................................................................................................. 6\n3、综合电耗 ..................................................",
+      "下持续加速，从政策扶持与产业初步突破的阶段起步，至 2035 年在地化供应率预计将提升至\n82%，从而有力保障供应链安全， 降低下游设备成本， 支撑新型储能等战略产业规模化、 高质量\n发展。\n0%\n20%\n40%\n60%\n80%\n100%\n2025年 2026年 2028年 2030年 2032年 2035年\n集中式 组串式 高压级联",
+      "1\n光伏产业是半导体技术与新能源需求相结合而衍生的产业。 大力发展光伏产业， 对调整能源\n结构、 推进能源生产和消费革命、 促进生态文明建设具有重要意义。 我国已将光伏产业列为国家\n战略性新兴产业之一， 在产业政策引导和市场需求驱动的双重作用下， 全国光伏产业实现了快速\n发展， 已经成为我国为数不多可参与国际竞争并取得领先优势的产业。 光伏产业链构成如下图所\n示。\n图 1  光伏产业链构成\n一、路线图编制说明\n（一）涵盖内容\n路线图编制以为国家制定产业政策提供支撑、 为行业技术发展指明方向、 为企业战略决策提\n供参考为主要目标，基于当前光伏技术和产业发展现状，从光伏产业链多晶硅、硅棒/硅片、电\n池、组件、薄膜、逆变器、系统、新型储能等各个环节抽取出可代表该领域发展水平的指标，这\n些指标涵盖产业、技术、市场等各个层面。",
+      "指导单位\n工业和信息化部电子信息司\n承担单位\n中国光伏行业协会\n赛迪智库集成电路研究所\n咨询专家（按姓氏笔划排序）\n丁小海 丁启钊 于沛阳 于振瑞 万  里 弓传河 马  强 马玉超\n王  伟 王  莉 王  娟 王  辉 王  婷 王文静 王国峰 王显章\n王栩生 王淑娟 王新强 甘新业 田  誉 田  磊 田清勇 史金超\n丛建鸥 邢国强 毕恩兵 朱建晶 任  勇 刘  飞 刘  国 刘  涛\n刘一铭 刘玉颖 刘亚锋 刘松民 刘雨箐 刘明明 刘建东 刘俊辉\n刘富贵 安百俊 许  飞 许克龙 孙  云 孙  阳 孙丽平 孙雨彤\n孙建侠 纪振双 严大洲 李  明 李  晨 李小磊 李寿琴 李宏钊\n李学健 李琼慧 李聪炟 李燕燕 杨  智 杨文侃 杨晓磊 肖鹏军\n时璟丽 何  博 何开富 何永才 何晨旭 余  帆 余中辉 沈  超\n沈海兵 宋登元 张  俊 张  敏 张  舒 张一峰 张光青 张志远\n张良利 张晓峰 张海林 张雪囡 张新颖 陆 闽 陆荷峰 陈  军\n陈  嘉 陈达明 陈伟文 陈奕峰 武晓峰 林坤燚 欧阳子 欧阳洁瑜\n罗才军 周  肃 周胡超 周洪伟 庞  健 宗  军 孟夏杰 孟祥飞\n赵志国 赵曙光 胡  伟 柳  典 钟财富 秦  潇 袁兴来 夏高强\n钱洪艳 倪健雄 徐  岩 殷晋杰 高振洲 郭明轩 唐正恺 曹天齐\n崔俊虎 梁  旭 梁  波 逯好峰 韩  洋 程星月 "
+    ],
     "ground_truth": "风电产业链上游提供叶片（如碳纤维叶片）、发电机等部件，中游整机厂集成机组，下游风电场运营依赖智能运维系统。"
   },
   {
     "question": "储能系统主要由哪些部分构成？",
-    "answer": "储能系统主要由电池组、储能变流器（PCS）、能量管理系统（EMS）和监控系统等部分构成。",
+    "answer": "储能系统主要由储能电池、储能变流器（PCS）、能量管理系统（EMS）和辅助设备构成[3]。不同技术路线的储能系统在具体组件上有所差异，例如锂离子电池储能系统包含电池模组和BMS（电池管理系统）等。",
     "source": "llm",
     "resolved_question": "储能系统主要由哪些部分构成？",
     "query_rewritten": false,
     "intent_source": "llm",
-    "contexts": [],
+    "contexts": [
+      "储能是新能源消纳的关键环节，按存储介质分为电化学储能与物理储能。",
+      "66\n图 85  2025-2035 年锂电储能新增装机系统成本变化趋势（单位：元/Wh）\n7、储能系统利用率\n由于电力市场中储能参与的交易品类尚较单一、 调度机制的灵活性有待提升， 叠加部分储能\n项目以配套新能源为主（调用场景相对受限）等因素，我国储能系统利用率处于初步提升阶段。\n2025 年我国储能系统利用率为 48%，随着现货市场和辅助服务市场完善，储能系统利用率将逐\n步提升，助推新型储能项目经济性改善与行业可持续发展。\n图 86  2025-2035 年储能系统利用率变化趋势\n0.30\n0.35\n0.40\n0.45\n0.50\n0.55\n0.60\n0.65\n0.70\n2025年 2026年 2028年 2030年 2032年 2035年\n2h-跟网型 2h-构网型 4h-跟网型 4h-构网型\n40%\n45%\n50%\n55%\n60%\n65%\n70%\n75%\n80%\n2025年 2026年 2028年 2030年 2032年 2035年",
+      "61\n（八）新型储能环节\n新型储能是指除抽水蓄能外，以输出电力为主要形式的各类储能技术，包含锂/钠离子电池\n储能、液流电池储能、压缩空气储能、飞轮储能、氢储能等不同技术路线。\n表 13  部分新型储能技术释义\n名称 释义\n锂离子电池储能\n基于锂离子电池的储能形式。锂离子电池主要依靠锂离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n铅炭电池储能\n基于铅炭电池的储能形式。铅炭电池是指正极为二氧化铅、负极为铅炭复合电极、电解\n液为硫酸溶液，通过化学能和电能相互转换实现充放电的电池。\n液流电池储能\n基于液流电池的储能形式。液流电池是指通过流动的正极和/或负极电解液中活性物质的\n电化学反应，进行化学能和电能相互转换实现充放电的电池。\n钠离子电池储能\n基于钠离子电池的储能形式。钠离子电池主要依靠钠离子在正极和负极之间移动来工\n作，通过化学能和电能相互转换实现充放电。\n压缩空气储能 通过空气介质的压缩和膨胀，实现能量存储和释放的储能形式。\n飞轮储能 以飞轮为储能载体，通过动能和电能相互转换实现电能存储、释放的储能形式。\n超级电容器储能\n通过电极/电解液界面形成的双电层电容或电极表面快速氧化还原反应形成的赝电容，实\n现能量存储、转换及释放的储能形式。\n超导电磁储能 通过超导线圈在超导状态下实现电能存储及释放的储能形式。\n重力储能 基于高度落差对储能介质进行升降以实现能量存储",
+      "型 4h-构网型\n40%\n45%\n50%\n55%\n60%\n65%\n70%\n75%\n80%\n2025年 2026年 2028年 2030年 2032年 2035年\n67\n8、锂电储能系统能量转化效率\n相较早期投运的储能系统， 当前我国储能系统具有能量转化效率稳步优化的突出特点。2025\n年， 我国储能系统能量转化效率为86.8%。 随着储能核心部件性能的升级、 系统集成方案的迭代，\n以及智能控制与调度技术的完善，我国储能系统能量转化效率或将逐步提升。\n图 87  2025-2035 年锂电储能系统能量转化效率变化趋势21\n9、新增锂电装机中跟网型储能/构网型储能技术路线占比22\n跟网型储能在技术成熟度、地区适应度以及综合成本等方面适配当前多数储能场景的需求，\n是现阶段市场的主流选择。2025 年，我国新增锂电装机中跟网型储能占比为85%，在常规电力\n调节场景下跟网型系统有其成熟适配的独特优势，构网型技术在未来一段时间内占比将持续增\n加，二者将依据不同应用场景的需求协同布局。\n21 该表内所示储能系统额定能量转换效率是依据 GB/T36548-2024 标准，在 35KV 侧进行的首年首次测试\n得到的 2h、4h 系统综合值；\n22 本项指标跟网、构网技术路线按项目招标时的技术路线要求计。\n85.0%\n86.0%\n87.0%\n88.0%\n89.0%\n90.0%\n2025年 2026年 2028年 2030年 2032年 2035年",
+      "67\n9、新增锂电装机中跟网型储能/构网型储能技术路线占比 .............................................. 67\n10、储能电池单体电芯初始体积能量密度 ............................................................................ 68\n11、新增锂电装机中不同储能系统 PCS 技术路线占比 ...................................................... 69\n12、锂电储能系统功率模块在地化供应率 ............................................................................ 69\n13、储能系统主控芯片在地化供应率 .................................................................................... 70"
+    ],
     "ground_truth": "储能系统通常由电池本体（锂电或液流）、电池管理系统BMS、储能变流器PCS和能量管理系统EMS等构成。"
   },
   {
     "question": "核能产业链从燃料到发电包括哪些环节？",
-    "answer": "抱歉，我暂时没有找到与“核能产业链从燃料到发电包括哪些环节？”相关的本地数据。请检查名称是否准确，或稍后重试。",
-    "source": "local_fallback",
+    "answer": "核能产业链从燃料到发电主要包括铀矿开采、铀浓缩、核燃料制造、核电站发电等环节[1]。其中，铀矿开采是产业链的起点，铀浓缩和燃料制造为核电站提供燃料，最终通过核反应堆实现发电[2]。",
+    "source": "llm",
     "resolved_question": "核能产业链从燃料到发电包括哪些环节？",
     "query_rewritten": false,
-    "intent_source": "rules",
-    "contexts": [],
+    "intent_source": "llm",
+    "contexts": [
+      "...... 3\n三、产业链各环节关键指标 .................................................................................................. 6\n（一）多晶硅环节 ................................ ................................ ................................ ............................... 6\n1、还原电耗 ................................................................................................................................... 6\n2、冷氢化电耗 .............................................................................................................................. 6\n3、综合电耗 ..................................................",
+      "氢能产业链包括制氢、储运氢、用氢三个环节。\n- 制氢：灰氢（化石燃料制氢）、蓝氢（加装碳捕集）、绿氢（可再生能源电解水）。\n- 储运：高压气态储氢、低温液态储氢、有机液体储氢。\n- 用氢：燃料电池汽车、工业原料、发电调峰。",
+      "24.0%\n26.0%\n28.0%\n单晶电池片 黑硅多晶 PERC黑硅多晶 PERC单晶\nn-TOPCon电池片 n-HJT电池片 n-XBC电池片 多晶电池片\n6\n三、产业链各环节关键指标\n（一）多晶硅环节1\n1、还原电耗\n多晶硅还原是指三氯氢硅和氢气发生还原反应生成高纯硅料的过程，其电耗包括硅芯预热、\n沉积、保温、结束换气等工艺过程中的电力消耗。2025 年随着还原自动化技术的提升、工艺的\n进一步优化、 硅芯尺寸的增加等因素， 多晶硅还原电耗进一步下降， 平均还原电耗为40.5kWh/kg-\nSi，较2024 年下降 2.4%。 未来随着还原技术的进步， 还原电耗仍将呈现持续下降趋势， 到2035\n年还原电耗有望下降至 36.5kWh/kg-Si。 但有可能随着下游对多晶硅产品质量的要求变化， 还原\n电耗会有所浮动。",
+      "目  录\n一、路线图编制说明 ............................................................................................................... 1\n（一）涵盖内容 ................................ ................................ ................................ ................................ ... 1\n（二）指标值的确定 ................................ ................................ ................................ ...........................  1\n二、中国光伏产业发展简况 .................................................................................................. 3\n三、产业链各环节关键指标 ..........................................................",
+      "......................... 33\n15、水耗 ...................................................................................................................................... 34\n16、电池单位产能设备投资额 ................................................................................................ 34\n（四）组件环节 ................................ ................................ ................................ ................................  35\n1、不同类型组件功率 ............................................................................................................... 35\n2、单/双面发电组件市场占比 ..........................."
+    ],
     "ground_truth": "核能产业链包括铀矿开采、燃料元件制造、反应堆运行发电、乏燃料后处理等环节，涉及华龙一号、AP1000等堆型。"
   }
 ]

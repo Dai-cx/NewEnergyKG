@@ -97,12 +97,17 @@ def main(argv=None) -> int:
                       help="Qdrant 集合名（切分粒度对比实验用；默认见 qa/config.py 的 QDRANT_COLLECTION）")
     argp.add_argument("--fusion-k", type=int, default=60,
                       help="RRF 平滑常数 k（调参实验用，默认 60）")
-    argp.add_argument("--rerank-candidates", type=int, default=50,
-                      help="重排候选池大小（默认 50）")
+    argp.add_argument("--rerank-candidates", type=int, default=None,
+                      help=f"重排候选池大小（默认取 config.RERANK_CANDIDATES="
+                           f"{config.RERANK_CANDIDATES}；该参数直接决定重排费用）")
     argp.add_argument("--limit", type=int, default=None, help="评测集抽样数量（试跑用）")
     argp.add_argument("--output", type=Path, default=DEFAULT_OUTPUT,
                       help="Markdown 报告输出路径")
     args = argp.parse_args(argv)
+
+    # 未显式指定时用配置值（重排按候选数计费，集中在一处便于控制成本）
+    if args.rerank_candidates is None:
+        args.rerank_candidates = config.RERANK_CANDIDATES
 
     # ---- 1. 本地实体表（KG 检索器需要实体名做实体识别）----
     try:

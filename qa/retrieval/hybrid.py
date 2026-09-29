@@ -18,11 +18,16 @@ from typing import List, Optional
 
 from loguru import logger
 
+from qa import config
 from qa.retrieval.base import RetrievalResult, Retriever, result_key
 from qa.retrieval.reranker import Reranker
 
 # RRF 平滑常数（业界常用默认值）
 RRF_K = 60
+
+# 重排候选池默认值：取自配置（重排按 token 计费，费用 ∝ 候选数 × chunk 长度）。
+# 集中到 config 便于一处调优/控成本，见 qa/config.py::RERANK_CANDIDATES。
+RERANK_CANDIDATES_DEFAULT = config.RERANK_CANDIDATES
 
 
 def rrf_fuse(
@@ -94,7 +99,7 @@ class HybridRetriever(Retriever):
         weights: Optional[List[float]] = None,
         fusion_k: int = RRF_K,
         reranker: Optional[Reranker] = None,
-        rerank_candidates: int = 50,
+        rerank_candidates: int = RERANK_CANDIDATES_DEFAULT,
     ):
         """
         Args:

@@ -140,10 +140,20 @@ def _clamp01(value: float) -> float:
     return max(0.0, min(1.0, value))
 
 
+# 陈述拆分结果缓存：key = 文本内容。
+# 依据：陈述拆分是**纯粹的文本->陈述**映射，与样本、上下文都无关，
+# 因此同一段文本重复送 LLM 属于纯浪费（实测评测集里会有多条样本
+# 共享同一段 ground_truth，重复调用是确定性的可省开销）。
+# 只缓存成功结果；失败不缓存，以便重试。
+_CLAIMS_CACHE: Dict[str, List[str]] = {}
+
+
 def _split_claims(llm: Any, text: str) -> Optional[List[str]]:
     """把一段文本拆成最小事实陈述（JSON {"claims": [...]}）。"""
     if not text or not text.strip():
         return []
+    if text in _CLAIMS_CACHE:
+        return _CLAIMS_CACHE[text]
     obj = _chat_json(llm, CLAIM_EXTRACT_SYSTEM, text, "陈述拆分")
     if obj is None:
         return None
@@ -153,7 +163,9 @@ def _split_claims(llm: Any, text: str) -> Optional[List[str]]:
     if not isinstance(claims, list):
         return None
     cleaned = [str(c).strip() for c in claims if str(c).strip()]
-    return cleaned  # 允许空列表：无陈述是合法结果（如纯闲聊），与"解析失败"区分开
+    # 允许空列表：无陈述是合法结果（如纯闲聊），与"解析失败"区分开
+    _CLAIMS_CACHE[text] = cleaned
+    return cleaned
 
 
 def _check_support(

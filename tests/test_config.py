@@ -54,6 +54,33 @@ class TestDefaults:
         assert config.ENTITY_FUZZY_THRESHOLD == 85
         assert config.MAX_HISTORY_ROUNDS == 5
 
+    def test_rerank_candidates_is_configurable_and_defaults_to_30(self):
+        """
+        重排候选池是**成本参数**（费用 ∝ 候选数 × chunk 长度）。
+
+        它必须满足两点：
+        1. 可通过 RERANK_CANDIDATES 环境变量覆盖；
+        2. 默认值为 30 —— 实测 cand=30 的 MRR/P@5 优于 cand=50/100
+           （见 qa/eval/retrieval_tuning_report.md），即"更省钱且指标更好"。
+        """
+        assert config.RERANK_CANDIDATES == 30
+
+        monkeypatch = pytest.MonkeyPatch()
+        try:
+            monkeypatch.setenv("RERANK_CANDIDATES", "12")
+            reloaded = importlib.reload(config)
+            assert reloaded.RERANK_CANDIDATES == 12
+        finally:
+            monkeypatch.undo()
+            importlib.reload(config)
+
+    def test_hybrid_default_follows_config(self):
+        """HybridRetriever 未显式指定候选池时，必须跟随 config（否则调优无效）"""
+        from qa.retrieval.hybrid import HybridRetriever
+
+        retriever = HybridRetriever(retrievers=[])
+        assert retriever.rerank_candidates == config.RERANK_CANDIDATES
+
     def test_default_logging_settings(self):
         assert config.LOG_LEVEL == "INFO"
         assert config.LOG_FILE == ""

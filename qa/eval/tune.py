@@ -31,6 +31,7 @@ from typing import Dict, List, Optional, Sequence, Tuple
 
 from loguru import logger
 
+from qa import config
 from qa.data_fallback import LocalDataStore
 from qa.eval.ablation import run_ablation, write_markdown_report
 from qa.eval.dataset import judge_result, load_retrieval_dataset, sample_dataset
@@ -106,13 +107,15 @@ def main(argv: Optional[List[str]] = None) -> int:
     argp.add_argument("--fusion-k-values", default="30,60,100",
                       help="RRF 平滑常数 k 扫描列表，逗号分隔（默认 30,60,100）")
     argp.add_argument("--rerank-candidates-values", default=None,
-                      help="重排候选池扫描列表，逗号分隔（默认 50；仅真实重排时生效）")
+                      help=f"重排候选池扫描列表，逗号分隔"
+                           f"（默认仅扫 config.RERANK_CANDIDATES={config.RERANK_CANDIDATES}；"
+                           f"注意组数 = fusion-k 数 × 候选数，每次重排都按 token 计费）")
     argp.add_argument("--output", type=Path, default=DEFAULT_OUTPUT,
                       help="Markdown 报告输出路径")
     args = argp.parse_args(argv)
 
     fusion_ks = _parse_int_list(args.fusion_k_values) or [60]
-    cands = _parse_int_list(args.rerank_candidates_values) or [50]
+    cands = _parse_int_list(args.rerank_candidates_values) or [config.RERANK_CANDIDATES]
 
     # ---- 检索器 ----
     try:

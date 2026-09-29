@@ -103,6 +103,16 @@ RETRIEVER_TOP_K = int(os.getenv("RETRIEVER_TOP_K", "5"))
 # 重排（rerank）模型：DashScope gte-rerank-v2（如账号不可用可改 gte-rerank）
 RERANK_MODEL = os.getenv("RERANK_MODEL", "gte-rerank-v2")
 
+# 送入重排器的候选条数（两阶段检索的"粗排池子"）。
+#
+# 这是**成本敏感参数**：重排按 token 计费，而单次请求要把"问题 + 全部候选 chunk"
+# 一起送进模型，故费用 ≈ 候选数 × chunk 长度。实测（见 qa/eval/retrieval_tuning_report.md）：
+#   cand=30 → MRR 0.8665 / P@5 0.6320
+#   cand=50 → MRR 0.8598 / P@5 0.6280
+#   cand=100 → MRR 0.8585 / P@5 0.6240
+# 小池子同时**更省钱且指标更好**，因此默认取 30（原实现硬编码 50）。
+RERANK_CANDIDATES = int(os.getenv("RERANK_CANDIDATES", "30"))
+
 # ==================== 调试配置 ====================
 DEBUG = os.getenv("QA_DEBUG", "false").lower() in ("true", "1", "yes")
 
