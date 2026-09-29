@@ -57,9 +57,9 @@ NewEnergyKG/
     ├── main.py                    # FastAPI 服务入口（/qa /chat /status）
     ├── ingestion/                 # 文档摄取：parser/chunker/embedder/qdrant_store
     ├── retrieval/                 # 检索层：KG/向量/BM25 统一接口 + RRF + 重排
-    ├── eval/                      # 评测：指标/数据集/消融/参数扫描/RAGAS 四指标
-    ├── eval_dataset.json          # 评测集主文件（60 题）
-    ├── eval_dataset_extra.json    # 评测集扩展（+40 题，合计 100 题）
+    ├── eval/                      # 评测：指标/数据集/消融/参数扫描/改写/RAGAS 四指标
+    ├── eval_dataset.json          # 评测集主文件（65 题，含 5 题多轮指代消解）
+    ├── eval_dataset_extra.json    # 评测集扩展（+40 题，合计 105 题）
     ├── test_qa.py                 # 命令行测试脚本
     ├── evaluate.py                # 纯 LLM vs KG+RAG 对比评估
     └── .env.example               # 环境变量模板
@@ -190,29 +190,41 @@ python -m qa.evaluate --mode both --output qa/eval_report.md --csv qa/eval_resul
 - `kg_rag`：知识图谱增强回答
 - `both`：两者对比评估
 
-### 9. 检索评估闭环（Week2：消融 / 参数扫描 / RAGAS 四指标）
+### 9. 检索评估闭环（Week2：消融 / 参数扫描 / RAGAS 四指标 / 查询改写）
 
-评测集已扩到 **100 题**（`qa/eval_dataset.json` 60 题 + `qa/eval_dataset_extra.json` 40 题，
-后者带 `reference_answer` 标准答案），配套命令：
+评测集共 **105 题**：`qa/eval_dataset.json` 65 题 + `qa/eval_dataset_extra.json` 40 题。
+其中 **45 题带 `reference_answer`** 标准答案，**5 题带 `history`** 用于多轮指代消解评估
+（这 5 题会被检索消融自动过滤，保证消融基线仍是可比的 **100 题**）。配套命令：
 
 ```bash
 # ① 检索消融：纯KG / 纯向量 / 纯BM25 / 混合(RRF) / 混合(RRF)+重排
-python -m qa.eval.run --output qa/eval/retrieval_ablation_report.md
+python -m qa.eval.run --collection newenergy_kb --output qa/eval/retrieval_ablation_report.md
 
-# ② 参数扫描（RRF 平滑常数 k；配置 Key 后加扫重排候选池）
-python -m qa.eval.tune --fusion-k-values 30,60,100 --limit 30
+# ② 查询改写（多轮指代消解）专项评估 —— 同一条检索管线，只切换"原句 vs 改写句"
+python -m qa.eval.rewrite --collection newenergy_kb
+python -m qa.eval.rewrite --collection newenergy_kb --no-rewrite   # 关闭改写作对照
 
-# ③ 生成质量四指标（faithfulness 等，需 DASHSCOPE_API_KEY）：
+# ③ 参数扫描（RRF 平滑常数 k；配置 Key 后加扫重排候选池）
+python -m qa.eval.tune --collection newenergy_kb --fusion-k-values 30,60,100 --limit 30
+
+# ④ 生成质量四指标（faithfulness 等，需 DASHSCOPE_API_KEY）：
 #    先现场收集真实问答样本（回答 + 检索引用），再评分出报告
 python -m qa.eval.gen_run --collect-live --samples-output qa/eval/collected_samples.json
 python -m qa.eval.gen_run --samples qa/eval/collected_samples.json
 ```
 
 - **检索指标**：Recall@K / MRR / Precision@K（LLM-free 近似判定）；
+- **改写指标**：实体抽取命中率 + 检索指标（原句 vs 改写后），
+  对照设计保证增益可干净归因于查询改写；
 - **生成指标**：faithfulness / answer_relevancy / context_precision / context_recall
   （自研 RAGAS 风格，LLM-as-judge）；
 - **切分粒度实验**：`python -m qa.ingestion.run --collection <集合名> --chunk-size N`
   分别摄取同一语料后，用 `python -m qa.eval.run --collection <集合名>` 对比各集合的检索指标。
+
+> 语料说明：`docs/kb/` 是由 `data/new_energy.json` 渲染出的结构化知识语料，
+> 用 `python -m qa.ingestion.kb_renderer render --ingest` 可幂等写入集合 `newenergy_kb`；
+> 原始 PDF 语料保留在 `newenergy_docs` 作为对照。
+> 修复前后对比见 `qa/eval/corpus_fix_report.md`。
 
 ---
 
@@ -248,13 +260,13 @@ python -m qa.eval.gen_run --samples qa/eval/collected_samples.json
 本仓库已建立 **pytest 自动化测试体系**（`tests/`），全部离线可跑（Fake Neo4j / 内存 Qdrant / 脚本化 LLM）：
 
 ```bash
-python -m pytest -q          # 当前 180+ 用例全绿
+python -m pytest -q          # 当前 249 用例全绿
 pip install -e ".[dev]"      # 安装测试依赖（pytest）
 ```
 
 覆盖范围：配置 / 意图分类 / 图谱客户端 / Prompt 与记忆 / 兜底回答 / 问答引擎（含
-改写与检索失败重试）/ 摄取管道（增量去重）/ 检索与重排（含召回池回归）/ 评测
-（指标核算、消融、参数扫描、RAGAS 四指标）。
+改写与检索失败重试）/ 摄取管道（增量去重）/ 知识语料渲染（覆盖率与幂等回归）/ 检索与重排
+（含召回池回归）/ 评测（指标核算、消融、参数扫描、查询改写、RAGAS 四指标）。
 
 手动冒烟（可选）：`python -m qa.test_qa "..."` 单问题问答、Neo4j Browser 中
 执行 Cypher 交叉验证。

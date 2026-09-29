@@ -932,5 +932,142 @@
       "20年"
     ],
     "expected_relation_entities": []
+  },
+  {
+    "question": "那它的缺点呢？",
+    "history": [
+      {
+        "role": "user",
+        "content": "磷酸铁锂电池有什么优点？"
+      },
+      {
+        "role": "assistant",
+        "content": "磷酸铁锂电池安全性高、循环寿命长（可达3000次以上）、成本相对较低，且不含重金属。"
+      }
+    ],
+    "expected_intent": "property",
+    "expected_entities": [
+      "磷酸铁锂电池"
+    ],
+    "expected_answer_keywords": [
+      "能量密度",
+      "低温",
+      "缺点"
+    ],
+    "expected_relation_entities": [],
+    "reference_answer": "磷酸铁锂电池的主要缺点是能量密度相对较低（约140-160Wh/kg），低温性能较差，且导电性略差。",
+    "_note": "指代消解：用「它」指代上一轮的磷酸铁锂电池；不借助 history 无法检索。"
+  },
+  {
+    "question": "它和三元锂电池比怎么样？",
+    "history": [
+      {
+        "role": "user",
+        "content": "磷酸铁锂电池有什么优点？"
+      },
+      {
+        "role": "assistant",
+        "content": "磷酸铁锂电池安全性高、循环寿命长、成本较低，但能量密度偏低。"
+      }
+    ],
+    "expected_intent": "compare",
+    "expected_entities": [
+      "磷酸铁锂电池",
+      "三元锂电池"
+    ],
+    "expected_answer_keywords": [
+      "能量密度",
+      "安全性",
+      "成本"
+    ],
+    "expected_relation_entities": [],
+    "reference_answer": "磷酸铁锂电池安全性高、循环寿命长、成本低但能量密度偏低；三元锂电池能量密度高但安全性和成本表现较差。",
+    "_note": "比较意图下的指代消解：「它」补全为磷酸铁锂电池，且需识别出第二个实体。"
+  },
+  {
+    "question": "那它的循环寿命呢？",
+    "history": [
+      {
+        "role": "user",
+        "content": "全钒液流电池的原理是什么？"
+      },
+      {
+        "role": "assistant",
+        "content": "全钒液流电池通过不同价态钒离子在电解液中的氧化还原反应储存与释放电能，电解液储存在外部储罐中。"
+      }
+    ],
+    "expected_intent": "property",
+    "expected_entities": [
+      "全钒液流电池"
+    ],
+    "expected_answer_keywords": [
+      "循环寿命",
+      "20000",
+      "次"
+    ],
+    "expected_relation_entities": [],
+    "reference_answer": "全钒液流电池循环寿命很长，通常可达20000次以上，使用寿命可超过20年。",
+    "_note": "属性追问：换了问的属性维度（原理 -> 循环寿命），实体仍需从上文继承。",
+    "_expected_rewrite_entities": [
+      "全钒液流电池"
+    ]
+  },
+  {
+    "question": "那它有哪些公司？",
+    "history": [
+      {
+        "role": "user",
+        "content": "碱性电解水制氢是什么？"
+      },
+      {
+        "role": "assistant",
+        "content": "碱性电解水制氢是利用碱性电解液，在直流电作用下把水分解为氢气和氧气的制氢技术。"
+      }
+    ],
+    "expected_intent": "relation",
+    "expected_entities": [
+      "碱性电解水制氢"
+    ],
+    "expected_answer_keywords": [
+      "公司",
+      "企业"
+    ],
+    "expected_relation_entities": [
+      "公司"
+    ],
+    "reference_answer": "碱性电解水制氢相关的企业包括电解槽制造与系统集成厂商。",
+    "_note": "关系追问：「它」继承实体，意图切换为 relation（问公司而非属性）。",
+    "_expected_rewrite_entities": [
+      "碱性电解水制氢"
+    ]
+  },
+  {
+    "question": "它的主要材料是什么？",
+    "history": [
+      {
+        "role": "user",
+        "content": "钙钛矿太阳能电池的效率有多高？"
+      },
+      {
+        "role": "assistant",
+        "content": "钙钛矿太阳能电池实验室效率已超过26%，且成本低、可柔性制备。"
+      }
+    ],
+    "expected_intent": "relation",
+    "expected_entities": [
+      "钙钛矿太阳能电池"
+    ],
+    "expected_answer_keywords": [
+      "材料",
+      "钙钛矿"
+    ],
+    "expected_relation_entities": [
+      "材料"
+    ],
+    "reference_answer": "钙钛矿太阳能电池的主要材料包括钙钛矿吸光层材料、电子传输层与空穴传输层材料等。",
+    "_note": "跨领域指代：上一轮谈光伏效率，本轮追问材料，验证实体不因话题切换而丢失。",
+    "_expected_rewrite_entities": [
+      "钙钛矿太阳能电池"
+    ]
   }
 ]
