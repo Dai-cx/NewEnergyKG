@@ -223,7 +223,29 @@ def main(argv: Optional[List[str]] = None) -> int:
     summary = summarize_scores(scored)
 
     # ---- 4. 报告 ----
-    path = write_gen_report(scored, summary, args.output)
+    # 防误导：若判分失败比例过高，报告显式标注"结果不可用"，
+    # 避免一个建立在个位数样本上的分数被当作有效结论引用
+    notes = None
+    total = summary.get("samples", 0)
+    if total:
+        max_skipped = max(
+            (summary.get(m, {}).get("skipped", 0) or 0) for m in ALL_METRICS
+        )
+        if max_skipped > total * 0.5:
+            logger.warning(
+                f"判分失败比例过高（最多 {max_skipped}/{total} 条被跳过），"
+                "本次结果不可用作结论"
+            )
+            notes = [
+                "⚠️ **本次结果不可用**：大部分样本判分失败（见上表「跳过」列），"
+                "得分建立在个位数样本上，不具备统计意义。",
+                "常见原因：LLM 裁判不可用（Key 失效 / 额度不足 / 欠费）、"
+                "网络异常、或样本缺少必要输入。请先修复裁判可用性再重跑。",
+                "所有指标均需 LLM 裁判；判分失败会标记为「跳过」而不是误报 0 分，"
+                "因此「跳过」列就是可用性的直接证据。",
+            ]
+
+    path = write_gen_report(scored, summary, args.output, notes=notes)
     for metric in ALL_METRICS:
         info = summary.get(metric, {})
         score = info.get("score")
