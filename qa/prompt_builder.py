@@ -100,6 +100,24 @@ class PromptBuilder:
         return SYSTEM_PROMPT.strip() + "\n\n" + extra
 
     @staticmethod
+    def format_kg_context(kg_context: Optional[Dict[str, Any]]) -> Optional[str]:
+        """
+        把图谱上下文渲染成注入 Prompt 的那段文本（JSON 缩进格式）。
+
+        单独抽出来的原因：**评估必须看到与 LLM 完全相同的文本**。
+        `qa/eval/gen_run.py` 采集 RAGAS 的 `contexts` 时若只取文档检索结果、
+        不含图谱事实，则任何来自图谱的陈述都会被判为"无上下文支持"，
+        faithfulness 会被系统性低估（实测 0.40，见 qa/eval/ragas_live_report.md）。
+        因此渲染只此一处，Prompt 与评估共用。
+
+        Returns:
+            渲染后的文本；无图谱上下文时返回 None。
+        """
+        if not kg_context:
+            return None
+        return json.dumps(kg_context, ensure_ascii=False, indent=2)
+
+    @staticmethod
     def build_user_prompt(
         question: str,
         intent: str = "property",
@@ -140,10 +158,11 @@ class PromptBuilder:
                 lines.append(f"- {ent['name']}（匹配类型：{ent['type']}，得分：{ent['score']}）")
             lines.append("")
 
-        # 第二阶段将注入知识图谱上下文
-        if kg_context:
+        # 第二阶段将注入知识图谱上下文（渲染统一走 format_kg_context）
+        kg_text = PromptBuilder.format_kg_context(kg_context)
+        if kg_text:
             lines.append("知识图谱数据：")
-            lines.append(json.dumps(kg_context, ensure_ascii=False, indent=2))
+            lines.append(kg_text)
             lines.append("")
 
         # 混合检索的参考资料（自动编号，供引用）

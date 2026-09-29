@@ -68,6 +68,44 @@ class TestPromptBuilder:
         assert up.index("参考资料") > up.index("识别到的实体")
 
 
+class TestKgContextFormatting:
+    """
+    `format_kg_context` 是 Prompt 与 RAGAS 评估的**共享渲染口**。
+
+    若两边各写一份渲染，"评估看到的文本"就可能与"LLM 实际看到的文本"不一致，
+    faithfulness 会因此误判（回答无据可依）。这组测试锁住这个契约。
+    """
+
+    def test_none_and_empty_return_none(self):
+        assert PromptBuilder.format_kg_context(None) is None
+        assert PromptBuilder.format_kg_context({}) is None
+
+    def test_returns_json_text(self):
+        ctx = {"technology": {"name": "磷酸铁锂电池"}}
+        text = PromptBuilder.format_kg_context(ctx)
+        assert '"name": "磷酸铁锂电池"' in text
+
+    def test_prompt_contains_exactly_the_formatted_text(self):
+        """Prompt 里注入的图谱文本，必须与 format_kg_context 的输出一致"""
+        ctx = {"technology": {"name": "华龙一号"}, "companies": ["中核集团"]}
+        up = PromptBuilder.build_user_prompt(question="Q", kg_context=ctx)
+        assert PromptBuilder.format_kg_context(ctx) in up
+
+    def test_formatted_text_searchable_as_context(self):
+        """
+        真实用途回归：评估把该文本放进 contexts 后，
+        回答中来自图谱的事实必须能被"证据检查"命中（而非被判无支持）。
+        """
+        ctx = {
+            "technology": {"name": "磷酸铁锂电池", "efficiency": "约95%"},
+            "materials": ["磷酸铁锂", "石墨", "铝箔"],
+        }
+        context_text = PromptBuilder.format_kg_context(ctx)
+        # 这是图谱回答里会出现的典型陈述所依赖的事实
+        for fact in ("磷酸铁锂", "石墨", "铝箔"):
+            assert fact in context_text
+
+
 # ==================== ConversationMemory ====================
 
 

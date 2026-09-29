@@ -4,7 +4,14 @@
 RAGAS 风格生成质量评估命令行入口（Week2 D3）
 
 评分单元：{question, answer, contexts, ground_truth?}
-    - contexts     = 问答时混合检索返回的参考资料文本（回答带了几个引用就有几条）
+    - contexts     = 问答时**实际注入 Prompt 的全部证据**，含两条路径：
+                     ① 文档混合检索的 references（带出处）
+                     ② 知识图谱结构化事实 kg_context
+                     两者共用 `PromptBuilder.format_kg_context` 渲染，
+                     保证"评估看到的文本 = LLM 看到的文本"。
+                     早期只采集了 ①，导致图谱事实被判"无据可依"，
+                     faithfulness 被系统性低估（0.40 → 修复后 0.71，
+                     详见 qa/eval/faithfulness_fix_report.md）。
     - ground_truth = 评测集条目里的 reference_answer（没有则 context_recall 跳过）
 
 两种取样本的方式：
@@ -34,6 +41,7 @@ from qa.answer_engine import AnswerEngine
 from qa.eval.dataset import load_qa_golden
 from qa.eval.gen_metrics import METRIC_LABELS, score_sample, summarize_scores
 from qa.llm_client import create_llm_client
+from qa.prompt_builder import PromptBuilder
 
 DEFAULT_SAMPLES = Path(__file__).resolve().parent / "demo_ragas_samples.json"
 DEFAULT_OUTPUT = Path(__file__).resolve().parent / "ragas_metrics_report.md"
@@ -84,6 +92,18 @@ def collect_samples_from_engine(
         except Exception as e:
             logger.warning(f"问答失败，跳过该样本：{question} -> {e}")
             continue
+
+        # contexts 必须与 Prompt 里实际注入的证据一致，否则 faithfulness /
+        # context_precision 会误判"回答无据可依"。
+        # 引擎里有两条证据路径：
+        #   1) 文档混合检索 -> references（带出处，用于引用编号）
+        #   2) 知识图谱结构化事实 -> kg_context（同样注入 Prompt 的"知识图谱数据"）
+        # 早期版本只采集了 (1)，导致图谱事实被判为无支持 —— 已修复。
+        contexts = [r.get("text", "") for r in (result.get("references") or [])]
+        kg_text = PromptBuilder.format_kg_context(result.get("kg_context"))
+        if kg_text:
+            contexts.append(kg_text)
+
         samples.append({
             "question": question,
             "answer": result.get("answer", ""),
@@ -91,7 +111,7 @@ def collect_samples_from_engine(
             "resolved_question": result.get("resolved_question"),
             "query_rewritten": result.get("query_rewritten", False),
             "intent_source": result.get("intent_source", ""),
-            "contexts": [r.get("text", "") for r in (result.get("references") or [])],
+            "contexts": contexts,
             "ground_truth": entry.get("reference_answer") or None,
         })
         logger.info(
